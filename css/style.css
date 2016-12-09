@@ -1,0 +1,83 @@
+@font-face {
+    font-family: myFont;
+    src: url(font/Anton.woff);
+}
+
+#linkmenu{
+    text-transform: uppercase;
+    border: 2px #fee778 solid;
+    text-align: center;
+    letter-spacing : 0.2em;
+}
+
+#linkmenu:hover{
+    background-color: #fee778 !important;
+    color: black;
+}
+
+.process_step{
+    width : 100%;
+    //min-width : 800px;
+    height: 100vh;// 600px;
+    background-color : black;
+    position : relative;
+}
+
+@media all and (orientation:portrait) {
+    .process_step{
+        width : 100vw;
+        min-width : 0px;
+        height : auto;
+        background-color : black;
+        position : initial;
+    }
+
+}
+
+.fontface
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight : 700;
+}
+/*trnsisi*/
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 1.5s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 1.2s;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+/*footer/*/
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.footer:hover{
+	background-color: #F8F6F6;
+	color: black;
+}
+
+.col-sm-5 h1{
+    font-size : 60px;
+
+}
+
+.col-sm-5 h4{
+    font-family: 'Cardo', serif;
+    letter-spacing : 0.01em;
+    text-transform : none;
+}

@@ -1,0 +1,1637 @@
+
+div{
+    display : block;
+}
+
+html, body{
+    padding : 0 !important;
+    margin : 0 !important;
+    background-color : transparent;
+    overflow : auto;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color : white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    list-style-type: none;
+    cursor : pointer;
+}
+
+a:hover{
+    text-decoration : none;
+    color : white;
+}
+
+a[name]{
+    display : block;
+    content : " ";
+    position : relative;
+    top : -50%;
+    visibility : hidden;
+}
+
+h2{
+    font-size : 3.2em;
+    font-weight: bold;
+    font-family: 'Dosis', sans-serif;
+    line-height : 1em;
+    letter-spacing : 0.01em;
+    text-align : center;
+    font-weight : bold;
+    color : #1a1a1a;
+    display : block;
+}
+
+h2 hr{
+    margin : 0.2em auto;
+}
+h4{
+    font-size : 1.25em;
+    letter-spacing: 0.1em;
+    padding-left : 0.1em;
+    font-family: 'Amaranth', sans-serif;
+    text-transform : uppercase;
+    text-align : center;
+    color : #1A1A1A
+}
+h4 hr{
+    width : 37px;
+    display : inline-block;
+    margin : 0 20px 0.3em;
+    border-color : #7F7F7F;
+}
+
+h3, .section_head h2{
+    font-size : 2.75em;
+    letter-spacing : 0.05em;
+    padding-left: 0.05em;
+    font-family: 'Amaranth', sans-serif;
+    text-transform: uppercase;
+    text-align :center;
+    color : #1A1A1A;
+}
+
+.section_head h2{
+    font-size :3.2em;
+}
+
+h5{
+    color : #7F7F7F;
+    font-size : 1.05em;
+    letter-spacing : 0.07em;
+    padding-left : 0.07em;
+    font-family : 'Amaranth', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h5 .balanced-text span, h4 span .balanced-text{
+    font-family: 'Dosis', sans-serif;
+    font-weight : 200;
+}
+
+h5 hr{
+    margin-top : 12px;
+    border-color : #7F7F7F;
+}
+hr {
+    width : 56px;
+    border-color : #1a1a1a;
+    border-width : 2px;
+    display : block;
+}
+p{
+    font-size : 1.65em;
+    margin : 0.8em auto 0 auto;
+    max-width : 75%;
+    line-height : 1.25em;
+    color : white;
+    font-family: 'Prociono', serif;
+    cursor : default;
+}
+span{
+    letter-spacing : .05em;
+}
+h1{
+    letter-spacing : 0.04em;
+    padding-left: 0.04em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform : uppercase;
+    text-align : center;
+    display : block;
+    font-weight : bold;
+}
+
+input, textArea, select{
+    display : block;
+    height : 40px;
+    width : 290px;
+    margin-bottom : 10px;
+    margin-left : auto;
+    margin-right : auto;
+    background-color : white;
+    border : 1px solid #c6c6c6;
+    border-radius : 3px;
+    padding : 0.65em 0.95em;
+    font-size : 0.9em;
+    color : #7f7f7f;
+}
+
+select{
+    margin : 0;
+}
+textArea{
+    height : 120px;
+    resize : none;
+}
+
+ul{
+    display : block;
+    list-style-type : disc;
+    padding : 0;
+}
+
+li{
+    list-style: none;
+}
+.wrapper{
+    margin : 0;
+    padding : 0;
+    overflow : visible;
+}
+
+#header{
+    position : fixed;
+    top : 0;
+    width : 100%;
+    padding : 0.5em 0;
+    color : #1A1A1A;
+    z-index : 10000;
+}
+
+.position-relative{
+    position : relative;
+}
+
+.content-width{
+    position : relative;
+    max-width : 1024px;
+    margin : 0 auto;
+    padding : 0 30px;
+    display : block;
+}
+
+@media all and (orientation:portrait) {
+    .content_width {
+        position : relative;
+        margin : 0 auto;
+        padding : 0;
+        display : block;
+        text-align : center;
+    }
+
+}
+
+
+.header-line{
+    height : 50px;
+    margin : 0 0 0 -2.5%;
+    vertical-align : middle;
+    display : block;
+}
+
+.header-line::before{
+    content: '';
+    display : inline-block;
+    height : 100%;
+    vertical-align: middle;
+}
+
+.left{
+    display : inline-block;
+    overflow : visible;
+    margin : 0 0 0 2.5%;
+    width : 13.5%;
+    text-align : left;
+}
+
+@media all and (orientation:portrait) {
+
+    .left{
+        display : inline-block;
+        overflow : visible;
+        text-align : left;
+    }
+
+
+}
+
+.right{
+    display : inline-block;
+    overflow : visible;
+    margin : 0 0 0 2.5%;
+    width : 13.5%;
+    text-align : right;
+}
+
+.right a{
+    border-bottom : 1px dotted white;
+}
+.center{
+    position : relative;
+    width : 63.5%;
+    text-align : center;
+    display : inline-block;
+    overflow : visible;
+    margin: 0 0 0 2.5%;
+    font-size : 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+.center a{
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2em;
+}
+.video_wrapper{
+    height : 100%;
+    width : 100%;
+    display : block;
+    position : fixed;
+    background-image : url(../Image/main_background.png);
+    background-size : cover;
+}
+
+@media all and (orientation:portrait) {
+    .video_wrapper {
+        width: 100vw;
+
+    }
+
+}
+
+.about_us_wrapper{
+    position : relative;
+    height : 100vh;
+    width : 100vw;
+    display : block;
+    opacity : 0.7;
+    background-color : white;
+    padding-top: 8%;
+}
+
+.about_us_wrapper p{
+    margin : 0.8em auto 0 auto;
+    max-width : 75%;
+    font-size : 2em;
+    font-style : normal;
+    line-height : 1.2em;
+    text-align : center;
+    color : #1a1a1a;
+    opacity : 0;
+}
+
+@media all and (orientation:portrait) {
+    .about_us_wrapper{
+        height:100vh;
+        opacity : 0.7;
+    }
+    .about_us_wrapper p{
+        opacity : 1;
+        font-size : 40px;
+    }
+    #part_1{
+        margin-top : 5vh;
+    }
+    #part_2{
+        margin-top : 10vh;
+    }
+}
+.about_menu_wrapper{
+    height : 90vh;
+    width : 100vw;
+    display : block;
+    position : relative;
+    border-top : 2.5px solid #FFFC52;
+    background-image : url(../Image/kitchen.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media all and (orientation:portrait) {
+    .about_menu_wrapper{
+        height:60vh;
+    }
+}
+
+.about_menu_wrapper p{
+    font-style : normal;
+    font-size : 1.35em;
+}
+
+.forget_password{
+    margin-top : -15px;
+    height : 50px;
+}
+
+.forget_password p{
+    text-align : center;
+    text-transform : uppercase;
+}
+
+.forget_password a{
+    font-family: 'Roboto', sans-serif;
+    color : #7F7F7F;    
+    font-size : 12px;
+    border-bottom : 1px dotted #7F7F7F;
+}
+.centered-content{
+    width : 100%;
+    text-align : center;
+    padding-bottom : 3.2em;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    display : block;
+    color : white;
+}
+
+.centered-content h1{
+    font-size : 5.5em;
+    line-height : 0.95em;
+    margin : 0 auto;
+    color : white;
+    opacity : 0.9;
+    max-width: 80%;
+    letter-spacing: 0.00001em;
+}
+
+.button_arrangement{
+    position : absolute;
+    bottom : 56px;
+    left : 0;
+    right : 0;
+    width : 280px;
+    margin : 0 auto;
+    text-align : center;
+    font-size : 16px;
+    z-index : 10000;
+}
+
+@media all and (orientation:portrait) {
+    .button_arrangement{
+        z-index: 2;
+    }
+    .centered-content{
+        width : 100vw;
+        text-align : center;
+        padding-bottom : 3.2em;
+        position : absolute;
+        top : 25%;
+        left : 0;
+        transform : none;
+        display : block;
+        color : white;
+    }
+}
+
+.button, .button_no_transition{
+    color : white;
+    border : 3px solid white;
+    outline: none;
+    display : block;
+    position : relative;
+    white-space : nowrap;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    text-align : center;
+    text-transform : uppercase;
+    letter-spacing: 0.15em;
+    padding : 0.7em 2em;
+    margin-bottom : 10px;
+    border-radius : 2px;
+    cursor : pointer;
+    width : 100%;
+}
+
+.button:hover {
+    background-color : #F7F991;
+    border : none;
+    color : black;
+}
+.text_link, .text_link_no_transition{
+    color : white;
+    border-color : white;
+    border-bottom : 1px dotted #9A9A9A;
+    cursor : pointer;
+    letter-spacing : 0.05em;
+    font-weight : bold;
+    text-transform : uppercase;
+}
+
+#footer .content-width{
+    padding : 1.5em 30px;
+}
+
+#footer{
+    vertical-align : bottom;
+    bottom : 0;
+    background-color : #000000;
+    min-height : 5em;
+    text-align : center;
+    display : block;
+    width : 100%;
+}
+
+.links{
+    display : block;
+    padding : .5em;
+    padding-right : 0;
+}
+
+.trademark{
+    color : #7F7F7F;
+    font-weight : normal;
+}
+
+.social_media_icons{
+    display : inline-block;
+    margin-left : 1em;
+    padding : .5em;
+    padding-left : 0;
+}
+
+.social_media_icons a{
+    cursor : pointer;
+}
+
+.facebook_icon{
+    background-image : url(../Image/Facebook.png);
+    background-size : cover;
+    background-position : center;
+    background-repeat : no-repeat;
+    width : 30px;
+    height : 30px;
+    display : inline-block;
+}
+
+.register_pop_up_wrapper, .sign_in_pop_up_wrapper{
+    width : 430px;
+    height : 530px;
+    background-color : white;
+    position : fixed;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    z-index : 1000;
+}
+
+@media all and (orientation:portrait) {
+
+    .register_pop_up_wrapper, .sign_in_pop_up_wrapper{
+        width : 100vw;
+        height : 100vh;
+        background-color : white;
+        position : fixed;
+
+        z-index : 1000;
+    }
+
+}
+.close_button{
+    position : absolute;
+    right : 6%;
+    top : 5%;
+}
+
+.back_button{
+    position : absolute;
+    left : 6%;
+    top : 5%;
+}
+
+.register_header{
+    display : block;
+    letter-spacing: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size : 30px;
+    height : 50px; 
+    color : black;
+    text-align : center;
+    padding-top : 20px;
+}
+
+.register_description, .register_description_4, .sign_in_description{
+    display : block;
+    font-family : 'Teko', sans-serif;
+    height : 220px;
+    padding-top : 10px;
+}
+
+.register_description_4{
+    height : 150px;
+}
+
+.errors{
+    margin-top : 10px;
+    color : red;
+    min-height: 30px;
+}
+
+.register_box{
+    display : block;
+    height : 100px;
+}
+
+.next_button_wrapper, .sign_in_button_wrapper{
+    height : 100px;
+    display : block;
+}
+
+.next_button_wrapper button, .sign_in_button_wrapper button{
+    margin-top: 25px;
+    width : 290px;
+    height : 45px;
+    display : block;
+    margin-left : auto;
+    margin-right : auto;
+    background-color : #1A1A1A;
+    color : #FFFFFF;
+    border : none;
+    border-radius : 2px;
+    letter-spacing: 0.1em;
+}
+#sign_in_button_wrapper_height {
+    height : 50px;
+
+}
+#sign_in_button_margin {
+    margin-top : 10px;
+}
+.register_description_2{
+    margin-top : 30px;
+    height : 145px;
+    display : block;
+}
+
+.login_inputs{
+    height : 120px;
+    display : block;
+    padding-top : 25px;
+}
+
+.register_description_2 p, .register_description_3 p, sign_in{
+   text-align : center;
+   font-family: 'IM Fell English', serif;
+   font-style : italic;
+   font-size : 1.3em;
+   font-weight : lighter;
+   display : block;
+   margin-left: auto;
+   margin-right : auto;
+   color : black;
+}
+.google_map_display{
+    position : absolute;
+    bottom : 50px;
+    display : block;
+    height : 235px;
+    padding-top : 10px;
+}
+
+.google_map_display img{
+    border-top : 1px solid grey;
+    height : 100%;
+    width : 100%;
+}
+.next_address, .next_details{
+    margin-top : 258px;
+    width : 290px;
+    height : 46px;
+    display : block;
+    margin-left : auto;
+    margin-right : auto;
+    background-color : #1A1A1A;
+    color : #FFFFFF;
+    border : none;
+    border-radius : 2px;
+    letter-spacing: 0.1em;
+}
+
+.next_details{
+    margin-top : 15px;
+}
+
+.register_description_3{
+    display : block;
+    margin-top : 30px;
+}
+
+.address_detail{
+    display : block;
+    height : 280px;
+    margin-top : 20px;
+}
+
+.double_input{
+    width : 290px;
+    height : 40px;
+    display : block;
+    margin-left: auto;
+    margin-right : auto;
+    margin-bottom : 10px;
+}
+#register_post_code, #register_first_name{
+    margin-left : auto;
+    margin-right : auto;
+    display : inline-block;
+    width : 140px;
+}
+
+#register_state, #register_last_name{
+    margin-left : 10px;
+    display : inline-block;
+    width : 135px;
+}
+
+
+input:focus, textArea:focus{
+    outline : none !important;
+    border : 1px solid #E8ED01;
+    box-shadow: 0 0 10px #F1F383;
+}
+
+.register_description p, .register_description_4 p, .sign_in_description p{
+    padding-top : 5px;
+    text-align : center;
+    font-family: 'IM Fell English', serif;
+    font-style : italic;
+    font-size : 1.2em;
+    font-weight : lighter;
+    display : block;
+    margin-left : auto;
+    margin-right : auto;
+    color : #1A1A1A;
+}
+
+#address_input{
+    margin-top : 20px;
+}
+
+.personal_details{
+    display : block;
+    height : 206px;
+    margin-top : 11px
+}
+
+.contents{
+    position : absolute;
+    z-index : 100;
+    top : 100vh;
+}
+
+.process_step_wrapper{
+    width : 100%;
+    //min-width : 800px;
+    height : 1150px;
+    background-color : black;
+    position : relative;
+}
+
+@media all and (orientation:portrait) {
+    .process_step_wrapper{
+        width : 100vw;
+        min-width : 0px;
+        height : auto;
+        background-color : black;
+        position : initial;
+    }
+
+}
+
+.divider_1{
+    position : absolute;
+    background-color : white;
+}
+
+
+.divider_2{
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    height : 50px;
+    background-color :  white;
+}
+
+@media all and (orientation:portrait) {
+    .divider_1 {
+        top : 0;
+        position : relative;
+    }
+
+}
+.icon_box_1 {
+    height : 150px;
+    width : 15%;
+    min-width : 150px;
+    max-width : 150px;
+    position : absolute;
+    border-radius : 50%;
+    background-color : #E2E1E1;
+    top : 50px;
+    left : 50px;
+    border : 1px solid #FFFC52;
+}
+
+.legend_1{
+    height : 30px;
+    width : 15%;
+    min-width : 150px;
+    max-width: 150px;
+    position : absolute;
+    border-radius : 20%;
+    border : 1px solid #FFFC52 ;// #A29F9F;
+    bottom : 10px;
+    left : 50px;
+    background-color :  whitesmoke;//#E7E7E7;
+    text-align : center;
+    text-transform : uppercase;
+    font-family: 'IM Fell English', serif;
+    font-style : italic;
+    font-size : 18px;
+}
+
+.legend_2{
+    height : 30px;
+    width : 15%;
+    min-width : 150px;
+    max-width: 150px;
+    position : absolute;
+    border-radius : 20%;
+    border : 3px solid #A29F9F;
+    bottom : 10px;
+    right : 50px;
+    background-color : whitesmoke;
+    text-align : center;
+    text-transform : uppercase;
+    font-family: 'IM Fell English', serif;
+    font-style : italic;
+    font-size : 18px;
+}
+
+@media all and (orientation:portrait) {
+    .legend_1, .legend_2{
+        width : 40vw;
+        height : 4vh;
+        left : 30vw;
+        right : 35vw;
+        max-width:none;
+        bottom : 5vh;
+        padding-top : 10px;
+        font-size : 22px;
+    }
+
+    
+    .video_wrapper{
+        position : relative;
+    }
+    
+    .contents{
+        position : absolute;
+    }
+
+}
+
+.text_on_right{
+    height : 100%;
+    width : 450px;
+    min-width : 450px;
+    position : absolute;
+    padding-top : 50px;
+    opacity : 0.7;
+    right : 0;
+    color : white;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.text_on_right p, .text_on_left p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size : 30px;
+    color : #1a1a1a;
+    cursor : default;
+}
+
+.text_on_right:hover, .text_on_left:hover {
+    opacity : 1;
+}
+
+.text_on_left {
+    height : 100%;
+    width : 450px;
+    position : absolute;
+    padding-top : 50px;
+    min-width : 450px;
+    opacity : 0.7;
+    border-top-right-radius : 10%;
+    border-bottom-right-radius: 10%;
+    left : 0;
+    color : white;
+}
+
+@media all and (orientation:portrait) {
+    .text_on_right,.text_on_left{
+        height : 100%;
+        // width : 450px;
+          min-width : 0;
+          margin : 0;
+        // position : absolute;
+        // padding-top : 50px;
+        //   background-color: #FFE033;
+        opacity : 0.7;
+        right : auto;
+        left : auto;
+        width :100%;
+        padding-top:10px;
+        background-color:transparent;
+        color : white;
+        border-top-left-radius: 10%;
+        border-bottom-left-radius: 10%;
+        text-align : center;
+    }
+    
+    .text_on_left p, .text_on_right p{
+        font-size : 50px;
+    }
+
+
+}
+
+
+#choose_icon{
+    background-image : url(../Image/choose.png);
+    background-repeat : no-repeat;
+    background-position : center ;
+}
+
+
+#order_icon{
+    background-image : url(../Image/order.png);
+    background-repeat : no-repeat;
+    background-position : center ; 
+    background-size : 90%;
+   
+}
+
+#pack_icon{
+    background-image : url(../Image/pack.png);
+    background-repeat : no-repeat;
+    background-position : center ;
+  
+}
+
+#deliver_icon{
+    background-image : url(../Image/deliver.png);
+    background-repeat : no-repeat;
+    background-position : center ;   
+  
+}
+
+.icon_box_2 {
+    width : 15%;
+    min-width : 150px;
+    max-width : 150px;
+    height : 150px;
+    border-radius : 50%;
+    position : absolute;
+    top : 50px;
+    right : 50px;
+}
+
+
+@media all and (orientation:portrait) {
+    .icon_box_1,.icon_box_2 {
+        width : 70vw;
+        left : 15vw;
+        right : 15vw;
+        top : 20vh;
+        height : 80vw;
+        border-radius : 50%;
+        max-width:none;
+        max-height: none;
+        background-size:cover;
+    }
+
+}
+
+.process_1{
+    position : absolute;
+    width : 100%;
+    height : 250px;
+    top : 100px;
+    background-color : white;
+}
+
+.process_2{
+    position : absolute;
+    width : 100%;
+    height : 250px;
+    top : 350px;
+    background-color : white; //#BBBBB9;    
+}
+
+.process_3{
+    position : absolute;
+    width : 100%;
+    height : 250px;
+    top : 600px;
+    background-color : white;    
+}
+
+.process_4{
+    position : absolute;
+    width : 100%;
+    height : 250px;
+    top : 850px;
+    background-color : white;    
+}
+
+@media all and (orientation:portrait) {
+    .process_1, .process_2, .process_3,.process_4{
+        position : relative;
+        top : 0;
+        display : block;
+        height : 100vh;
+    }
+}
+
+// set viewing of each icon to 1 screen
+
+.video_display{
+    min-height: 100%;
+    min-width : 100%;
+    height : 100%;
+    width : 100%;
+    display : block;
+    position : absolute;
+    top : 0;
+    left : 0;
+    object-fit: fill;
+}
+
+@media all and (orientation:portrait) {
+    .video_display{
+        // min-height: 100%;
+        // min-width : 100%;
+        height : 100%;
+        //  width : 100%;
+        display : block;
+        position : absolute;
+        top : 0; 
+        //  object-fit: fill;
+    }
+}
+
+
+.menu_contents{
+   background-color : #EDEDE9;
+}
+
+.menu_details_contents{
+    
+}
+
+.main_image_wrapper{
+    background-image : url(../Image/raspberry.jpeg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    position : relative;
+    background-position : center bottom;
+    height : 500px;
+    margin : 0 auto;
+    width : 100%;
+}
+
+.centered_text{
+    width : 100%;
+    text-align : center;
+    padding : 0 30px;
+    position : relative;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+}
+
+.centered_text h1{
+    line-height : 1;
+    color : white;
+    font-size : 6.2em;
+    display : inline-block;
+    
+}
+.centered_text h1 hr{
+    display : inline-block;
+    height : 0;
+    margin : 0;
+    padding : 0;
+    vertical-align : middle;
+    border-color : white;
+}
+
+.text_wrapper{
+    position : relative;
+    margin-top : 40px;
+    margin-bottom : 40px;
+}
+
+.bottom_ribbon_text_wrapper{
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    padding : 7px 0;
+    text-align : center;
+    color : #1A1A1A;
+    font-size : 1.1em;
+    
+}
+
+.bottom_ribbon_text_wrapper a span{
+    color : #1A1A1A;
+}
+
+.bottom_ribbon_text_wrapper a {
+    font-size : 1.1em;
+}
+
+#color_selected{
+    background-color : #FFCC00;
+}
+
+.product_section_wrapper h4{
+    margin : 40px 0;
+}
+
+ul .menu-items{
+    margin-bottom: 0;
+}
+
+.menu-item{
+    margin : 0 auto 40px;
+    display : block;
+    max-width : 1024px;
+}
+
+.menu-item-container{
+    background-color : #FFFFFF;
+    margin : 0 30px;
+}
+
+.image-box {
+    display : block;
+    position : relative;
+    border-bottom : 0px;
+    width : 100%;
+    background-color : #D4D3D3;
+    background-position : center;
+    background-size : 94px 94px;
+    content : ' ';
+    display : block;
+    padding-top : 45%;
+}
+
+.image{
+    position : absolute;
+    top : 0;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    background-repeat : no-repeat;
+    background-position : center bottom;
+    background-size : cover;
+}
+
+.details{
+    text-align : center;
+    padding : 30px 20px;
+}
+
+.details h3{
+    margin : 0;
+    line-height: 1em;
+}
+
+.details h5{
+    margin : 0;
+    font-weight : lighter;
+}
+
+.balanced-text{
+    position : relative;
+    
+}
+
+.details h3 span{
+    display : inline-block;
+}
+
+.actions{
+    max-width : 600px;
+    margin : 0 auto;
+}
+
+.details .line{
+    margin-left : -1.5%;
+}
+
+.line{
+    margin : 0 0 0 -2.5%;
+    vertical-align : middle;
+}
+
+.line > .col2{
+    margin-left : 1.5%;
+}
+
+.line > *.col2 {
+    width : 47.5%;
+}
+
+.line > *{
+    display : inline-block;
+    overflow : visible;
+    margin : 0 0 0 2.5%;
+}
+
+.actions .button{
+    height : 46px;
+    line-height: 23px;
+}
+
+a.button.secondary{
+    background-color : #FEE778;
+    border-color : #FDD513;
+    border-width: 1px;
+    color : #1A1A1A;
+}
+a.button.primary{
+    background-color : #1A1A1A;
+    border-color : #000000;
+    border-width: 1px;
+    color : #FFFFFF;
+    font-weight: normal;
+}
+.page{
+    min-height : 100%;
+    margin-bottom : -5em;
+}
+
+#menu-item{
+    background-color : white;
+}
+
+.clickable.back{
+    background-color : #FFFFFF;    
+}
+
+.header-line.clickable{
+    border: 2px solid #FFFFFF;
+    font-size : 20px;
+}
+
+.clickable{
+    position : relative;
+    display : inline-block;
+    width : 40px;
+    height : 40px;
+    line-height : 40px;
+    font-weight : lighter;
+    letter-spacing : normal;
+    border-radius : 50%;
+    text-align : center;
+    cursor : pointer;
+}
+
+.icons-back{
+    position : absolute;
+    top : 30%;
+    left : 25%;
+    line-height : 1;
+    background-image : url(../Image/back.png);
+    background-size : cover;
+    width : 16px;
+    height : 16px;
+    background-repeat: no-repeat;
+}
+
+.background-image-holder{
+    content : ' ';
+    position : absolute;
+    max-width : 1500px;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+    right : 0;
+    background-position : center;
+    background-size : 94px 94px;
+    background-color : #E6E6E6;
+    background-repeat : no-repeat;
+    min-height : 300px;
+    max-height : 67vh;
+    margin : 0 auto;
+}
+
+.background-image-wrapper{
+    min-height : 300px;
+    max-height : 67vh;
+    max-width : 1500px;
+    margin : 0 auto;
+    background-position : center bottom;
+    background-repeat : no-repeat;
+    background-size : cover;
+    height : 100vh;
+    position : relative;
+    color : white;
+    border-color : white;
+}
+
+.section_description{
+    display : none;
+    background-color : #FFFFFF;
+    margin : 0;
+    padding : 40px 0 20px;
+    text-align : center;
+    color : #FFFFFF;
+}
+
+.section_head{
+    margin-bottom : 40px;
+    text-align : center;
+}
+
+.section_head h4 span{
+    display : table-cell;
+}
+
+.line-height-checker{
+    display : inline-block;
+    position : absolute;
+    top : 0;
+    left : 0;
+    visibility : hidden;
+}
+
+.section_buttons{
+    margin : 0 auto;
+    width : 360px;
+}
+
+.details-product-description{
+    margin-top : 10px;
+    background-color : #FFFFFF;
+    margin : 0;
+    padding : 40px 0 20px;
+    text-align : center;
+}
+
+.balanced-text span{
+    display : online-block;
+}
+
+.section_head h4{
+    display : table;
+    font-weight : lighter;
+    margin : 0.4em auto 0;
+}
+
+.width_auto{
+    height : 46px;
+    line-height : 23px;
+    display : inline-block;
+    width : auto;
+    padding-left : 3em;
+    padding-right : 3em;
+    background-color : #1a1a1a;
+    color : #FFFFFF;
+    font-weight : normal;
+    border : 2px solid #1A1A1A;
+}
+
+.details-product-categories{
+    margin-bottom : 10px;
+    margin : 40px auto;
+    padding : 0 30px;
+    text-align : center;
+}
+
+.the-list{
+    max-width : 500px;
+    margin : 0 auto;
+    text-align : left;
+    height : 200px ;
+    background-color : #1A1A1A;
+}
+#adjustable-height{
+    background-color : transparent;
+    min-height : 200px;
+    height : auto;
+}
+.the-list ul{
+    vertical-align : middle;
+}
+
+.the-list ul li{
+    position : relative;
+    display : inline-block;
+    min-width : 100px;
+    min-height : 120px;
+    width : 20%;
+    height : 30%;
+}
+
+.list_image{
+    position : absolute;
+    height : 75%;
+    width : 100%;
+    background-repeat : no-repeat;
+    background-size : 80px 80px;
+    background-position : center;
+    
+}
+
+.ingredient_name{
+    position : absolute;
+    font-family: 'IM Fell English', serif;
+    font-size : 14px;
+    bottom : 0;
+    height : 25%;
+    width : 100%;
+    text-align : center;
+ 
+}
+
+.details-product-about{
+    margin : 40px auto;
+    padding : 0 30px;
+    background-color : #F7F7F7;
+    margin-bottom : 0;
+    margin-top : 0;
+    padding-bottom : 0;
+    padding-top : 40px;
+    text-align : center;
+}
+
+.details-product-about p, .details-product-ingredients p{
+    margin-bottom : 0;
+    font-style : normal;
+    line-height : 1.7em;
+    max-width : 500px;
+    color : #1A1A1A;
+}
+
+ #margin-enabled{
+    margin-bottom : 40px;
+}
+
+.details-product-ingredients{
+    background-color : #F7F7F7;
+    margin : 40px auto;
+    margin-bottom : 0;
+    margin-top : 0;
+    padding : 0 30px;
+    padding-bottom : 30px;
+    padding-top : 40px;
+    text-align : center;
+}
+
+.details-product-ingredients .the-list{
+    max-width : 800px;
+}
+
+.details-product-allergens{
+    margin : 40px auto 0;
+    padding : 0 40px 40px;
+    text-align : center;
+}
+
+.details-product-allergens p{
+    color : #7F7F7F;
+    font-size : .82em;
+    font-style : italic;
+    line-height : 1.75em;
+}
+
+#login_error_messages, #login_error_messages_2{
+    height : 20px;
+    width : 290px;
+    margin-left : 70px;
+    position : fixed;
+    display : block;
+    top : 265px;
+    color : red;
+    font-family: 'IM Fell English', serif;
+    font-style : italic;
+    font-size : 1.2em;
+    font-weight : lighter;
+    
+}
+
+.expand_button{
+    height : 90%;
+    width : 50px;
+    background-color : #fbfafa;
+    border-radius : 50%;
+    background-size : 30px;
+    background-repeat : no-repeat;
+    background-position : center;
+    background-image : url(../Image/expand.png);
+    border : 2px solid #e0dada;
+    cursor : pointer;
+}
+
+.member_menu{
+    height : 100%;
+    width : 100%;
+    position : fixed;
+    top : 0%;
+    left : 0%;
+    background-color : black;
+    overflow : auto;
+}
+
+.member_menu_close_button{
+    position : absolute;
+    top : 10px;
+    left : 5%;
+    display : inline-block;
+    background-image : url(../Image/closebutton.png);
+    background-size : 30px;
+    border-radius : 50%;
+    background-position : center;
+    border : 2px solid white;
+    width : 40px;
+    height : 40px;
+    cursor : pointer;
+}
+
+.member_menu_cart_button{
+    position : absolute;
+    top : 5px;
+    right : 5%;
+    display : inline-block;
+    background-image : url(../Image/cart.png);
+    background-size : 30px;
+    background-position : center;
+    background-repeat : no-repeat;
+    border-radius : 50%;
+    border : 2px dotted #1a1a1a;
+    width : 40px;
+    height : 40px;
+}
+.left_filler, .right_filler{
+    width : 24.45%;
+    display : inline-block;
+    
+}
+.center_filler{
+    width : 50%;
+    display : inline-block;
+    margin :  auto;
+    position : absolute;
+}
+
+.center_box{
+    display : block;
+    height : 70px;
+    width : 100%;
+    margin : 0 auto;
+    margin-top : 10px;
+    position : absolute;
+}
+
+.center_filler a{
+    display: block;
+    text-align : center;
+    font-family : 'Open Sans', sans-serif;
+    letter-spacing : 0.2em;
+    font-size : 30px;
+    text-decoration: none;
+}
+
+.center_filler a:hover{
+    text-decoration : none;
+    color : white;
+}
+
+.left_5_percent{
+    display : block;
+    position : absolute;
+    top : 10px;
+    left : 5%;
+}
+
+
+.member_menu_header{
+    height : 60px;
+    width : 100%;
+    display : inline-block;
+    margin : auto;
+}
+
+.member_menu_body{
+    height : 550px;
+    width : 100%;
+}
+
+.list_box{
+    height : 85px;
+    width : 100%;
+    background-color : black;
+}
+
+.list_box .centered_text a{
+    color : white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight : 700;
+    font-size : 38px;
+    letter-spacing : 0.05em;
+    text-transform: uppercase;
+}
+
+.list_box .centered_text a:hover{
+    color : #FFCD5C;
+}
+
+.list_box .centered_text hr{
+    border-color : #4C4C4C;
+    margin : 10px auto;
+}
+.list_box_sign_out{
+
+    height : 125px;
+    width : 100%;
+    text-align : center;
+}
+
+#sign_out_button{
+    text-align : center;
+    border : 1px solid #7F7F7F;
+    background-color : transparent;
+    margin-left : auto;
+    margin-right : auto;
+    color : #FFFFFF;
+    display : inline-block;
+    font-family : 'Open Sans Condensed', sans-serif;
+    font-weight : 700;
+    font-size : 16px;
+    text-transform: uppercase;
+    text-decoration : none;
+    border-radius : 2px;
+    cursor : pointer;
+    padding : 0.7em 2em;
+    padding-left : 4em;
+    padding-right : 4em;
+    margin-top : 90px;
+}   
+
+.register_errors{
+    margin-top : 10px;
+    color : red;
+    min-height : 30px;
+    padding-left : 70px;
+    font-style : italic;
+    font-family: 'IM Fell English', serif;
+    font-size : 1.2em;
+}
+
+.number_display{
+    position : absolute;
+    margin-left : 30px;
+    height : 20px;
+    width : 20px;
+    background-color : black;
+    border-radius : 50%;
+    color : white;
+    text-align : center;
+    font-size : 14px;
+    font-family: 'IM Fell English', serif;
+}
+
+.icon_box_wrapper{
+    height : 100%;
+    background-color : blue;
+    width : 200px;
+}
+
+#click_cursor{
+    cursor : pointer;
+}
+
+.success{
+    text-align : center;
+    font-size : 18px;
+    font-style: italic;
+    font-family: 'IM Fell English', serif;
+    color : green;
+}
