@@ -853,9 +853,9 @@
                                         <li class="active" style="margin: auto;"><a href="#">Selffeed for Android</a></li>
                                         <li><a class="footer" href="#">Selffeed for IOs</a></li>
                                         <li><a class="footer"href="#">Business</a></li>
-                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Information/QuestionAndAnswer">QA</a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/QuestionAndAnswer">QA</a></li>
                                         <li><a class="footer"href="#">Contact Us</a></li>
-                                        <li><a class="footer"href="#">Career</a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/career">Career</a></li>
                                         <li><a class="footer"href="#">QA</a></li>
                                         <li><a class="footer"href="#">Term of Use</a></li>
                                         <li><a class="footer"href="#">Privacy Policy</a></li>
