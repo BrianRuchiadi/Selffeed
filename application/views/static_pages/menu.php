@@ -1,11 +1,14 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> SelfFeed </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
@@ -175,9 +178,9 @@
                             <hr>
                             <div class="text_wrapper">
                                 <?php if($store_status->status == 1){ ?>
-                                <span>Kitchen's Open</span>
+                                <div class="title-1">Kitchen's Open</div>
                                 <?php } else { ?>
-                                <span>Kitchen's Close</span>
+                                <span class="title-1">Kitchen's Close</span>
                                 <?php } ?>
                             </div>
                             <hr>                        
@@ -201,9 +204,11 @@
                 
                 <div class="product_section_wrapper">
                     <h4>
-                        <hr>
-                        <span> On Today's Lunch Menu </span>
-                        <hr>
+                        <div class="title-2">
+                            <hr>
+                            <span> On Today's Lunch Menu </span>
+                            <hr>
+                        </div>
                     </h4>
                 </div>
                 
@@ -233,14 +238,14 @@
                                 </h5>
                                 <div class="actions">
                                     <div class="line">
-                                        <div class="col2">
-                                            <a class="button secondary" href="<?php echo base_url(); ?>index.php/Menu/details/<?php echo $product->product_id; ?>">Details</a>
+                                        <div class="col2 btn">
+                                            <a class="button secondary title-3" href="<?php echo base_url(); ?>index.php/Menu/details/<?php echo $product->product_id; ?>">Details</a>
                                         </div>
-                                        <div class="col2 last">
+                                        <div class="col2 last btn">
                                             <?php if(!$credit){ ?>
                                             <a class="button primary" onclick="register()">Sign Up to Order</a>
                                             <?php } else { ?>
-                                            <a class="button primary" onclick="addToCart(<?php echo $product->product_id; ?>);">I'll preorder this</a>
+                                            <a class="button primary title-4" onclick="addToCart(<?php echo $product->product_id; ?>);">I'll preorder this</a>
                                             <?php } ?>
                                         </div>
                                     </div>

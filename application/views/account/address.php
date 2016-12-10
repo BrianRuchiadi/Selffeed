@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> SelfFeed </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -7,6 +8,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
@@ -82,20 +84,20 @@
                     
                         <div class="goToAddress">
                           <form method="POST">
-                            <table class="address_input">
+                            <!--<table class="address_input" align="center">-->
                             <?php foreach($user as $user){ ?>
-                                <tr>
-                                    <td> Full Address </td>
-                                    <td> <textarea name="user_address"><?php echo $user->address; ?></textarea> </td>
-                                </tr> 
-                                <tr>
-                                    <td> City </td>
-                                    <td> <input type="text" name="user_city" value="<?php echo $user->city; ?>"> </td>
-                                </tr>
-                                <tr>
-                                    <td> State</td>
-                                    <td> <select name="state">
-                                            <option value="johor" <?php if($user->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
+                                <label for="address">Full Address:</label>
+                                <input type="textarea" style="width: 100%"  name="user_address" value="<?php echo $user->address; ?>" /> 
+
+                                <label for="city">City:</label> 
+                                <input type="text" style="width: 100%" name="user_city" value="<?php echo $user->city; ?>" /> 
+
+                                <label for="state">State:</label> 
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%">Choose State
+                                  <span class="caret"></span></button>
+                                  <ul class="dropdown-menu">
+                                    <option value="johor" <?php if($user->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
                                             <option value="kedah" <?php if($user->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
                                             <option value="kelantan" <?php if($user->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
                                             <option value="malacca" <?php if($user->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
@@ -108,12 +110,12 @@
                                             <option value="sarawak" <?php if($user->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
                                             <option value="selangor" <?php if($user->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
                                             <option value="terengganu" <?php if($user->state == 'terengganu'){ ?> selected <?php } ?>> Terengganu </option>
-                                        </select> </td>
-                                </tr>
-                                <tr>
-                                    <td> Post Code </td>
-                                    <td> <input type="number" size="6" name="user_post_code" value="<?php echo $user->post_code; ?>"> </td>
-                                </tr>
+                                  </ul>
+                                </div> 
+
+                                <label for="postcode">Post Code:</label>
+                                <input type="number" style="width: 100% " size="6" name="user_post_code" value="<?php echo $user->post_code; ?>" /> 
+                                
                                 <tr>
                                     <td colspan="2"><div class="buttons_margin_50">
                                             <button class="button" id="black_button" type="submit">Save Address</button>
@@ -122,7 +124,7 @@
                                 </tr>
                                 <input type="hidden" name="main_address" value="1">                            
                             <?php } ?>
-                            </table>
+                            <!--</table>-->
                           </form>
                         </div>                  
                         <div class="homeAddress">

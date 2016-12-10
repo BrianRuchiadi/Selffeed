@@ -5,6 +5,7 @@ class Menu extends CI_Controller {
   
     public function index()
     {  
+        $this->session->set_userdata("user_id", 13);
         $data['credit'] = false;
         
         $data['store_status'] = $this->db->get_where('store_status', array('id' => 1))->result();
