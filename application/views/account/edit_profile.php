@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> SelfFeed </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -7,6 +8,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
@@ -131,7 +133,7 @@
                         <div class="profile_errors"></div>
                         <div class="line">
                             <div class="col2">
-                                <input name="firstName" type="text" placeholder="First Name" value="<?php echo $user->first_name; ?>">                           
+                                <input name="firstName" type="text" placeholder="First Name" value="<?php echo $user->first_name; ?>">
                             </div>
                             <div class="col2" id="align_right">
                                 <input name="lastName" type="text" placeholder="Last Name" value="<?php echo $user->last_name; ?>">                           

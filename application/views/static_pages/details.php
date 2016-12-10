@@ -1,11 +1,15 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> SelfFeed </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'); 
@@ -133,7 +137,7 @@
                         </div>
                         
         
-                        <div class="background-image-wrapper" style="background-image :url(../../.<?php echo $picture; ?>);">
+                        <div class="background-image-wrapper img-responsive" style="background-image :url(../../.<?php echo $picture; ?>);">
                             <div class="section_description">
                                 <div class="section_head">
                                     <h2>
@@ -155,12 +159,14 @@
                                         </span>
                                     </h4>
                                 </div>
-                                <div class="section_buttons">
+                                <div class="section_buttons btn">
                                     <?php if(!$credit){ ?>
-                                    <a class="button primary" onclick="register()">Sign up to Order</a>
-                                    <?php } else { ?>
-                                    <a class="button primary">I'll Preorder this . RM <?php echo $product[0]->product_price; ?></a>
-                                    <?php } ?>
+                                    <div class="btn">                                            
+                                        <a class="button primary" onclick="register()">Sign up to Order</a>
+                                        <?php } else { ?>
+                                        <a class="button primary">I'll Preorder this . RM <?php echo $product[0]->product_price; ?></a>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +235,7 @@
                                     <?php echo $ingredient->name; ?> , 
                                    <?php } ?>
                                 </p>
-                                <div class="the-list" id="adjustable-height">
+                                <div class="the-list" id="adjustable-height" style="text-align: center;">
                                     <ul>
                                         <?php foreach($ingredients as $ingredient){ ?>
                                         <li><div class="list_image" style="background-image : url(../../.<?php echo $ingredient->picture; ?>)"></div>
