@@ -8,6 +8,7 @@ class Menu extends CI_Controller {
         $data['credit'] = false;
         
         $data['store_status'] = $this->db->get_where('store_status', array('id' => 1))->result();
+        $data['store_status'] = $data['store_status'][0];
         
         if($this->session->userdata('user_id') != ''){
             $data['user'] = $this->session->userdata('user_id');

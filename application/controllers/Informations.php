@@ -106,4 +106,8 @@ class Informations extends CI_Controller {
     public function success(){
         $this->load->view('static_pages/success.php');
     }
+    
+    public function business(){
+        $this->load->view('static_pages/business.php');
+    }
 }

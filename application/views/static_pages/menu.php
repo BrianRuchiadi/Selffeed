@@ -174,7 +174,11 @@
                         <h1>
                             <hr>
                             <div class="text_wrapper">
+                                <?php if($store_status->status == 1){ ?>
                                 <span>Kitchen's Open</span>
+                                <?php } else { ?>
+                                <span>Kitchen's Close</span>
+                                <?php } ?>
                             </div>
                             <hr>                        
                         </h1>
