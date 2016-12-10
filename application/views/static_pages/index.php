@@ -636,7 +636,11 @@
                 </video>
                 <div class="centered-content" style="opacity : 0.99;">
                     <h1>
-                        <span id="faded"> The ingredients for your cooking experience</span>
+                        <span id="faded"> 
+                            <div class="title-1">
+                                The ingredients for your cooking experience
+                            </div>
+                        </span>
                     </h1>
                 </div>
                 <div class="button_arrangement" id="first_arrangement">
@@ -660,45 +664,7 @@
                     <a class="text_link" onclick="open_sign_in();">Already a member? Sign in </a>
                 </div>         
                 </div>
-                
-                <!--<div class="process_step_wrapper">
-                    <div class="divider_1" > 
-                        <p> The Process </p>
-                    </div>
-                    <div class="process_1">
-
-                            <div class="icon_box_1" id="choose_icon"></div>
-                            <div class="legend_1"> Choose</div>
- 
-                        <div class="text_on_right" id="first_step">
-                            <p>Browse and choose what you want </p>
-                        </div>
-                    </div>
-                    <div class="process_2">
-                        <div class="icon_box_1" id="order_icon"></div>
-                        <div class="legend_1"> Order</div>
-                        <div class="text_on_right" id="second_step">
-                            <p> Click on to order </p>
-                        </div>
-                    </div>
-                    <div class="process_3">
-                        <div class="icon_box_1" id="pack_icon"></div>
-                        <div class="legend_1"> Pack</div>
-                        <div class="text_on_right" id="third_step">
-                            <p> We will prepare and pack it nicely </p>
-                        </div>
-                    </div>
-                    <div class="process_4">
-                        <div class="icon_box_1" id="deliver_icon"></div>
-                        <div class="legend_1"> Deliver</div>
-                        <div class="text_on_right" id="fourth_step">
-                            <p> We will deliver it to your doorstep </p>
-                        </div>
-                    </div>
-                    <div class="divider_2">
-                    </div> #F8F6F6
-                
-                </div>-->
+            
                 <div class='step_wrapper'>
                     <!--
                       <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px; position : fixed; right : 5%; top : 5%;">
@@ -708,8 +674,76 @@
                                     </div>
                        </div>
                     -->
-                <div class="process_step module" style="background-color: white; max-height: 1150px;">
-                    <div style="padding-top: 75px;">
+                <div class="process_step module" style="background-color: white; max-height: 500px;">
+                    <div class="fluid-container">
+                        <div class="row">
+                            <div class="col-xs-12 outer">
+                                <div class="row">
+                                    <div class="col-xs-4 leftcol fixed">
+                                        <img src="../image/choose.png" class="img-rounded" alt="process1" width="100%">
+                                    </div>
+                                    <div class="col-xs-8 rightcol scrollit" style="color: black;">
+                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
+                                        <h4 style="text-align: left; padding-top: 50px;">
+                                            With you not having to go through painstaking process of prepping, just
+                                            follow the simple steps on our fool-proof recipes and voilà you're the master
+                                            chef! What's left to do is to eat!
+                                        </h4>
+                                        <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            </div>
+                                        </div>
+                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
+                                        <h4 style="text-align: left; padding-top: 50px;">
+                                            With you not having to go through painstaking process of prepping, just
+                                            follow the simple steps on our fool-proof recipes and voilà you're the master
+                                            chef! What's left to do is to eat!
+                                        </h4>
+                                        <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            </div>
+                                        </div>
+                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
+                                        <h4 style="text-align: left; padding-top: 50px;">
+                                            With you not having to go through painstaking process of prepping, just
+                                            follow the simple steps on our fool-proof recipes and voilà you're the master
+                                            chef! What's left to do is to eat!
+                                        </h4>
+                                        <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            </div>
+                                        </div>
+                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
+                                        <h4 style="text-align: left; padding-top: 50px;">
+                                            With you not having to go through painstaking process of prepping, just
+                                            follow the simple steps on our fool-proof recipes and voilà you're the master
+                                            chef! What's left to do is to eat!
+                                        </h4>
+                                        <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            </div>
+                                        </div>
+                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
+                                        <h4 style="text-align: left; padding-top: 50px;">
+                                            With you not having to go through painstaking process of prepping, just
+                                            follow the simple steps on our fool-proof recipes and voilà you're the master
+                                            chef! What's left to do is to eat!
+                                        </h4>
+                                        <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--
+                    <div style="padding-top: 75px;" class="col-sm-12">
                         <container>
                             <div class="col-sm-5" style="padding-top: 100px; padding-left : 40px;">
                                 <h1 style="text-align: left; " class="fontface">ORDER</h1>
@@ -721,7 +755,6 @@
                                     <div id="linkmenu" style="height: 40px; line-height: 40px;">
                                         <a onclick="open_register();" class="btn btn-2" style="color: black; font-weight : 600;"> Get Started</a>
                                     </div>
-                    
                                 </div>
                             </div>
                             <div class="col-sm-7" style="text-align: center; padding-top : 20px;">
@@ -818,7 +851,7 @@
                         </container>
                     </div>
                 </div>
-                    
+                    -->
                 </div>
                 
                 <div class="about_menu_wrapper">
@@ -850,19 +883,20 @@
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">
                                     <ul class="nav navbar-nav">
-                                        <li class="active" style="margin: auto;"><a href="#">Selffeed for Android</a></li>
-                                        <li><a class="footer" href="#">Selffeed for IOs</a></li>
-                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/business">Business</a></li>
-                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/questionAndAnswer">QA</a></li>
-                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Help">Contact Us</a></li>
-                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/career">Career</a></li>
-                                        <li><a class="footer"href="#">QA</a></li>
-                                        <li><a class="footer"href="#">Term of Use</a></li>
-                                        <li><a class="footer"href="#">Privacy Policy</a></li>
-                                        <li><a class="footer" href="#" class="text-muted">&copy; 2016 Selffeed</a></li>
+                                        <li class="active" style="margin: auto;"><a href="#"><div class="linkFooter">Selffeed for Android</div></a></li>
+                                        <li><a class="footer" href="#"><div class="linkFooter">Selffeed for IOs</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/business"><div class="linkFooter">Business</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/questionAndAnswer"><div class="linkFooter">QA</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Help"><div class="linkFooter">Contact Us</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/career"><div class="linkFooter">Career</div></a></li>
+                                        <li><a class="footer"href="#"><div class="linkFooter">QA</div></a></li>
+                                        <li><a class="footer"href="#"><div class="linkFooter">Term of Use</div></a></li>
+                                        <li><a class="footer"href="#"><div class="linkFooter">Privacy Policy</div></a></li>
+                                        <li><a class="footer" href="#" class="text-muted"><div class="linkFooter">&copy; 2016 Selffeed</div></a></li>
+                                        <!--
                                         <li><a class="footer"ref="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a class="footer" href="#" ><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
-                                        <li><a class="footer" href="#" ><i class="fa fa-youtube" aria-hidden="true"></i></i></a></li>         
+                                        <li><a class="footer" href="#" ><i class="fa fa-youtube" aria-hidden="true"></i></i></a></li> -->        
                                     </ul>
                               </div>
                         </nav>  
@@ -871,6 +905,7 @@
             </div>
         </div>
     </body>
+    <!--
     <script type="text/javascript">
         (function($) {
 
@@ -913,4 +948,5 @@
               
             });
     </script>
+    -->
 </html>
