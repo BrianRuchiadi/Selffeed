@@ -29,6 +29,7 @@ class Menu extends CI_Controller {
     
     public function details($product_id)
     {  
+        
         $check = $this->db->get_where('products', array('product_id' =>$product_id))->result();
         if(count($check) > 0){
             $data['credit'] = false;

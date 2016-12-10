@@ -18,7 +18,7 @@ class Admin_Panel_Applicants extends CI_Controller{
                 redirect('Admin_Panel_Applicants');
             }
         
-            $this->load->view('admin_panel/header');
+            $this->load->view('admin_panel/header.php');
             $this->load->view('admin_panel/applicants_index.php', $data);
             $this->load->view('admin_panel/footer');
         } else {
@@ -31,28 +31,48 @@ class Admin_Panel_Applicants extends CI_Controller{
        $this->db->delete('job_applicants', array('id' => $id));     
     }
     // One more display field
-    public function edit($id)
-    {
-        if($this->session->userdata("admin_id")){
-         
-            if($_POST){
-                
-                $update['active'] = $this->input->post('active');
-                $update['job_name'] = $this->input->post('job_name');
-                $update['job_description'] = $this->input->post('job_description');
- 
-                $this->db->update('job_vacancy',$update, array('id' => $id));
-                redirect('Admin_Panel_Careers');
-            }
-        
-            $data['vacancy'] = $this->db->get_where('job_vacancy', array('id' => $id))->result();
-        
-            $this->load->view('admin_panel/header');
-            $this->load->view('admin_panel/vacancy_edit', $data);
-            $this->load->view('admin_panel/footer');
-        } else {
-            redirect('Admin_Panel_Access/login');
-        }
-    }
-    
+   public function details($id)
+   {
+       if($this->session->userdata("admin_id")){
+           $data['job_applicant'] = $this->db->get_where('job_applicants', array('id' => $id))->result();
+           $data['job_applicant'] = $data['job_applicant'][0];
+           
+           $update['read'] = 1;
+           $this->db->update('job_applicants', $update, array('id' => $id));
+           
+           $this->load->view('admin_panel/header');
+           $this->load->view('admin_panel/applicant_details.php', $data);
+           $this->load->view('admin_panel/footer');
+           
+          
+       } else {
+           redirect('Admin_Panel_Access/login');
+       }
+   }
+   
+   public function download_resume($id){
+       
+       $data['job_applicant'] = $this->db->get_where('job_applicants', array('id' => $id))->result();
+       $data['job_applicant'] = $data['job_applicant'][0];
+       
+       $this->load->helper('download');
+           
+           if($data['job_applicant']->resume != ''){
+               force_download($data['job_applicant']->resume, NULL);
+           }
+       
+   }
+   
+    public function download_coverLetter($id){
+       
+       $data['job_applicant'] = $this->db->get_where('job_applicants', array('id' => $id))->result();
+       $data['job_applicant'] = $data['job_applicant'][0];
+       
+       $this->load->helper('download');
+           
+           if($data['job_applicant']->coverLetter != ''){
+               force_download($data['job_applicant']->coverLetter, NULL);
+           }
+       
+   }
 }
