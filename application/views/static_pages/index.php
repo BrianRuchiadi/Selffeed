@@ -722,9 +722,9 @@
                                     </div>
                                     <!--<div id="img1" class="col-xs-4 leftcol scrollit" style="color: black;">-->
                                     <div class="col-xs-4 leftcol scrollit" style="color: black;">
-                                        <!--<img src="../image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">-->
-                                        <div id="img1" class="img-responsive">
-                                        </div>
+                                        <img src="../image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">
+                                        <!--<div id="img1" class="img-responsive">
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -905,7 +905,7 @@
             </div>
         </div>
     </body>
-    
+    <!--
     <script>
     var targetOffset1 = $("#div1").offset().top;
     var targetOffset2 = $("#div2").offset().top;
@@ -931,4 +931,5 @@
         }
       });
     </script>
+    -->
 </html>
