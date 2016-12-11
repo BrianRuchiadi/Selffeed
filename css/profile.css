@@ -56,17 +56,17 @@
 }
 
 .profile_form .line .col2{
-   margin-left : 0;
-   width : 48.5%;
+   width : 47.5%;
 }
 
 .profile_form .line{
-    margin : 0;
+    margin-bottom : 10px;
 
 }
 
 .locked_box{
     position : relative;
+    margin-bottom : 10px;
 }
 
 .locked_box input{

@@ -90,15 +90,27 @@
                     </table>
                     <?php } ?>
                 </div>
-                <footer class="position-relative" id="footer">
-                    <div class="content-width">
-                        <div class="links">
-                            <span class="trademark">&copy; 2016 Selffeed </span>
-                        </div>
-                        <div class="social_media_icons">
-                            <a href="https://www.facebook.com/SelfFeed/?fref=ts" class="facebook_icon"></a>
-                
-                        </div>
+                <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                    <div style="vertical-align: middle;">
+                        <nav class="navbar" style="margin:auto;">
+                              <div class="container-fluid" align="center">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active" style="margin: auto;"><a href="#"><div class="linkFooter">Selffeed for Android</div></a></li>
+                                        <li><a class="footer" href="#"><div class="linkFooter">Selffeed for IOs</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/business"><div class="linkFooter">Business</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/questionAndAnswer"><div class="linkFooter">QA</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Help"><div class="linkFooter">Contact Us</div></a></li>
+                                        <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/career"><div class="linkFooter">Career</div></a></li>
+                                        <li><a class="footer"href="#"><div class="linkFooter">Term of Use</div></a></li>
+                                        <li><a class="footer"href="#"><div class="linkFooter">Privacy Policy</div></a></li>
+                                        <li><a class="footer" href="#" class="text-muted"><div class="linkFooter" style="border:none;">&copy; 2016 Selffeed</div></a></li>
+                                        <!--
+                                        <li><a class="footer"ref="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a class="footer" href="#" ><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
+                                        <li><a class="footer" href="#" ><i class="fa fa-youtube" aria-hidden="true"></i></i></a></li> -->        
+                                    </ul>
+                              </div>
+                        </nav>  
                     </div>
                 </footer>
             

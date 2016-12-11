@@ -866,18 +866,7 @@
                         <a class="text_link_no_transition"  onclick="open_sign_in()">Already a member? Sign in </a>
                     </div>                 
                 </div>
-                <!-- <footer id="footer">
-                    <div class="content-width">
-                        <div class="links">
-                            <span class="trademark">&copy; 2016 Selffeed<br>
-                                All Right Reserved</span>
-                        </div>
-                        <div class="social_media_icons">
-                            <a href="https://www.facebook.com/SelfFeed/?fref=ts" class="facebook_icon"></a>
-                              
-                        </div>
-                    </div>
-                </footer> -->
+ 
                 <footer style="background-color: black; height: 80px; color: white; text-align: center;">
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
@@ -889,10 +878,9 @@
                                         <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/questionAndAnswer"><div class="linkFooter">QA</div></a></li>
                                         <li><a class="footer"href="<?php echo base_url(); ?>index.php/Help"><div class="linkFooter">Contact Us</div></a></li>
                                         <li><a class="footer"href="<?php echo base_url(); ?>index.php/Informations/career"><div class="linkFooter">Career</div></a></li>
-                                        <li><a class="footer"href="#"><div class="linkFooter">QA</div></a></li>
                                         <li><a class="footer"href="#"><div class="linkFooter">Term of Use</div></a></li>
                                         <li><a class="footer"href="#"><div class="linkFooter">Privacy Policy</div></a></li>
-                                        <li><a class="footer" href="#" class="text-muted"><div class="linkFooter">&copy; 2016 Selffeed</div></a></li>
+                                        <li><a class="footer" href="#" class="text-muted"><div class="linkFooter" style="border:none;">&copy; 2016 Selffeed</div></a></li>
                                         <!--
                                         <li><a class="footer"ref="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a class="footer" href="#" ><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
@@ -905,48 +893,5 @@
             </div>
         </div>
     </body>
-    <!--
-    <script type="text/javascript">
-        (function($) {
 
-          $.fn.visible = function(partial) {
-            
-              var $t            = $(this),
-                  $w            = $(window),
-                  viewTop       = $w.scrollTop(),
-                  viewBottom    = viewTop + $w.height(),
-                  _top          = $t.offset().top,
-                  _bottom       = _top + $t.height(),
-                  compareTop    = partial === true ? _bottom : _top,
-                  compareBottom = partial === true ? _top : _bottom;
-            
-            return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-
-              };
-                
-            })(jQuery);
-
-            var win = $(window);
-
-            var allMods = $(".module");
-
-            allMods.each(function(i, el) {
-              var el = $(el);
-              if (el.visible(true)) {
-                el.addClass("already-visible"); 
-              } 
-            });
-
-            win.scroll(function(event) {
-              
-              allMods.each(function(i, el) {
-                var el = $(el);
-                if (el.visible(true)) {
-                  el.addClass("come-in"); 
-                } 
-              });
-              
-            });
-    </script>
-    -->
 </html>
