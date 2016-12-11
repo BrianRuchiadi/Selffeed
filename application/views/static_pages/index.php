@@ -679,64 +679,52 @@
                         <div class="row">
                             <div class="col-xs-12 outer">
                                 <div class="row">
-                                    <div class="col-xs-4 leftcol fixed">
-                                        <img src="../image/choose.png" class="img-rounded" alt="process1" width="100%">
+                                    <div class="col-xs-8 rightcol fixed">
+                                        <div id="div1">
+                                            <h1 style="text-align: left; " class="fontface">ORDER</h1>
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
+                                               Have a look through what we're offering today and take a pick! We'll then prep 
+                                               ingredients according to the recipe and arrange it to be delivered to you.
+                                            </h4>
+                                            <div class="col-sm-7" style="padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
+                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                    <a onclick="open_register();" class="btn btn-2" style="color: black; font-weight : 600;"> Get Started</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="div2">
+                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">SIT BACK</h1>
+                                            <!--<a id="anchor-point1">scroll to here</a>-->
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
+                                                While you do your thing, we'll do ours. Preparing. Our technology
+                                                let us receive exactly what you ordered, prepare it with care, and
+                                                deliver it to you in a swift way.
+                                            </h4>
+                                            <div class="col-sm-7" style="padding-top: 50px;">
+                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                    <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="div3">
+                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">COOKING</h1>
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
+                                                With you not having to go through painstaking process of prepping, just
+                                                follow the simple steps on our fool-proof recipes and voilà you're the master
+                                                chef! What's left to do is to eat!
+                                            </h4>
+                                            <div class="col-sm-7" style="padding-top: 50px;">
+                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                                    <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-xs-8 rightcol scrollit" style="color: black;">
-                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                        <h4 style="text-align: left; padding-top: 50px;">
-                                            With you not having to go through painstaking process of prepping, just
-                                            follow the simple steps on our fool-proof recipes and voilà you're the master
-                                            chef! What's left to do is to eat!
-                                        </h4>
-                                        <div class="col-sm-7" style="padding-top: 50px;">
-                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                            </div>
-                                        </div>
-                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                        <h4 style="text-align: left; padding-top: 50px;">
-                                            With you not having to go through painstaking process of prepping, just
-                                            follow the simple steps on our fool-proof recipes and voilà you're the master
-                                            chef! What's left to do is to eat!
-                                        </h4>
-                                        <div class="col-sm-7" style="padding-top: 50px;">
-                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                            </div>
-                                        </div>
-                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                        <h4 style="text-align: left; padding-top: 50px;">
-                                            With you not having to go through painstaking process of prepping, just
-                                            follow the simple steps on our fool-proof recipes and voilà you're the master
-                                            chef! What's left to do is to eat!
-                                        </h4>
-                                        <div class="col-sm-7" style="padding-top: 50px;">
-                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                            </div>
-                                        </div>
-                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                        <h4 style="text-align: left; padding-top: 50px;">
-                                            With you not having to go through painstaking process of prepping, just
-                                            follow the simple steps on our fool-proof recipes and voilà you're the master
-                                            chef! What's left to do is to eat!
-                                        </h4>
-                                        <div class="col-sm-7" style="padding-top: 50px;">
-                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                            </div>
-                                        </div>
-                                        <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                        <h4 style="text-align: left; padding-top: 50px;">
-                                            With you not having to go through painstaking process of prepping, just
-                                            follow the simple steps on our fool-proof recipes and voilà you're the master
-                                            chef! What's left to do is to eat!
-                                        </h4>
-                                        <div class="col-sm-7" style="padding-top: 50px;">
-                                            <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                            </div>
+                                    <!--<div id="img1" class="col-xs-4 leftcol scrollit" style="color: black;">-->
+                                    <div class="col-xs-4 leftcol scrollit" style="color: black;">
+                                        <!--<img src="../image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">-->
+                                        <div id="img1">
+                                        <a id="img1">scroll to here</a>
                                         </div>
                                     </div>
                                 </div>
@@ -853,6 +841,31 @@
                 </div>
                     -->
                 </div>
+                <div class="fluid-container" style="background-color: white; height: 500px; padding-top: 120px;">
+                    <div class="row">
+                        <div class="col-xs-12 outer">
+                            <div class="col-xs-7">
+                                <div id="div3">
+                                    <h1 style="text-align: left;" class="fontface">WE'RE HERE</h1>
+                                    <h4 style="text-align: left;">
+                                        Serving instant meal to you in Klang Valley. Add your address to see
+                                        how we can serve you.
+                                    </h4>
+                                    <div class="col-sm-7" style="padding-top: 50px;">
+                                        <div id="linkmenu" style="height: 40px; line-height: 40px;">
+                                            <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-5" style="color: black;">
+                                <div>
+                                    <img id="map" class="img-responsive" width="300px" style="margin: auto;" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD2jb7zC86sEFusbapaersFLAcquoF0zlY&center=2.9973095907989094,101.60451254999998&zoom=9&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:geometry.fill%7Ccolor:0xffeb3b&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0xffeb3b%7Cweight:5.5&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&size=480x360">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="about_menu_wrapper">
                     <div class="centered-content">
@@ -893,5 +906,28 @@
             </div>
         </div>
     </body>
+    
+    <script>
+    var targetOffset1 = $("#div1").offset().top;
+    var targetOffset2 = $("#div2").offset().top;
+    var targetOffset3 = $("#div3").offset().top;
 
+    var $w = $(window).scroll(function() {
+        if ($w.scrollTop() > targetOffset1) {
+            $('#img1').css({
+                "background-image": "url('../image/sleffeed-animation-final/sleffeed1.gif')"
+            });
+        } 
+        else if ($w.scrollTop() > targetOffset2) {
+            $('#img1').css({
+                "background-image": "url('../image/sleffeed-animation-final/sleffeed2.gif')"
+            });
+        }
+        else if ($w.scrollTop() > targetOffset3) {
+            $('#img1').css({
+                "background-image": "url('../image/sleffeed-animation-final/sleffeed3.gif')"
+            });
+        }
+      });
+    </script>
 </html>

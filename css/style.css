@@ -1,7 +1,8 @@
-@font-face {
+/*@font-face {
     font-family: myFont;
     src: url(font/Anton.woff);
 }
+*/
 
 
 /*med que*/
@@ -30,6 +31,7 @@
     }
 }
 
+/*
 input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
   -webkit-appearance: none; -moz-appearance: none;
   display: block;
@@ -38,7 +40,7 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
   line-height: 40px; font-size: 17px;
   border: 1px solid #bbb;
 }
-
+*/
 
 #linkmenu{
     text-transform: uppercase;
@@ -171,4 +173,14 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
     font-family: 'Cardo', serif;
     letter-spacing : 0.01em;
     text-transform : none;
+}
+
+#div1, #div2, #div3{
+    padding-top : 30px;
+    height : 100vh;
+}
+
+
+#map{
+    border-radius : 50%;
 }
