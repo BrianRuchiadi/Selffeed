@@ -30,11 +30,15 @@
     
 }
 
-.profile_content h2{
+.profile_content h2, .faq_content h2{
     margin : 0;
     font-family : 'Open Sans Condensed', sans-serif;
     font-weight : 700;
     text-transform : uppercase;
+}
+
+.faq_content h2{
+    font-size : 70px;
 }
 
 .profile_form{
@@ -606,4 +610,56 @@
      background-image : url(../Image/facebook-messenger.png);
      border-radius : 4px;
      background-size : cover;
+ }
+ 
+ .career_list p {
+     font-family : 'Prociono', serif;
+     text-align : center;
+     font-style : normal;
+     text-decoration : none;
+     cursor : default;
+     font-size : 24px;
+     margin-top : 20px;
+ }
+ 
+ .business_form {
+     height : 240px;
+     width : 500px;
+     background-color : #FFE685;
+     margin : 0 auto;
+     margin-top : 70px;   
+ }
+
+ .business_input{
+     margin-bottom : 10px;
+     display : block;
+     width : 480px;
+     font-family : 'Prociono', serif;
+     font-style :normal;
+ }
+ 
+ .business_input textArea{
+     color : black;
+     resize : vertical;
+ }
+ 
+ .business_form .buttons .button{
+     width : 480px;
+     height : 40px;
+     margin : 0 auto;
+     margin-top : 30px;
+     font-size : 14px;
+     padding-top : 5px;
+     font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-style : normal;
+     
+ }
+ 
+ .business_form .buttons{
+     margin-top : 0;
+     margin : 0 auto;
+ }
+ 
+ .faq_content .payment_description p{
+     text-align : left;
  }

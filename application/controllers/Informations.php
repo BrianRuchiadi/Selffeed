@@ -108,6 +108,14 @@ class Informations extends CI_Controller {
     }
     
     public function business(){
+        if($_POST){
+  
+            $insert['email'] = $this->input->post('email');
+            $insert['details'] = $this->input->post('details');
+            
+            $this->db->insert('business_inquiry', $insert);
+            redirect('Home');
+        }
         $this->load->view('static_pages/business.php');
     }
 }

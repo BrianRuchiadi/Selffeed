@@ -79,9 +79,11 @@
             });
         }
         
-        function addToCart(product_id){
+        function addToCart(product_id, product_price){
             cart += 1;
-            
+            $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
+            $('#add_to_' + product_id).css('padding-left', '10px');
+            $('#add_to_' + product_id).css('padding-right', '10px');
             var product_id = product_id;
             $.ajax({
                     type : "POST",
@@ -245,7 +247,24 @@
                                             <?php if(!$credit){ ?>
                                             <a class="button primary" onclick="register()">Sign Up to Order</a>
                                             <?php } else { ?>
-                                            <a class="button primary title-4" onclick="addToCart(<?php echo $product->product_id; ?>);">I'll preorder this</a>
+                                            <!-- if logged in  (need to check if product is in the cart and if cart exist)-->
+                                            
+                                            <?php if($cart_full){ 
+                                                $exist = false;
+                                                foreach($this->cart->contents() as $cart){
+                                                    if($cart['id'] == $product->product_id){
+                                                        $exist = true;
+                                                    }
+                                                }  ?>
+                                            <?php if($exist){ ?>
+                                            <a class="button primary title-4"  onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product->product_price; ?> </a>
+                                            <!-- tambahkan button + gitu ketika if exist ini -->
+                                            <?php }else { ?>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <?php } ?>
+                                            <?php } else { ?>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <?php } ?>
                                             <?php } ?>
                                         </div>
                                     </div>

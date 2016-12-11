@@ -123,5 +123,6 @@
                     <a href="<?php echo base_url();?>index.php/Admin_Panel_Careers/"><li>Job Vacancy</li></a>
                     <a href="<?php echo base_url();?>index.php/Admin_Panel_Applicants/"><li>Applicant</li></a>
                     <a href="<?php echo base_url();?>index.php/Admin_Panel_Store_Status/"><li>Store Status</li></a>
+                    <a href="<?php echo base_url();?>index.php/Admin_Panel_Business/"><li>Business Inquiry</li></a>
                 </ul>
             </div>

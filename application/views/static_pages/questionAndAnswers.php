@@ -21,7 +21,7 @@
         </style>
         <script>  
             function back(){
-                window.location.replace("<?php echo base_url(); ?>index.php/Menu");
+                window.location.replace("<?php echo base_url(); ?>index.php/Home");
             }
         </script>
     </head>
@@ -30,11 +30,7 @@
             <div class="member_menu" id="white">
                 <div class="member_menu_header" id="black">
                     <div class="left_filler" id="header_left_position">
-                        <div class="left_5_percent">
-                            <a class="clickable back" href="<?php echo base_url(); ?>index.php/Menu">
-                                <span class="icons-back"></span>
-                            </a>
-                        </div>
+                       
                     </div>
                     <div class="center_filler">
                         <div class="center_box" >
@@ -118,7 +114,7 @@
                         <a href="http://m.me/SelfFeed"><div class="messenger_link"></div></a>
                        
                      <div class="buttons">
-                            <button class="button" id="black_button" onclick="back()">Back</button>
+                            <button class="button" id="black_button" onclick="back()">Back to Home</button>
                         </div>
                     </div>
                 </div>

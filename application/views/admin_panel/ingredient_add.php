@@ -12,7 +12,11 @@
                         <tr>
                             <td> Name </td>
                             <td> <input type="text" name="ingredient_name" required> </td>
-                        </tr>                
+                        </tr>       
+                        <tr>
+                            <td> Price </td>
+                            <td> <input type="number" name="ingredient_price" step="0.01" min="0" ></td>
+                        </tr>
                         <tr>
                             <td colspan="2"><button class="btn-success">Add </button></td>
                         </tr>
