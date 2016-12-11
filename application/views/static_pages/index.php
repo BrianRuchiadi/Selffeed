@@ -847,13 +847,13 @@
                             <div class="col-xs-7">
                                 <div id="div3">
                                     <h1 style="text-align: left;" class="fontface">WE'RE HERE</h1>
-                                    <h4 style="text-align: left;">
+                                    <h4 style="text-align: left; letter-spacing : 0.01em; font-size : 14px; padding-top: 50px;">
                                         Serving instant meal to you in Klang Valley. Add your address to see
                                         how we can serve you.
                                     </h4>
                                     <div class="col-sm-7" style="padding-top: 50px;">
                                         <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                            <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            <a onclick="open_register();" style="color: black;  font-weight: bold;"> Get Started</a>
                                         </div>
                                     </div>
                                 </div>
