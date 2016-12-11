@@ -680,7 +680,7 @@
                             <div class="col-xs-12 outer">
                                 <div class="row">
                                     <div class="col-xs-8 rightcol fixed">
-                                        <div id="div1" style="height: 200px;">
+                                        <div id="div1">
                                             <h1 style="text-align: left; " class="fontface">ORDER</h1>
                                             <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
                                                Have a look through what we're offering today and take a pick! We'll then prep 
@@ -692,7 +692,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="div2" style="height: 200px;">
+                                        <div id="div2" >
                                             <h1 style="text-align: left; padding-top: 150px;" class="fontface">SIT BACK</h1>
                                             <!--<a id="anchor-point1">scroll to here</a>-->
                                             <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
@@ -722,7 +722,7 @@
                                     </div>
                                     <!--<div id="img1" class="col-xs-4 leftcol scrollit" style="color: black;">-->
                                     <div class="col-xs-4 leftcol scrollit" style="color: black;">
-                                        <img src="../image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">
+                                        <img src="../Image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">
                                         <!--<div id="img1" class="img-responsive">
                                         </div>-->
                                     </div>
