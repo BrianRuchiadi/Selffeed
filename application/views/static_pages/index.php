@@ -456,6 +456,32 @@
             });
         });
         </script>
+
+        <style type="text/css">
+            .container{
+                height:100%;
+                width:100%;
+                border-bottom: 1px solid #eee;
+                box-sizing: border-box;
+                display: table;
+                background-color: white;
+            }
+            .section{
+                width: 40%;
+                height: 100%;
+                box-sizing: border-box;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+            #image-changer {
+                display: inline-block;
+                width: 400px;
+                height: 400px;
+                background-size: 100%;
+                background-image: url('https://d16cs9nbg8x6iq.cloudfront.net/s/img/home01.gif')
+            }
+        </style>
     </head>
     <body>
         <div class="register_pop_up_wrapper" id="register_main">
@@ -575,14 +601,15 @@
             
             <div class="sign_in_1">
                 <div class="sign_in_description">
-                        <h2>
-                            <hr>
-                            <span>SIGN IN</span>
-                            <hr>
-                        </h2>
-                        <p>Delicious food, prepared by our
-                            best chefs, 
-                            delivered to you when you want it.</p>
+                    <h2>
+                        <hr>
+                        <span>SIGN IN</span>
+                        <hr>
+                    </h2>
+                    <p>Delicious food, prepared by our
+                        best chefs, 
+                        delivered to you when you want it.
+                    </p>
                 </div>
                 <div id="login_error_messages"></div>
                 <div class="login_inputs">
@@ -598,14 +625,14 @@
             </div>
             <div class="sign_in_2">
                 <div class="sign_in_description">
-                        <h2>
-                            <hr>
-                            <span>FORGOT YOUR PASSWORD</span>
-                            <hr>
-                        </h2>
-                        <p>Enter your email, and we’ll send you instructions for resetting it.</p>
+                    <h2>
+                        <hr>
+                        <span>FORGOT YOUR PASSWORD</span>
+                        <hr>
+                    </h2>
+                    <p>Enter your email, and we’ll send you instructions for resetting it.</p>
                 </div>
-                 <div id="login_error_messages_2"></div>
+                <div id="login_error_messages_2"></div>
                 <div class="login_inputs">
                     <input type="email" placeholder="Email Address" id="reset_email"> 
                 </div>
@@ -613,7 +640,6 @@
                     <button onclick="send_reset_password()" id="sign_in_button_margin">SEND ME RESET INSTRUCTIONS</button>
                 </div>
             </div>
-            
         </div>
         
         <div class="wrapper"> 
@@ -647,8 +673,6 @@
                     <a class="button" onclick="open_register();">Get Started</a>
                     <a class="text_link" onclick="open_sign_in();">Already a member? Sign in </a>
                 </div>  
-               
-                
             </div>
             
             <div class="contents">
@@ -659,187 +683,61 @@
                     <p id="part_2">We believe that cooking is for everyone. And with our fool-proof recipes, it'll work with 
                     anyone from a novice to a five-star chef! What's more is that through this we're making an effort to tackle
                     and curb the food spoilage and eventual wastage problem! So why wait? Get yours today!</p>
-                      <div class="button_arrangement" id="second_arrangement">
-                    <a class="button" onclick="open_register();" id="change_color">Get Started</a>
-                    <a class="text_link" onclick="open_sign_in();">Already a member? Sign in </a>
-                </div>         
+                    <div class="button_arrangement" id="second_arrangement">
+                        <a class="button" onclick="open_register();" id="change_color">Get Started</a>
+                        <a class="text_link" onclick="open_sign_in();">Already a member? Sign in </a>
+                    </div>         
                 </div>
-            
-                <div class='step_wrapper'>
-                    <!--
-                      <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px; position : fixed; right : 5%; top : 5%;">
-                                    <!==http://previews.123rf.com/images/ksena2you/ksena2you1005/ksena2you100500003/7294978-menu-book-with-wineglass-Stock-Vector.jpg==>
-                                    <div style="margin: 0; position: absolute; top: 50%; left : 55%; transform: translate(-50%, -50%); width : 100%; ">
-                                        <img src="../image/choose.png" class="img-rounded" alt="process1" width="80%" height="100%">
-                                    </div>
-                       </div>
-                    -->
-                <div class="process_step module" style="background-color: white; max-height: 500px;">
-                    <div class="fluid-container">
-                        <div class="row">
-                            <div class="col-xs-12 outer">
-                                <div class="row">
-                                    <div class="col-xs-8 rightcol fixed">
-                                        <div id="div1">
-                                            <h1 style="text-align: left; " class="fontface">ORDER</h1>
-                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
-                                               Have a look through what we're offering today and take a pick! We'll then prep 
-                                               ingredients according to the recipe and arrange it to be delivered to you.
-                                            </h4>
-                                            <div class="col-sm-7" style="padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
-                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                    <a onclick="open_register();" class="btn btn-2" style="color: black; font-weight : 600;"> Get Started</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="div2" >
-                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">SIT BACK</h1>
-                                            <!--<a id="anchor-point1">scroll to here</a>-->
-                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
-                                                While you do your thing, we'll do ours. Preparing. Our technology
-                                                let us receive exactly what you ordered, prepare it with care, and
-                                                deliver it to you in a swift way.
-                                            </h4>
-                                            <div class="col-sm-7" style="padding-top: 50px;">
-                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                    <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="div3">
-                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">COOKING</h1>
-                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
-                                                With you not having to go through painstaking process of prepping, just
-                                                follow the simple steps on our fool-proof recipes and voilà you're the master
-                                                chef! What's left to do is to eat!
-                                            </h4>
-                                            <div class="col-sm-7" style="padding-top: 50px;">
-                                                <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                                    <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--<div id="img1" class="col-xs-4 leftcol scrollit" style="color: black;">-->
-                                    <div class="col-xs-4 leftcol scrollit" style="color: black;">
-                                        <img src="../Image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">
-                                        <!--<div id="img1" class="img-responsive">
-                                        </div>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!--
-                    <div style="padding-top: 75px;" class="col-sm-12">
-                        <container>
-                            <div class="col-sm-5" style="padding-top: 100px; padding-left : 40px;">
-                                <h1 style="text-align: left; " class="fontface">ORDER</h1>
-                                <h4 style="text-align: left; padding-top: 50px;">
-                                   Have a look through what we're offering today and take a pick! We'll then prep 
-                                   ingredients according to the recipe and arrange it to be delivered to you.
-                                </h4>
-                                <div class="col-sm-7" style="padding-top: 50px;">
-                                    <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                        <a onclick="open_register();" class="btn btn-2" style="color: black; font-weight : 600;"> Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-7" style="text-align: center; padding-top : 20px;">
-                                <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px;">
-                                    <!==http://previews.123rf.com/images/ksena2you/ksena2you1005/ksena2you100500003/7294978-menu-book-with-wineglass-Stock-Vector.jpg==>
-                                    <div style="margin: 0; position: absolute; top: 50%; left : 55%; transform: translate(-50%, -50%); width : 100%; ">
-                                        <img src="../image/choose.png" class="img-rounded" alt="process1" width="80%" height="100%">
-                                    </div>
-                                </div>
-                            </div>
-                        </container>
+                
+                <div style="display: none;">
+                    <img src="https://d16cs9nbg8x6iq.cloudfront.net/s/img/home01.gif">
+                    <img src="https://d16cs9nbg8x6iq.cloudfront.net/s/img/home02.gif">
+                    <img src="https://d16cs9nbg8x6iq.cloudfront.net/s/img/home03.gif">
+                </div>
+                <div id="section-home" class="container">
+                    <div class="section">
+                        <h2>home</h2>
+                    </div>
+                    <div class="section">
                     </div>
                 </div>
-                <div class="process_step module" style="background-color: white; max-height: 1150px;">
-                    <div style="padding-top: 75px;">
-                        <container>
-                            <div class="col-sm-5" style="padding-top: 100px; padding-left : 40px;">
-                                <h1 style="text-align: left;" class="fontface">SIT BACK</h1>
-                                <h4 style="text-align: left; padding-top: 50px;">
-                                    While you do your thing, we'll do ours. Preparing. Our technology
-                                    let us receive exactly what you ordered, prepare it with care, and
-                                    deliver it to you in a swift way.
-                                </h4>
-                                <div class="col-sm-7" style="padding-top: 50px;">
-                                    <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                        <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                    </div>
+                <div id="section-about" class="container">
+                    <div class="section">
+                        <h2>About</h2>
+                    </div>
+                    <div class="section">
+                    </div>
+                </div>
+                <div id="section-order" class="container" data-image="url('https://d16cs9nbg8x6iq.cloudfront.net/s/img/home01.gif')">
+                    <div class="section">
+                        <h2>order</h2>
+                    </div>
+                    <div class='section image-changer-loader'>
+                        <div id="image-changer" is-fixed="false"></div>
+                    </div>
+                </div>
+                <div id="section-sit-back" class="container" data-image="url('https://d16cs9nbg8x6iq.cloudfront.net/s/img/home02.gif')">
+                    <div class="section">
+                        <h2>sit back</h2>
+                    </div>
+                    <div class='section image-changer-loader'>
+                    </div>
+                </div>
+                <div id="section-eat" class="container" data-image="url('https://d16cs9nbg8x6iq.cloudfront.net/s/img/home03.gif')">
+                    <div class="section">
+                        <h2>eat</h2>
+                    </div>
+                    <div class='section image-changer-loader'>
+                    </div>
+                </div>
+                <div id="section-map" class="container">
+                    <div class="section">
+                        <h2>we are here</h2>
+                    </div>
+                    <div class="section">
+                    </div>
+                </div>
 
-                                </div>
-                            </div>
-                            <div class="col-sm-7" style="text-align: center; padding-top : 20px;">
-                                <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px;">
-                                    <!==http://www.pngall.com/wp-content/uploads/2016/05/Click.png==>
-                                    <div style="margin: 0; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); width : 100%;">
-                                        <img src="../image/process_2.png" class="img-rounded" alt="process2" width="70%" height="70%">
-                                    </div>
-                                </div>
-                            </div>
-                        </container>
-                    </div>
-                </div>
-                <div class="process_step module" style="background-color: white; max-height: 1150px;">
-                    <div style="padding-top: 75px;">
-                        <container>
-                            <div class="col-sm-5" style="padding-top: 100px; padding-left : 40px;">
-                                <h1 style="text-align: left;" class="fontface">COOKING</h1>
-                                <h4 style="text-align: left; padding-top: 50px;">
-                                    With you not having to go through painstaking process of prepping, just
-                                    follow the simple steps on our fool-proof recipes and voilà you're the master
-                                    chef! What's left to do is to eat!
-                                </h4>
-                                <div class="col-sm-7" style="padding-top: 50px;">
-                                    <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                        <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-7" style="text-align: center; padding-top : 20px;">
-                                <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px;">
-                                    <!=-http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-3/256/packing-icon.png==>
-                                    <div style="margin: 0; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); width : 100%;">
-                                        <img src="../image/pack.png" class="img-rounded" alt="process3" width="80%" height="80%">
-                                    </div>
-                                </div>
-                            </div>
-                        </container>
-                    </div>
-                </div>
-                <div class="process_step module" style="background-color: white; max-height: 1150px;">
-                    <div style="padding-top: 75px;">
-                        <container>
-                            <div class="col-sm-5" style="padding-top: 100px; padding-left : 40px;">
-                                <h1 style="text-align: left;" class="fontface">WE'RE HERE</h1>
-                                <h4 style="text-align: left; padding-top: 50px;">
-                                    Serving instant meal to you in Klang Valley. Add your address to see
-                                    how we can serve you.
-                                </h4>
-                                <div class="col-sm-7" style="padding-top: 50px;">
-                                    <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                        <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-7" style="text-align: center; padding-top : 20px;">
-                                <div style="border-radius: 50%; width: 530px; height: 530px; background: #E6E5E5; margin-left: 150px;">
-                                    <!=-http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-3/256/packing-icon.png==>
-                                    <div style="margin: 0; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); width : 100%;">
-                                        <img src="../image/pack.png" class="img-rounded" alt="process3" width="80%" height="80%">
-                                    </div>
-                                </div>
-                            </div>
-                        </container>
-                    </div>
-                </div>
-                    -->
-                </div>
                 <div class="fluid-container" style="background-color: white; height: 500px; padding-top: 120px;">
                     <div class="row">
                         <div class="col-xs-12 outer">
@@ -857,9 +755,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-5" style="color: black;">
-                                <div>
-                                    <img id="map" class="img-responsive" width="300px" style="margin: auto;" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD2jb7zC86sEFusbapaersFLAcquoF0zlY&center=2.9973095907989094,101.60451254999998&zoom=9&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:geometry.fill%7Ccolor:0xffeb3b&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0xffeb3b%7Cweight:5.5&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&size=480x360">
+                            <div class="col-xs-5">
+                                <div >
+                                    <img style="border-radius: 50%; margin-left: 130;" height="300px" width="300px" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD2jb7zC86sEFusbapaersFLAcquoF0zlY&center=2.9973095907989094,101.60451254999998&zoom=9&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:geometry.fill%7Ccolor:0xffeb3b&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0xffeb3b%7Cweight:5.5&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&size=480x360">
                                 </div>
                             </div>
                         </div>
@@ -905,31 +803,70 @@
             </div>
         </div>
     </body>
-    <!--
-    <script>
-    var targetOffset1 = $("#div1").offset().top;
-    var targetOffset2 = $("#div2").offset().top;
-    var targetOffset3 = $("#div3").offset().top;
+    <script type="text/javascript">
+        
+        var sHome = $("#section-home");
+        var sAbout = $("#section-about");
+        var sOrder = $("#section-order");
+        var sSitBack = $("#section-sit-back");
+        var sEat = $("#section-eat");
+        var sMap = $("#section-map");
+        var containerList = $(".container");
+        var imageChanger = $("#image-changer");
 
-    var $w = $(window).scroll(function() {
-        if ($w.scrollTop() > targetOffset1) {
-            $('#img1').css({
-                "background-image": "url('../image/sleffeed-animation-final/sleffeed1.gif')",
-                "height":"200px",
-                "width":"200px"
-            });
-        } 
-        else if ($w.scrollTop() > targetOffset2) {
-            $('#img1').css({
-                "background-image": "url('../image/back.png')"
-            });
-        }
-        else if ($w.scrollTop() > targetOffset3) {
-            $('#img1').css({
-                "background-image": "url('../image/sleffeed-animation-final/sleffeed3.gif')"
-            });
-        }
-      });
+        $(window).scroll(function(){
+            var windowTop = $(window).scrollTop();
+
+            //update coordinate ke semua elemen 
+            for(var i=0;i<containerList.length;i++){
+                containerList.eq(i).attr('coord-top',containerList.eq(i).offset().top-windowTop);
+            }
+
+            // dia jadi fixed ada saat posisi sOrder ada dipaling atas dan s eat tidak berada paling atas
+            if(sOrder.attr('coord-top')<0 && sEat.attr('coord-top')>0){
+                imageChanger.attr('is-fixed','true');
+            }else{
+                imageChanger.attr('is-fixed','false');
+            }
+
+            //validasi, kalau is-fixed = true maka cssnya diubah 
+            if(imageChanger.attr('is-fixed')=='true'){
+                imageChanger.css({
+                    position:'fixed',
+                    top:imageChanger.offset().top-windowTop,
+                    left:imageChanger.offset().left
+                })
+            }else{
+                imageChanger.css({
+                    position:'inherit'
+                })
+            }
+
+            //START OF : pindahin gambar ke masing masing container
+            if(sOrder.attr('coord-top')<0){
+                imageChanger.appendTo(sOrder.find('.image-changer-loader'));
+            }
+
+            if(sSitBack.attr('coord-top')<0){
+                imageChanger.appendTo(sSitBack.find('.image-changer-loader'));
+            }
+
+            if(sEat.attr('coord-top')<0){
+                imageChanger.appendTo(sEat.find('.image-changer-loader'));
+            }
+            //END OF : pindahin gambar ke masing masing container
+
+            //validasi gambar
+            var halfScreenSize = ($(window).height()/2);
+
+            if(sEat.attr('coord-top') < halfScreenSize && sEat.attr('data-image')!=imageChanger.css('background-image')){
+                imageChanger.css('background-image',sEat.attr('data-image'));
+            }else if(sSitBack.attr('coord-top') < halfScreenSize && sSitBack.attr('data-image')!=imageChanger.css('background-image')){
+                imageChanger.css('background-image',sSitBack.attr('data-image'));
+            }else if(sOrder.attr('coord-top') < halfScreenSize && sOrder.attr('data-image')!=imageChanger.css('background-image')){
+                imageChanger.css('background-image',sOrder.attr('data-image'));
+            }
+
+        });
     </script>
-    -->
 </html>
