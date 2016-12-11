@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 
     public function index($option = '')
     {     
-        $this->session->set_userdata("user_id", 13);
+        //$this->session->set_userdata("user_id", 13);
         // Ini harus dihapus nanti
         
         $data['register'] = false;

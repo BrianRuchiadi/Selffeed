@@ -28,7 +28,7 @@
                         <td> <?php echo $number++; ?></td>
                         <td> <?php echo $product->product_name; ?> </td>
                         <td> <?php echo $product->product_quantity; ?> </td>
-                        <td> <?php echo $product->product_price; ?> </td>
+                        <td> <?php echo $product->product_price; ?> MYR </td>
                         <td> <?php echo $product->upload_date; ?> </td>
                         <td> <a class="edit_link" href="<?php echo base_url(); ?>index.php/Admin_Panel_Products/edit/<?php echo $product->product_id; ?>">EDIT</a></td>
                         <td> <input type="checkbox" value="<?php echo $product->product_id; ?>" name="delete[]"></td>

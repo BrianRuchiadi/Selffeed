@@ -42,6 +42,7 @@ class Admin_Panel_Ingredients extends CI_Controller{
         
             if($_POST){
                 $update['name'] = $this->input->post('ingredient_name');
+                $update['price'] = $this->input->post('ingredient_price');
             
                 if(!$_FILES['ingredient_image']['name'] == ''){
                 
@@ -77,6 +78,7 @@ class Admin_Panel_Ingredients extends CI_Controller{
             if($_POST){
             
                 $data['name'] = $this->input->post('ingredient_name');
+                $data['price'] = $this->input->post('ingredient_price');
             
                 if(!$_FILES['ingredient_image']['name'] == '')
                 {   

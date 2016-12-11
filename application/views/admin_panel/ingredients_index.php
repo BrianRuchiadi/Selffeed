@@ -17,7 +17,8 @@
                     <tr>
                         <td> No </td>
                         <td> Name </td>
-                        <td> Thumbnail </td>    
+                        <td> Thumbnail </td>  
+                        <td> Price </td>
                         <td> Edit</td>
                         <td> Delete </td>              
                     </tr>
@@ -26,6 +27,7 @@
                         <td> <?php echo $number++; ?></td>
                         <td> <?php echo $ingredient->name; ?> </td>
                         <td> <?php echo $ingredient->picture; ?> </td>
+                        <td> <?php echo $ingredient->price; ?> MYR </td>
                         <td> <a class="edit_link" href="<?php echo base_url(); ?>index.php/Admin_Panel_Ingredients/edit/<?php echo $ingredient->id; ?>">EDIT</a></td>
                         <td> <input type="checkbox" value="<?php echo $ingredient->id; ?>" name="delete[]"></td>
                     </tr>

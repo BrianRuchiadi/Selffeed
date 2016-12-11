@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
 
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'); 
@@ -27,7 +27,7 @@
             $('.member_menu_cart_button').hide();
             displayCart();
             $(window).bind("mousewheel",function(){
-                
+               
                 console.log($(document).scrollTop());
                                
                 if($(document).scrollTop() > 0){
@@ -70,6 +70,10 @@
         function addToCart(product_id){
             cart += 1;
             
+            $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
+            $('#add_to_' + product_id).css('padding-left', '10px');
+            $('#add_to_' + product_id).css('padding-right', '10px');
+            
             var product_id = product_id;
             $.ajax({
                     type : "POST",
@@ -92,7 +96,7 @@
         
         function register(){
                 window.location.replace('<?php echo base_url(); ?>index.php/Home/index/register');
-        }
+        };
         
       
         </script>
@@ -199,13 +203,27 @@
                                 </div>
                                 <div class="section_buttons">
                                     <?php if(!$credit){ ?>
-                                    <a class="button width_auto">
+                                    <a class="button width_auto" onclick="register();">
                                         Sign up to Order
                                     </a>
                                     <?php } else { ?>
-                                    <a class='button width_auto' onclick="addToCart(<?php echo $product[0]->product_id ?>);">
-                                        I'll Preorder this . RM <?php echo $product[0]->product_price; ?>
-                                    </a>
+                                                          <?php if($cart_full){ 
+                                                $exist = false;
+                                                foreach($this->cart->contents() as $cart){
+                                              
+                                                    if($cart['id'] == $product[0]->product_id){
+                                                        $exist = true;
+                                                    }
+                                                }  ?>
+                                    <?php if($exist){ ?>
+                                            <a class="button width_auto"  onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <!-- tambahkan button + gitu ketika if exist ini -->
+                                            <?php }else { ?>
+                                            <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <?php } ?>
+                                            <?php } else { ?>
+                                            <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <?php } ?>
                                     <?php } ?>
                                 </div>
                             </div>

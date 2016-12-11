@@ -5,13 +5,20 @@ class Menu extends CI_Controller {
   
     public function index()
     {  
-        $this->session->set_userdata("user_id", 13);
+        $this->load->library('cart');
+        //$this->session->set_userdata("user_id", 13);
+        
         $data['credit'] = false;
+        $data['cart_full'] = false;
         
         $data['store_status'] = $this->db->get_where('store_status', array('id' => 1))->result();
         $data['store_status'] = $data['store_status'][0];
         
         if($this->session->userdata('user_id') != ''){
+            if(count($this->cart->contents()) > 0){
+                $data['cart_full'] = true;
+            }
+          
             $data['user'] = $this->session->userdata('user_id');
             $data['user_details'] = $this->users->get_data($this->session->userdata('user_id'));
             $data['credit'] = true;
@@ -30,15 +37,20 @@ class Menu extends CI_Controller {
     
     public function details($product_id)
     {  
+        $this->load->library('cart');
         
         $check = $this->db->get_where('products', array('product_id' =>$product_id))->result();
         if(count($check) > 0){
             $data['credit'] = false;
             $data['image_exists'] = false;
             $data['ingredient_exists'] = false;
+            $data['cart_full'] = false;
         
             if($this->session->userdata("user_id") != ''){
                 $data['credit'] = true;
+                if(count($this->cart->contents()) > 0){
+                    $data['cart_full'] = true;
+                }
             }
             $data['product'] = $this->db->get_where('products', array('product_id' => $product_id))->result();
             $picture = $this->db->get_where('products_images', array('product_id' => $product_id))->result();

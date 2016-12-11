@@ -19,6 +19,10 @@
                             <td> <input type="text" name="ingredient_name" value="<?php echo $ingredient->name; ?>" required> </td>
                         </tr>
                         <tr>
+                            <td> Price </td>
+                            <td> <input type="number" name="ingredient_price" step="0.01" value="<?php echo $ingredient->price; ?>" required></td>
+                        </tr>
+                        <tr>
                             <td colspan="2"><button class="btn-primary">Edit </button></td>
                         </tr>
                     </table>
