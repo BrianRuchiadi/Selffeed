@@ -597,3 +597,13 @@
  .address_list:hover{
      background-color : #6F6F6F;
  }
+ 
+ .messenger_link{
+     height : 100px;
+     margin : auto;
+     margin-top : 20px;
+     width : 40%;
+     background-image : url(../Image/facebook-messenger.png);
+     border-radius : 4px;
+     background-size : cover;
+ }

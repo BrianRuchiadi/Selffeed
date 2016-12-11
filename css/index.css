@@ -1635,3 +1635,21 @@ a.button.primary{
     font-family: 'IM Fell English', serif;
     color : green;
 }
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.footer:hover{
+	background-color: #F8F6F6;
+	color: black;
+}
+
+.linkFooter{
+    border-bottom: 1px dashed #999;
+    text-decoration: none; 
+}

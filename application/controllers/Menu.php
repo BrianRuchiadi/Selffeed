@@ -64,5 +64,4 @@ class Menu extends CI_Controller {
         
         $this->load->view('static_pages/details.php', $data);
     }
-    
 }
