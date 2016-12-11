@@ -682,11 +682,11 @@
                                     <div class="col-xs-8 rightcol fixed">
                                         <div id="div1" style="height: 200px;">
                                             <h1 style="text-align: left; " class="fontface">ORDER</h1>
-                                            <h4 style="text-align: left; padding-top: 50px;">
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
                                                Have a look through what we're offering today and take a pick! We'll then prep 
                                                ingredients according to the recipe and arrange it to be delivered to you.
                                             </h4>
-                                            <div class="col-sm-7" style="padding-top: 50px;">
+                                            <div class="col-sm-7" style="padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
                                                 <div id="linkmenu" style="height: 40px; line-height: 40px;">
                                                     <a onclick="open_register();" class="btn btn-2" style="color: black; font-weight : 600;"> Get Started</a>
                                                 </div>
@@ -695,7 +695,7 @@
                                         <div id="div2" style="height: 200px;">
                                             <h1 style="text-align: left; padding-top: 150px;" class="fontface">SIT BACK</h1>
                                             <!--<a id="anchor-point1">scroll to here</a>-->
-                                            <h4 style="text-align: left; padding-top: 50px;">
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
                                                 While you do your thing, we'll do ours. Preparing. Our technology
                                                 let us receive exactly what you ordered, prepare it with care, and
                                                 deliver it to you in a swift way.
@@ -706,9 +706,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="div3" style="height: 200px;"   >
-                                            <h1 style="text-align: left; padding-top: 250px;" class="fontface">COOKING</h1>
-                                            <h4 style="text-align: left; padding-top: 50px;">
+                                        <div id="div3">
+                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">COOKING</h1>
+                                            <h4 style="text-align: left; padding-top: 50px; letter-spacing : 0.01em; font-size : 14px;">
                                                 With you not having to go through painstaking process of prepping, just
                                                 follow the simple steps on our fool-proof recipes and voilà you're the master
                                                 chef! What's left to do is to eat!
@@ -846,13 +846,13 @@
                             <div class="col-xs-7">
                                 <div id="div3">
                                     <h1 style="text-align: left;" class="fontface">WE'RE HERE</h1>
-                                    <h4 style="text-align: left;">
+                                    <h4 style="text-align: left; letter-spacing : 0.01em; font-size : 14px; padding-top: 50px;">
                                         Serving instant meal to you in Klang Valley. Add your address to see
                                         how we can serve you.
                                     </h4>
                                     <div class="col-sm-7" style="padding-top: 50px;">
                                         <div id="linkmenu" style="height: 40px; line-height: 40px;">
-                                            <a onclick="open_register();" style="color: black; font-weight: bold;"> Get Started</a>
+                                            <a onclick="open_register();" style="color: black;  font-weight: bold;"> Get Started</a>
                                         </div>
                                     </div>
                                 </div>

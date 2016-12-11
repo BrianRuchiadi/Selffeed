@@ -115,6 +115,8 @@
                         <p><b> Q :Can i cancel my order? </b></p>
                         <p> A :If it is more than two days in advance, you may cancel your order.</p>
                         
+                        <a href="http://m.me/SelfFeed"><div class="messenger_link"></div></a>
+                       
                      <div class="buttons">
                             <button class="button" id="black_button" onclick="back()">Back</button>
                         </div>
