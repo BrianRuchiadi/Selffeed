@@ -680,7 +680,7 @@
                             <div class="col-xs-12 outer">
                                 <div class="row">
                                     <div class="col-xs-8 rightcol fixed">
-                                        <div id="div1">
+                                        <div id="div1" style="height: 200px;">
                                             <h1 style="text-align: left; " class="fontface">ORDER</h1>
                                             <h4 style="text-align: left; padding-top: 50px;">
                                                Have a look through what we're offering today and take a pick! We'll then prep 
@@ -692,7 +692,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="div2">
+                                        <div id="div2" style="height: 200px;">
                                             <h1 style="text-align: left; padding-top: 150px;" class="fontface">SIT BACK</h1>
                                             <!--<a id="anchor-point1">scroll to here</a>-->
                                             <h4 style="text-align: left; padding-top: 50px;">
@@ -706,8 +706,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="div3">
-                                            <h1 style="text-align: left; padding-top: 150px;" class="fontface">COOKING</h1>
+                                        <div id="div3" style="height: 200px;"   >
+                                            <h1 style="text-align: left; padding-top: 250px;" class="fontface">COOKING</h1>
                                             <h4 style="text-align: left; padding-top: 50px;">
                                                 With you not having to go through painstaking process of prepping, just
                                                 follow the simple steps on our fool-proof recipes and voilà you're the master
@@ -723,8 +723,7 @@
                                     <!--<div id="img1" class="col-xs-4 leftcol scrollit" style="color: black;">-->
                                     <div class="col-xs-4 leftcol scrollit" style="color: black;">
                                         <!--<img src="../image/sleffeed-animation-final/sleffeed1.gif" class="img-rounded" style="text-align: center; padding-top: 100px; padding-left: 30px;" alt="process1" width="80%">-->
-                                        <div id="img1">
-                                        <a id="img1">scroll to here</a>
+                                        <div id="img1" class="img-responsive">
                                         </div>
                                     </div>
                                 </div>
@@ -915,12 +914,14 @@
     var $w = $(window).scroll(function() {
         if ($w.scrollTop() > targetOffset1) {
             $('#img1').css({
-                "background-image": "url('../image/sleffeed-animation-final/sleffeed1.gif')"
+                "background-image": "url('../image/sleffeed-animation-final/sleffeed1.gif')",
+                "height":"200px",
+                "width":"200px"
             });
         } 
         else if ($w.scrollTop() > targetOffset2) {
             $('#img1').css({
-                "background-image": "url('../image/sleffeed-animation-final/sleffeed2.gif')"
+                "background-image": "url('../image/back.png')"
             });
         }
         else if ($w.scrollTop() > targetOffset3) {
