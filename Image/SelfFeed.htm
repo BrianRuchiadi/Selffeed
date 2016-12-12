@@ -1,0 +1,305 @@
+
+<!-- saved from url=(0036)http://[::1]/selffeed/index.php/Menu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> SelfFeed </title>
+        <script src="./SelfFeed_files/jquery.min.js"></script>
+        <script src="./SelfFeed_files/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="./SelfFeed_files/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./SelfFeed_files/index.css">
+
+        <link rel="stylesheet" type="text/css" href="./SelfFeed_files/style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'); 
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+            @import url('https://fonts.googleapis.com/css?family=Prociono');
+            @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:600');
+            @import url('https://fonts.googleapis.com/css?family=Dosis:800');
+            @import url('https://fonts.googleapis.com/css?family=Dosis:200');
+            @import url('https://fonts.googleapis.com/css?family=Amaranth');
+
+        </style>
+        <script>
+        var cart = 0;
+        
+        $(document).ready(function(){
+            $('.member_menu_cart_button').hide();
+            $('.member_menu').hide();
+            displayCart();
+            $(window).bind("mousewheel",function(){
+           
+                if($(document).scrollTop() > 0){
+                    $('#header').css("background-color", "white");
+                    $('.center a').css("color", "#1A1A1A");
+                    $('.right a').css("color", "#1A1A1A");
+                    $('.right a').css("border-color", "#1A1A1A");
+                    $('#header').css("opacity", "1");
+                    $('#header').css("box-shadow", "1px 1px 5px #7F7F7F");
+                }
+                else{
+                    $('#header').css("opacity", 1);
+                    $('.center a').css("color", "white");
+                    $('.right a').css("color", "white");
+                    $('.right a').css("border-color", "white");
+                    $('#header').css("background-color", "transparent");
+                    $('#header').css("box-shadow", "none");
+                }
+            });
+        });
+        
+        function expand(){
+            $('.member_menu').show();
+            $('.wrapper').hide();
+        }
+        
+        function close_menu(){
+            $('.member_menu').hide();
+            $('.wrapper').show();
+        }
+        
+        function edit_address(){
+            window.location.replace('http://[::1]/selffeed/index.php/Account/delivery');
+        }
+      
+        function displayCart(){
+            var input = '';
+            $.ajax({
+                    type : "POST",
+                    url : "http://[::1]/selffeed/index.php/Cart/totalQuantity",
+                    data : {input : input},
+                    success : function(result){
+                                var result = JSON.parse(result);
+                                if(result.quantity > 0){
+                                     $('#cart_quantity').html('' + result.quantity );
+                                     $('.member_menu_cart_button').show();
+                                }
+                    }
+            });
+        }
+        
+        function addToCart(product_id, product_price){
+            cart += 1;
+            $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
+            $('#add_to_' + product_id).css('padding-left', '10px');
+            $('#add_to_' + product_id).css('padding-right', '10px');
+            var product_id = product_id;
+            $.ajax({
+                    type : "POST",
+                    url : "http://[::1]/selffeed/index.php/Cart/add",
+                    data : {product_id : product_id},
+                    success : function(result){
+                                          var result = JSON.parse(result);
+                                         
+                                          if(cart > 0){
+                                            $('#cart_quantity').html('' + result.total_quantity );
+                                            $('.member_menu_cart_button').show();
+                                          }
+                        }
+            });     
+        }
+        
+        function sign_in(){
+                window.location.replace('http://[::1]/selffeed/index.php/Home/index/login');
+        }
+        
+        function register(){
+                window.location.replace('http://[::1]/selffeed/index.php/Home/index/register');
+        }
+        </script>
+    </head>
+    <body>
+                <div class="member_menu" style="display: none;">
+            <div class="member_menu_header">
+                <div class="left_filler">
+                    <div class="member_menu_close_button" onclick="close_menu()"></div>
+                </div>
+                <div class="center_filler">
+                    <div class="center_box">
+                         <a href="http://[::1]/selffeed/index.php/Menu#">SELFFEED</a>
+                    </div>
+                </div>
+                <div class="right_filler">
+                </div>
+            </div>
+            <div class="member_menu_body">
+                <div class="list_box">
+                    <div class="centered_text"><a href="http://[::1]/selffeed/index.php/Account"> Profile </a><hr></div>
+                </div>
+                <div class="list_box">
+                    <div class="centered_text"><a href="http://[::1]/selffeed/index.php/Account/payment"> Payment </a><hr></div>
+                </div>
+                <div class="list_box">
+                    <div class="centered_text"><a href="http://[::1]/selffeed/index.php/Account/delivery"> Address </a><hr></div>
+                </div>
+                <div class="list_box">
+                    <div class="centered_text"><a href="http://[::1]/selffeed/index.php/Account/orders"> Orders </a><hr></div>
+                </div>
+                <div class="list_box">
+                    <div class="centered_text"><a href="http://[::1]/selffeed/index.php/Help"> Get Help </a><hr></div>
+                </div>
+                <div class="list_box_sign_out">
+                    <a class="width_auto" id="sign_out_button" href="http://[::1]/selffeed/index.php/Account/logout">Sign Out</a>
+                </div>
+            </div>
+        </div>
+              
+        <div class="wrapper">  
+            <div class="menu_contents">
+                <div id="header" style="background-color: white; opacity: 1; box-shadow: rgb(127, 127, 127) 1px 1px 5px;">
+                    <div class="content-width">
+                        <div class="header-line">
+                            <div class="left">
+                                                                <div class="expand_button" onclick="expand();"></div>
+                                                            </div>
+                            <div class="center">
+                                <a href="http://[::1]/" style="color: rgb(26, 26, 26);">SELFFEED</a>
+                            </div>
+                            <div class="right">
+                                                                <a href="http://[::1]/selffeed/index.php/Checkout" style="color: rgb(26, 26, 26); border-color: rgb(26, 26, 26);">
+                                    <div class="member_menu_cart_button" style="display: none;">
+                                        <div class="number_display" id="cart_quantity"></div>
+                                    </div>
+                                </a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_image_wrapper">
+                    <div class="centered_text">
+                        <h1>
+                            <hr>
+                            <div class="text_wrapper">
+                                                                <div class="title-1">Kitchen's Open</div>
+                                                            </div>
+                            <hr>                        
+                        </h1>
+                    </div>
+                    <div class="bottom_ribbon_text_wrapper" id="color_selected">
+                        <a onclick="register()" class="text_link">
+                                                            </a><a class="text_link">
+                                                                   <span id="user_address" onclick="edit_address();">Petaling Jaya</span></a>
+                                                        
+                        
+                    </div>
+                </div>
+                
+                <div class="product_section_wrapper">
+                    <h4>
+                        <div class="title-2">
+                            <hr>
+                            <span> On Today's Lunch Menu </span>
+                            <hr>
+                        </div>
+                    </h4>
+                </div>
+                
+                <ul class="menu-items">
+                                        <li class="menu-item">
+                        <a name="test-1">
+                            
+                        </a>
+                        <div class="menu-item-container">
+                            <a class="image-box" href="http://[::1]/selffeed/index.php/Menu/details/10">
+                                <div class="image" style="background-image : url(../Image/products/spaghetti_bolognese.jpg);"> 
+                                    
+                                </div> 
+                            </a>
+                            <div class="details">
+                                <h3>
+                                    <div class="balanced-text">
+                                        <span>Spaghetti Bolognese</span>
+                                    </div>
+                                </h3>
+                                <h5>
+                                    <div class="balanced-text">
+                                        <span> Spaghetti with tomato paste                                    </span>
+                                    </div>
+                                    <hr>
+                                </h5>
+                                <div class="actions">
+                                    <div class="line">
+                                        <div class="col2 btn">
+                                            <a class="button secondary title-3" href="http://[::1]/selffeed/index.php/Menu/details/10">Details</a>
+                                        </div>
+                                        <div class="col2 last btn">
+                                                                                        <!-- if logged in  (need to check if product is in the cart and if cart exist)-->
+                                            
+                                                                                        <a class="button primary title-4" id="add_to_10" onclick="addToCart(10, 11.8);">I'll preorder this . MYR 11.8 </a>
+                                                                                                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                        <li class="menu-item">
+                        <a name="test-1">
+                            
+                        </a>
+                        <div class="menu-item-container">
+                            <a class="image-box" href="http://[::1]/selffeed/index.php/Menu/details/11">
+                                <div class="image" style="background-image : url(../Image/products/spaghetti_carbonara.jpeg);"> 
+                                    
+                                </div> 
+                            </a>
+                            <div class="details">
+                                <h3>
+                                    <div class="balanced-text">
+                                        <span>Spaghetti Carbonara</span>
+                                    </div>
+                                </h3>
+                                <h5>
+                                    <div class="balanced-text">
+                                        <span>   Spaghetti with Mozzarella cheese, and herbs                  </span>
+                                    </div>
+                                    <hr>
+                                </h5>
+                                <div class="actions">
+                                    <div class="line">
+                                        <div class="col2 btn">
+                                            <a class="button secondary title-3" href="http://[::1]/selffeed/index.php/Menu/details/11">Details</a>
+                                        </div>
+                                        <div class="col2 last btn">
+                                                                                        <!-- if logged in  (need to check if product is in the cart and if cart exist)-->
+                                            
+                                                                                        <a class="button primary title-4" id="add_to_11" onclick="addToCart(11, 11.4);">I'll preorder this . MYR 11.4 </a>
+                                                                                                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    
+                </ul>
+
+                <footer>
+                    <div style="vertical-align: middle;">
+                        <nav class="navbar" style="margin:auto;">
+                              <div class="container-fluid" align="center">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active" style="margin: auto;"><a href="http://[::1]/selffeed/index.php/Menu#"><div class="linkFooter">Selffeed for Android</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Menu#"><div class="linkFooter">Selffeed for IOs</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Informations/business"><div class="linkFooter">Business</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Informations/questionAndAnswer"><div class="linkFooter">QA</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Help"><div class="linkFooter">Contact Us</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Informations/career"><div class="linkFooter">Career</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Menu#"><div class="linkFooter">Term of Use</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Menu#"><div class="linkFooter">Privacy Policy</div></a></li>
+                                        <li><a class="footer" href="http://[::1]/selffeed/index.php/Menu#"><div class="linkFooter" style="border:none;">© 2016 Selffeed</div></a></li>
+                                        <!--
+                                        <li><a class="footer"ref="#" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a class="footer" href="#" ><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
+                                        <li><a class="footer" href="#" ><i class="fa fa-youtube" aria-hidden="true"></i></i></a></li> -->        
+                                    </ul>
+                              </div>
+                        </nav>  
+                    </div>
+                </footer>
+            </div>
+            
+        </div>
+    
+
+</body></html>
