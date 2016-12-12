@@ -328,7 +328,7 @@
                 if(scrollPercentage < 32.6){
                     $('#animation').css('position' , 'absolute');
                     $('#animation').css('top', '130px');
-                    $('#animation').css('right', '40px');
+                    $('#animation').css('right', '20px');
                 }
                 if(scrollPercentage >= 32.6 && scrollPercentage <= 68.3){
                     $('#animation').css('position' , 'fixed');
@@ -348,7 +348,7 @@
                     $('#animation').css('top', 'auto');
                     $('#animation').css('position', 'absolute');
                     $('#animation').css('bottom', '40px');
-                    $('#animation').css('right', '40px');
+                    $('#animation').css('right', '20px');
                     $('#animation').css('display', 'block');
                 }
                 
