@@ -1633,3 +1633,7 @@ footer{
     padding : 5px ;
     }
 }
+
+.container-fluid{
+    padding-top : 30px;
+}
