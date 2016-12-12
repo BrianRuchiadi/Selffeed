@@ -212,7 +212,7 @@
                 
                 <div class="product_section_wrapper">
                     <h4>
-                        <div class="title-2">
+                        <div class="title2">
                             <hr>
                             <span> On Today's Lunch Menu </span>
                             <hr>

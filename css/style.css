@@ -13,6 +13,11 @@
         font-size: 100%;
     }
 
+    .title2{
+        width: 100%;
+        font-size: 80%;
+    }
+
     .headerMenu{
         width: 100%;
         font-size: 80%;
@@ -45,6 +50,15 @@
     }   
     .goToAddressP{
         display: block;
+    }
+
+    .holder{
+        webkit-appearance: none; -moz-appearance: none;
+        display: block;
+        margin: 0;
+        width: 50%; height: 40px;
+        line-height: 40px; font-size: 17px;
+        border: 1px solid #bbb;
     }
 }
 
