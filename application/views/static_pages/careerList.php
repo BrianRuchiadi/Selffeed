@@ -21,7 +21,7 @@
         </style>
         <script>  
             function back(){
-                window.location.replace("<?php echo base_url(); ?>index.php/Menu");
+                window.history.back();
             }
         </script>
     </head>
@@ -31,7 +31,7 @@
                 <div class="member_menu_header" id="black">
                     <div class="left_filler" id="header_left_position">
                         <div class="left_5_percent">
-                            <a class="clickable back" href="<?php echo base_url(); ?>index.php/Menu">
+                            <a class="clickable back" onclick="back()">
                                 <span class="icons-back"></span>
                             </a>
                         </div>
