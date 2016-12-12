@@ -195,3 +195,17 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
     padding-left : 20px;
     padding-right : 80px;
 }
+
+
+#sticky.stick {
+    background-color:#F7F991;
+    border: none;
+    color: black;
+    position: fixed;
+    top:0;
+    left: 480;
+    right: 480; 
+    text-align: center;
+    margin: auto;
+    z-index: 10000;
+}
