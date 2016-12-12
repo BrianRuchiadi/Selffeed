@@ -184,7 +184,7 @@
                     <div class="centered_text">
                         <h1>
                             <hr>
-                            <div class="text_wrapper">
+                            <div class="text_wrapper headerMenu">
                                 <?php if($store_status->status == 1){ ?>
                                 <div class="title-1">Kitchen's Open</div>
                                 <?php } else { ?>

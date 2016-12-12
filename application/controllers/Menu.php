@@ -6,7 +6,7 @@ class Menu extends CI_Controller {
     public function index()
     {  
         $this->load->library('cart');
-        $this->session->set_userdata("user_id", 13);
+        //$this->session->set_userdata("user_id", 13);
         
         $data['credit'] = false;
         $data['cart_full'] = false;

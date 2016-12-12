@@ -12,6 +12,15 @@
         width: 100%;
         font-size: 100%;
     }
+
+    .headerMenu{
+        width: 100%;
+        font-size: 80%;
+    }
+
+    .right{
+        margin-left: 0px;
+    }
     
     .nav.navbar-nav>li{
     margin : 0;
@@ -202,7 +211,7 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
     border: none;
     color: black;
     position: fixed;
-    top:0;
+    top: 10;
     left: 480;
     right: 480; 
     text-align: center;

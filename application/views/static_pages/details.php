@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
-            @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'); 
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
             @import url('https://fonts.googleapis.com/css?family=Prociono');
             @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:600');
             @import url('https://fonts.googleapis.com/css?family=Dosis:800');
