@@ -418,7 +418,7 @@ li{
 .button:hover {
     background-color : #F7F991;
     border : none;
-    color : black;
+    //color : black;
 }
 .text_link, .text_link_no_transition{
     color : white;
@@ -1132,12 +1132,20 @@ a.button.secondary{
     border-width: 1px;
     color : #1A1A1A;
 }
+a.button.secondary:hover{
+    background-color : #FFF89C;
+    border : 3px solid #FFF89C;
+}
 a.button.primary{
     background-color : #1A1A1A;
     border-color : #000000;
     border-width: 1px;
     color : #FFFFFF;
     font-weight: normal;
+}
+a.button.primary:hover{
+    background-color : #2B2B2B;
+    border : 3px solid #2B2B2B;
 }
 .page{
     min-height : 100%;

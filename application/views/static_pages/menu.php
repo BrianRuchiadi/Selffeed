@@ -125,24 +125,30 @@
                 </div>
             </div>
             <div class="member_menu_body">
-                <div class="list_box">
-                    <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account"> Profile </a><hr></div>
-                </div>
-                <div class="list_box">
-                    <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/payment"> Payment </a><hr></div>
-                </div>
-                <div class="list_box">
-                    <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/delivery"> Address </a><hr></div>
-                </div>
-                <div class="list_box">
-                    <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/orders"> Orders </a><hr></div>
-                </div>
-                <div class="list_box">
-                    <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Help"> Get Help </a><hr></div>
+                <div style="margin-top : 5px">
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Menu"> Lunch Tomorrow </a><hr></div>
+                    </div>
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account"> Profile </a><hr></div>
+                    </div>
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/payment"> Payment </a><hr></div>
+                    </div>
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/delivery"> Address </a><hr></div>
+                    </div>
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Account/orders"> Orders </a><hr></div>
+                    </div>
+                    <div class="list_box">
+                        <div class="centered_text"><a href="<?php echo base_url(); ?>index.php/Help"> Get Help </a><hr></div>
+                    </div>
                 </div>
                 <div class="list_box_sign_out">
                     <a class="width_auto" id="sign_out_button" href="<?php echo base_url(); ?>index.php/Account/logout">Sign Out</a>
                 </div>
+                    
             </div>
         </div>
         <?php } ?>

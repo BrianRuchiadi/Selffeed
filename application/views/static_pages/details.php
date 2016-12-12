@@ -21,6 +21,10 @@
 
         </style>
         <script>
+        function back(){
+            window.history.back();
+        }
+            
         var cart = 0;
         
         $(document).ready(function(){
@@ -115,7 +119,7 @@
                             <div class="content-width">
                                 <div class="header-line">
                                     <div class="left">
-                                        <a class="clickable back" href="<?php echo base_url(); ?>index.php/Menu">
+                                        <a class="clickable back" onclick="back()">
                                             <span class="icons-back"></span>
                                         </a>
                                     </div>

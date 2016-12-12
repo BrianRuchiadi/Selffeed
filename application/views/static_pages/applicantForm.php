@@ -129,7 +129,7 @@
                             </div>
                             <div class="buttons">
                                 <button class="button" id="black_button" type="submit">Request Job</button>
-                                <a class="change_text" href="<?php echo base_url(); ?>index.php/Menu">Cancel</a>
+                                <a class="change_text" onclick="back()">Cancel</a>
                             </div>
                         </form>
                     </div>

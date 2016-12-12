@@ -46,10 +46,14 @@
                         
                         <div class="business_form"> 
                             <form method="POST">
-                                <input type="email" required name="email" class="business_input" placeholder="Email Address">
-                                <textarea name="details" required class="business_input" cols="50" rows="10" placeholder="What are you looking for? (optional)">
+                                <div class="holder">
+                                    <input type="email" required name="email" class="business_input" placeholder="Email Address">
+                                </div>
+                                <div class="holder">
+                                    <textarea name="details" required class="business_input" cols="50" rows="10" placeholder="What are you looking for? (optional)">
                                     
-                                </textarea>
+                                    </textarea>
+                                </div>
                                 <div class="buttons">
                                     <input type="submit" value="Send" class="button" id="black_button" >
                                 </div>
