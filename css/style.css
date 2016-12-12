@@ -65,6 +65,10 @@
     .business_form{
         width: 400px;
     }
+
+    .faq{
+        font-size: 80%;
+    }
 }
 
 @media screen and ( max-width: 500px ) { 
