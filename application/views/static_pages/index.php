@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700'); 
@@ -694,7 +694,7 @@
                 <div class="centered-content" style="opacity : 0.99;">
                     <h1>
                         <span id="faded"> 
-                            <div class="title-1">
+                            <div class="title2">
                                 The ingredients for your cooking experience
                             </div>
                         </span>
