@@ -694,7 +694,7 @@
                 <div class="centered-content" style="opacity : 0.99;">
                     <h1>
                         <span id="faded"> 
-                            <div class="title-1">
+                            <div class="title2">
                                 The ingredients for your cooking experience
                             </div>
                         </span>
