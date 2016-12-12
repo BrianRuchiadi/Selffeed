@@ -373,31 +373,28 @@ class Payments_pro extends CI_Controller
 	}
 
 	
-	function Set_express_checkout($user_id)
+	function Set_express_checkout()
 	{
-                $getUser = $this->db->get_where('users', array('id' => $id))->result();
-                $getUser = $getUser[0];
-                
 		$SECFields = array(
 							'token' => '', 								// A timestamped token, the value of which was returned by a previous SetExpressCheckout call.
 							'maxamt' => '', 						// The expected maximum total amount the order will be, including S&H and sales tax.
-							'returnurl' => 'http://[::1]/selffeed/index.php/Home', 							// Required.  URL to which the customer will be returned after returning from PayPal.  2048 char max.
-							'cancelurl' => 'http://[::1]/selffeed/index.php/Checkout', 							// Required.  URL to which the customer will be returned if they cancel payment on PayPal's site.
-							'callback' => 'http://[::1]/selffeed/index.php/Menu', 							// URL to which the callback request from PayPal is sent.  Must start with https:// for production.
-							'callbacktimeout' => '6', 					// An override for you to request more or less time to be able to process the callback request and response.  Acceptable range for override is 1-6 seconds.  If you specify greater than 6 PayPal will use default value of 3 seconds.
+							'returnurl' => '', 							// Required.  URL to which the customer will be returned after returning from PayPal.  2048 char max.
+							'cancelurl' => '', 							// Required.  URL to which the customer will be returned if they cancel payment on PayPal's site.
+							'callback' => '', 							// URL to which the callback request from PayPal is sent.  Must start with https:// for production.
+							'callbacktimeout' => '', 					// An override for you to request more or less time to be able to process the callback request and response.  Acceptable range for override is 1-6 seconds.  If you specify greater than 6 PayPal will use default value of 3 seconds.
 							'callbackversion' => '', 					// The version of the Instant Update API you're using.  The default is the current version.							
-							'reqconfirmshipping' => '0', 				// The value 1 indicates that you require that the customer's shipping address is Confirmed with PayPal.  This overrides anything in the account profile.  Possible values are 1 or 0.
-							'noshipping' => '1', 						// The value 1 indiciates that on the PayPal pages, no shipping address fields should be displayed.  Maybe 1 or 0.
-							'allownote' => '1', 							// The value 1 indiciates that the customer may enter a note to the merchant on the PayPal page during checkout.  The note is returned in the GetExpresscheckoutDetails response and the DoExpressCheckoutPayment response.  Must be 1 or 0.
-							'addroverride' => '1', 						// The value 1 indiciates that the PayPal pages should display the shipping address set by you in the SetExpressCheckout request, not the shipping address on file with PayPal.  This does not allow the customer to edit the address here.  Must be 1 or 0.
-							'localecode' => 'MY', 						// Locale of pages displayed by PayPal during checkout.  Should be a 2 character country code.  You can retrive the country code by passing the country name into the class' GetCountryCode() function.
+							'reqconfirmshipping' => '', 				// The value 1 indicates that you require that the customer's shipping address is Confirmed with PayPal.  This overrides anything in the account profile.  Possible values are 1 or 0.
+							'noshipping' => '', 						// The value 1 indiciates that on the PayPal pages, no shipping address fields should be displayed.  Maybe 1 or 0.
+							'allownote' => '', 							// The value 1 indiciates that the customer may enter a note to the merchant on the PayPal page during checkout.  The note is returned in the GetExpresscheckoutDetails response and the DoExpressCheckoutPayment response.  Must be 1 or 0.
+							'addroverride' => '', 						// The value 1 indiciates that the PayPal pages should display the shipping address set by you in the SetExpressCheckout request, not the shipping address on file with PayPal.  This does not allow the customer to edit the address here.  Must be 1 or 0.
+							'localecode' => '', 						// Locale of pages displayed by PayPal during checkout.  Should be a 2 character country code.  You can retrive the country code by passing the country name into the class' GetCountryCode() function.
 							'pagestyle' => '', 							// Sets the Custom Payment Page Style for payment pages associated with this button/link.  
 							'hdrimg' => '', 							// URL for the image displayed as the header during checkout.  Max size of 750x90.  Should be stored on an https:// server or you'll get a warning message in the browser.
 							'hdrbordercolor' => '', 					// Sets the border color around the header of the payment page.  The border is a 2-pixel permiter around the header space.  Default is black.  
 							'hdrbackcolor' => '', 						// Sets the background color for the header of the payment page.  Default is white.  
 							'payflowcolor' => '', 						// Sets the background color for the payment page.  Default is white.
 							'skipdetails' => '', 						// This is a custom field not included in the PayPal documentation.  It's used to specify whether you want to skip the GetExpressCheckoutDetails part of checkout or not.  See PayPal docs for more info.
-							'email' => $getUser->email, 								// Email address of the buyer as entered during checkout.  PayPal uses this value to pre-fill the PayPal sign-in page.  127 char max.
+							'email' => '', 								// Email address of the buyer as entered during checkout.  PayPal uses this value to pre-fill the PayPal sign-in page.  127 char max.
 							'solutiontype' => '', 						// Type of checkout flow.  Must be Sole (express checkout for auctions) or Mark (normal express checkout)
 							'landingpage' => '', 						// Type of PayPal page to display.  Can be Billing or Login.  If billing it shows a full credit card form.  If Login it just shows the login screen.
 							'channeltype' => '', 						// Type of channel.  Must be Merchant (non-auction seller) or eBayItem (eBay auction)

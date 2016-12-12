@@ -187,6 +187,12 @@
     font-size : 1.5em;    
     font-style: italic;
 }
+.qa_description p{
+    color : black;
+    font-family : 'IM Fell English', serif;
+    font-size : 1.5em;    
+    font-style: normal;
+}
 .orders_content p{
     padding-top : 20px;
     color : black;

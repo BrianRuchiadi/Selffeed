@@ -41,7 +41,7 @@
                 </div>
                 <div class="faq_content">
                     <h2>FAQ (Frequently Asked Questions)</h2>
-                    <div class="payment_description">
+                    <div class="qa_description">
                         <p><b>  Q :How does SelfFeed work?</b></p>
                         <p> A :At SelfFeed, we offer a pre-packed meal service. What we do is, according
                            to the recipe that you've chosen from our frequently updated roster, we 

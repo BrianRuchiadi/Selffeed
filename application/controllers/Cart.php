@@ -154,7 +154,7 @@ class Cart extends CI_Controller {
     
     function Set_express_checkout()
 	{
-		$SECFields = array(
+                $SECFields = array(
 							'token' => '', 								// A timestamped token, the value of which was returned by a previous SetExpressCheckout call.
 							'maxamt' => '', 						// The expected maximum total amount the order will be, including S&H and sales tax.
 							'returnurl' => '', 							// Required.  URL to which the customer will be returned after returning from PayPal.  2048 char max.

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700'); 
@@ -856,7 +856,7 @@
                     </div>                 
                 </div>
  
-                <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                <footer style="background-color: black; color: white; text-align: center;">
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">
