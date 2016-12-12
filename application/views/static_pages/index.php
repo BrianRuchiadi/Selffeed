@@ -7,6 +7,7 @@
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
@@ -319,6 +320,37 @@
             <?php } ?>
 
             $(window).bind("mousewheel",function(){
+                var scrollPercentage = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+                console.log(scrollPercentage);
+                //32.7 - 68.7
+                //40
+                
+                if(scrollPercentage < 32.6){
+                    $('#animation').css('position' , 'absolute');
+                    $('#animation').css('top', '130px');
+                    $('#animation').css('right', '40px');
+                }
+                if(scrollPercentage >= 32.6 && scrollPercentage <= 68.3){
+                    $('#animation').css('position' , 'fixed');
+                }
+                if(scrollPercentage < 40.1){
+                    $('#animation').css('background-image', 'url(../Image/sleffeed-animation-final/sleffeed1.gif)');
+
+                }
+                if(scrollPercentage >= 40.1 && scrollPercentage < 54.1){
+                    $('#animation').css('background-image', 'url(../Image/sleffeed-animation-final/sleffeed2.gif)');
+                }
+               
+                if(scrollPercentage >= 54.1){
+                    $('#animation').css('background-image', 'url(../Image/sleffeed-animation-final/sleffeed3.gif)');
+                }
+                if(scrollPercentage > 65.3){
+                    $('#animation').css('top', 'auto');
+                    $('#animation').css('position', 'absolute');
+                    $('#animation').css('bottom', '40px');
+                    $('#animation').css('right', '40px');
+                    $('#animation').css('display', 'block');
+                }
                 
                 if($(window).scrollTop() <= 609){               
                     $('#second_arrangement').css('visibility', 'hidden');
@@ -446,8 +478,7 @@
                 }
                 if($(window).scrollTop() > 511.1){
                     $('#part_2').css('opacity', '0.85');
-                }
-                
+                }              
                 if($(window).scrollTop() > 609){
                     $('#second_arrangement').css('visibility', 'visible');
                     $('#first_arrangement').css('visibility', 'hidden');
@@ -688,7 +719,53 @@
                         <a class="text_link" onclick="open_sign_in();">Already a member? Sign in </a>
                     </div>         
                 </div>
-                
+                <div id="step_animation_wrapper"><!-- lapisan terluar -->
+                    <div class='each_step'>
+                        <h1> EAT </h1>
+                        <p>Have a look through what we are offering today and take a pick! We'll then
+                           prep ingredients according to the recipe and arrange for it to be delivered
+                           for you.</p>
+                        <div id="linkmenu" style="height: 40px; line-height: 40px;" onclick="open_register()">
+                            <a onclick="open_register();" > Get Started</a>
+                        </div>
+                        
+                    </div>
+             
+                    <div class='each_step'>
+                        <h1> SIT BACK </h1>
+                        <p>While you do your things,we'll do ours:Preparing. Our technology let us receive
+                            exactly what you ordered, prepare it with care, and deliver it to you in a swift way.</p>
+                        <div id="linkmenu" style="height: 40px; line-height: 40px;" onclick="open_register()">
+                            <a onclick="open_register();" > Get Started</a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class='each_step'>
+                        <h1> COOKING </h1>
+                        <p>With you not having to go through the painstaking process of prepping,just
+                           follow the simple steps on our fool-proof recipes and voila, you're the 
+                           master chef! What's left to do is eat!</p>
+                        <div id="linkmenu" style="height: 40px; line-height: 40px;" onclick="open_register()">
+                            <a onclick="open_register();" > Get Started</a>
+                        </div>
+                        
+                    </div>
+                    <div  id="animation"></div>
+                </div>
+                <div class="wearehere">
+                    <div class='each_step'>
+                        <h1> We're Here </h1>
+                        <p>Serving instant meal to you in Klang Valley. Add your address to see
+                           how we can serve you.</p>
+                        <div id="linkmenu" style="height: 40px; line-height: 40px;" onclick="open_register()">
+                            <a onclick="open_register();" > Get Started</a>
+                        </div>
+                        <div class="map_place">
+                        </div>
+                    </div>
+                </div>
+                <!-- Start of step
                 <div style="display: none;">
                     <img src="https://d16cs9nbg8x6iq.cloudfront.net/s/img/home01.gif">
                     <img src="https://d16cs9nbg8x6iq.cloudfront.net/s/img/home02.gif">
@@ -737,7 +814,8 @@
                     <div class="section">
                     </div>
                 </div>
-
+`               End of step-->
+                <!--
                 <div class="fluid-container" style="background-color: white; height: 500px; padding-top: 120px;">
                     <div class="row">
                         <div class="col-xs-12 outer">
@@ -763,6 +841,7 @@
                         </div>
                     </div>
                 </div>
+                -->
                 
                 <div class="about_menu_wrapper">
                     <div class="centered-content">
@@ -803,6 +882,7 @@
             </div>
         </div>
     </body>
+    <!--
     <script type="text/javascript">
         
         var sHome = $("#section-home");
@@ -869,4 +949,5 @@
 
         });
     </script>
+    -->
 </html>
