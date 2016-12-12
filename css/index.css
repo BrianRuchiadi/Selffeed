@@ -868,48 +868,6 @@ input:focus, textArea:focus{
 
 }
 
-
-#choose_icon{
-    background-image : url(../Image/choose.png);
-    background-repeat : no-repeat;
-    background-position : center ;
-}
-
-
-#order_icon{
-    background-image : url(../Image/order.png);
-    background-repeat : no-repeat;
-    background-position : center ; 
-    background-size : 90%;
-   
-}
-
-#pack_icon{
-    background-image : url(../Image/pack.png);
-    background-repeat : no-repeat;
-    background-position : center ;
-  
-}
-
-#deliver_icon{
-    background-image : url(../Image/deliver.png);
-    background-repeat : no-repeat;
-    background-position : center ;   
-  
-}
-
-.icon_box_2 {
-    width : 15%;
-    min-width : 150px;
-    max-width : 150px;
-    height : 150px;
-    border-radius : 50%;
-    position : absolute;
-    top : 50px;
-    right : 50px;
-}
-
-
 @media all and (orientation:portrait) {
     .icon_box_1,.icon_box_2 {
         width : 70vw;
@@ -1108,7 +1066,7 @@ ul .menu-items{
     right : 0;
     background-repeat : no-repeat;
     background-position : center bottom;
-    background-size : cover;
+    background-size : 100% 100%;
 }
 
 .details{
@@ -1648,8 +1606,30 @@ a.button.primary{
 	background-color: #F8F6F6;
 	color: black;
 }
-
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 .linkFooter{
-    border-bottom: 1px dashed #999;
+    text-transform: uppercase;
+    border-bottom : 1px dotted #999;
+    display : inline-block;
     text-decoration: none; 
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="title-"] {
+        width: 100%;
+        font-size: 100%;
+    }
+    
+    .nav.navbar-nav>li{
+    margin : 0;
+    }
+
+    .nav>li>a{
+    padding : 5px ;
+    }
 }

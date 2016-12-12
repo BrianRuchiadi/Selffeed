@@ -10,7 +10,15 @@
     /* For mobile phones: */
     [class*="title-"] {
         width: 100%;
-        font-size: 70%;
+        font-size: 100%;
+    }
+    
+    .nav.navbar-nav>li{
+    margin : 0;
+    }
+
+    .nav>li>a{
+    padding : 5px ;
     }
 
     .btn{
@@ -163,9 +171,12 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
 }
 
 .linkFooter{
-    border-bottom: 1px dashed #999;
+    text-transform: uppercase;
+    border-bottom : 1px dotted #999;
+    display : inline-block;
     text-decoration: none; 
 }
+
 
 .col-sm-5 h1{
     font-size : 60px;

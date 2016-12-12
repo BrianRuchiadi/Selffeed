@@ -221,7 +221,7 @@
 
                 </div>
                
-                <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                <footer>
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">
