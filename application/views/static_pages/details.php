@@ -52,6 +52,26 @@
                     $('#header').css("box-shadow", "none");
                     $('.clickable.back').css("border", "none");
                 }
+
+                var window_top = $('#header').offset().top;
+                var div_top = $('#sticky-anchor').offset().top;
+                if (window_top >= div_top) {
+                        //naik
+                        $('#sticky').addClass('stick');  
+                        // $('#sticky').css("background-color", "red");
+                        // $('#sticky').css("position", "fixed");
+                        // $('#sticky').css("top", "0");
+                        // $('#sticky').css("left", "480");
+                        // $('#sticky').css("right", "480");
+                } else {
+                        //turun
+                        $('#sticky').removeClass('stick');
+                        // $('#sticky').css("background-color", "black");
+                        // $('#sticky').css("position", "inherit");
+                        // $('#sticky').css("top", "0");
+                        // $('#sticky').css("left", "480");
+                        // $('#sticky').css("right", "480");
+                }
             });
         });
         
@@ -226,7 +246,8 @@
                                             <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
                                             <?php } ?>
                                             <?php } else { ?>
-                                            <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <div id="sticky-anchor"></div>
+                                            <a id="sticky" class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
                                             <?php } ?>
                                     <?php } ?>
                                 </div>
