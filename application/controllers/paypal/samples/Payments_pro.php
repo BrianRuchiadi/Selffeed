@@ -161,6 +161,7 @@ class Payments_pro extends CI_Controller
 		$GBFields = array('returnallcurrencies' => '1');
 		$PayPalRequestData = array('GBFields'=>$GBFields);
 		$PayPalResult = $this->paypal_pro->GetBalance($PayPalRequestData);
+                
 		
 		if(!$this->paypal_pro->APICallSuccessful($PayPalResult['ACK']))
 		{

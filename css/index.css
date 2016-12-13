@@ -234,13 +234,16 @@ li{
     margin : 0 0 0 2.5%;
     width : 13.5%;
     text-align : right;
+    position : absolute;
+    top : 20px;
+    right : 20px;
 }
 
 .right a{
     border-bottom : 1px dotted white;
 }
 .center{
-    position : relative;
+    position : absolute;
     width : 63.5%;
     text-align : center;
     display : inline-block;
@@ -1143,7 +1146,7 @@ a.button.primary{
     color : #FFFFFF;
     font-weight: normal;
 }
-a.button.primary:hover{
+a.button.primary:hover, .button.primary:hover{
     background-color : #2B2B2B;
     border : 3px solid #2B2B2B;
 }
@@ -1282,6 +1285,7 @@ a.button.primary:hover{
     color : #FFFFFF;
     font-weight : normal;
     border : 2px solid #1A1A1A;
+    font-family : 'Open Sans Condensed', sans-serif;
 }
 
 .details-product-categories{

@@ -318,13 +318,15 @@
             <?php if($login){ ?>
             open_sign_in();
             <?php } ?>
+            $(window).scroll(function(){
+                console.log('part_1 ' + $("#part_1").offset().top);
+                console.log('body ' + $("body").scrollTop());
+                $("#part_1").css("opacity",1 -(($("#part_1").offset().top - $("body").scrollTop()) / $("#part_1").offset().top));
+                //$('#part_1').css("opacity",  1 - $(window).scrollTop() / $('.about_us_wrapper').height())
+            });
 
             $(window).bind("mousewheel",function(){
                 var scrollPercentage = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
-                console.log(scrollPercentage);
-                //32.7 - 68.7
-                //40
-                
                 if(scrollPercentage < 32.6){
                     $('#animation').css('position' , 'absolute');
                     $('#animation').css('top', '130px');
@@ -363,122 +365,7 @@
                     $('#header').css("opacity", 1);
                     $('#header').css("background-color", "transparent");
                 }
-                if($(window).scrollTop() < 63){
-                    $('.text_link').css('color', '#FFFFFF');
-                    $('.text_link').css('border-color', '#FFFFFF');
-                    $('#change_color').css('color' , '#FFFFFF');
-                }
-                
-                if($(window).scrollTop() > 63 && $(window).scrollTop() < 67.1 ){
-                    $('.text_link').css('border-color', '#E4E4E4');
-                    $('.text_link').css('color', '#E4E4E4');   
-                    $('#first_arrangement').css('z-index', '10000');
-                }
-                if($(window).scrollTop() > 67.1 && $(window).scrollTop() < 74.1){
-                    $('.text_link').css('border-color', '#D1D1D1');
-                    $('.text_link').css('color', '#D1D1D1');
-                }
-                if($(window).scrollTop() > 74.1 && $(window).scrollTop() < 93.1){
-                    $('.text_link').css('color', '#B1AFAF');
-                    $('.text_link').css('border-color', '#B1AFAF');
-                }
-                if($(window).scrollTop() > 93.1 && $(window).scrollTop() < 112.1){
-                    $('.text_link').css('border-color', '#A1A1A1');
-                    $('.text_link').css('color', '#A1A1A1');
-                    $('.button').css('color', '#FFFFFF');
-                }
-                if($(window).scrollTop() > 112.1 && $(window).scrollTop() < 120.1){
-                    $('.text_link').css('border-color', '#898989');
-                    $('.text_link').css('color', '#898989');
-                    $('.button').css('color', '#898989');
-                    $('.button').css('border-color', '#FDFCF3');
-                }
-                if($(window).scrollTop() > 120.1 && $(window).scrollTop() < 126.1){
-                    $('.text_link').css('border-color', '#464645');
-                    $('.text_link').css('color', '#464645');
-                    $('.button').css('color', '#464645');
-                    $('#change_color').css('border-color', 'FEFDEC');
-                }
-                if($(window).scrollTop() > 126.1 && $(window).scrollTop() < 146.1){
-                    $('.text_link').css('border-color', '#4A4A4A');
-                    $('.text_link').css('color', '#4A4A4A');
-                    $('.button').css('color' , '#4A4A4A');
-                    $('.button').css('border-color', '#FDFCE0');
-                }
-                if($(window).scrollTop() > 146.1 && $(window).scrollTop() < 186.1){
-                    $('.text_link').css('border-color', '#2A2A2A');
-                    $('.text_link').css('color', '#2A2A2A');
-                    $('.button').css('color', '#2A2A2A');
-                    $('.button').css('border-color', '#FFFECF');
-                    $('#faded').css('opacity', '0.8');
-                }
-                if($(window).scrollTop() > 186.1 && $(window).scrollTop() < 221.1){
-                    $('.text_link').css('border-color', '#171717');
-                    $('.text_link').css('color', '#171717');
-                    $('#change_color').css('color', '#171717');
-                    $('#change_color').css('border-color', '#FEFCBD');
-                    $('#faded').css('opacity', '0.65');
-                }
-                if($(window).scrollTop() > 221.1 && $(window).scrollTop() < 263.1){
-                    $('.text_link').css('border-color', '#3D3D3D');
-                    $('.text_link').css('color', '#3D3D3D');
-                    $('#change_color').css('color', '#3D3D3D');
-                    $('#change_color').css('border-coloe', '#FFFD8E');
-                    $('#faded').css('opacity', '0.5');
-                }
-                if($(window).scrollTop() > 263.1 && $(window).scrollTop() < 298.1){
-                    $('.text_link').css('border-color', '#242424');
-                    $('.text_link').css('color', '#242424');
-                    $('.button').css('color', '#242424');
-                    $('.button').css('border-color', '#FFFC52');
-                    $('#faded').css('opacity', '0.35');
-                }
-                if($(window).scrollTop() > 298.1 && $(window).scrollTop() < 306.1){
-                    $('.text_link').css('border-color', '#000000');
-                    $('.text_link').css('color', '#000000');
-                    $('.button').css('color', '#000000');
-                    $('#faded').css('opacity', '0.2');
-                }
-                if($(window).scrollTop() > 306.1 && $(window).scrollTop() < 310.1){
-                    $('#faded').css('opacity', '0.15');
-                }
-                if($(window).scrollTop() > 310.1 && $(window).scrollTop() < 369.1){
-                    $('#part_1').css('opacity', '0');
-                    $('#part_2').css('opacity', '0');
-                }
-                if($(window).scrollTop() > 416 && $(window).scrollTop() < 433.1){
-                    $('#faded').css('opacity', '0');
-                    $('#part_1').css('opacity', '0.2');
-                }
-                if($(window).scrollTop() > 433.1 && $(window).scrollTop() < 440.1){
-                    $('#part_1').css('opacity', '0.3');
-                }
-                if($(window).scrollTop() > 440.1 && $(window).scrollTop() < 447.1){
-                    $('#part_1').css('opacity', '0.4');
-                }
-                if($(window).scrollTop() > 447.1 && $(window).scrollTop() < 454.1){
-                    $('#part_1').css('opacity', '0.45');
-                }
-                if($(window).scrollTop() > 454.1 && $(window).scrollTop() < 460.1){
-                    $('#part_1').css('opacity', '0.65');             
-                }
-                if($(window).scrollTop() > 472.1 && $(window).scrollTop() < 490.1){
-                    $('#part_2').css('opacity', '0');
-                }
-                if($(window).scrollTop() > 490.1 && $(window).scrollTop() < 498.1){
-                    $('#part_1').css('opacity', '0.78');
-                    $('#part_2').css('opacity', '0.2');
-                }
-                if($(window).scrollTop() > 498.1 && $(window).scrollTop() < 505.1){
-                    $('#part_1').css('opacity', '0.85');
-                    $('#part_2').css('opacity', '0.35');
-                } 
-                if($(window).scrollTop() > 505.1 && $(window).scrollTop() < 511.1){
-                    $('#part_2').css('opacity', '0.55');
-                }
-                if($(window).scrollTop() > 511.1){
-                    $('#part_2').css('opacity', '0.85');
-                }              
+             
                 if($(window).scrollTop() > 609){
                     $('#second_arrangement').css('visibility', 'visible');
                     $('#first_arrangement').css('visibility', 'hidden');

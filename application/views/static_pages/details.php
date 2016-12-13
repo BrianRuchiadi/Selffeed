@@ -8,7 +8,7 @@
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
-
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
@@ -30,9 +30,20 @@
         $(document).ready(function(){
             $('.member_menu_cart_button').hide();
             displayCart();
+            
+            $('.fixed_button_header')
+            $(window).scroll(function(){
+                console.log('part_1 ' + $(".button.width_auto").offset().top);
+                console.log('body ' + $("body").scrollTop());
+                
+                
+              // button width auto
+              // fixed button header
+                //$("#part_1").css("opacity",1 -(($("#part_1").offset().top - $("body").scrollTop()) / $("#part_1").offset().top));
+                //$('#part_1').css("opacity",  1 - $(window).scrollTop() / $('.about_us_wrapper').height())
+            });
             $(window).bind("mousewheel",function(){
                
-                console.log($(document).scrollTop());
                                
                 if($(document).scrollTop() > 0){
                     $('#header').css("background-color", "white");
@@ -52,26 +63,19 @@
                     $('#header').css("box-shadow", "none");
                     $('.clickable.back').css("border", "none");
                 }
-
+                /*
                 var window_top = $('#header').offset().top;
                 var div_top = $('#sticky-anchor').offset().top;
                 if (window_top >= div_top) {
-                        //naik
+                        //up
                         $('#sticky').addClass('stick');  
-                        // $('#sticky').css("background-color", "red");
-                        // $('#sticky').css("position", "fixed");
-                        // $('#sticky').css("top", "0");
-                        // $('#sticky').css("left", "480");
-                        // $('#sticky').css("right", "480");
+                   
                 } else {
-                        //turun
+                        //down
                         $('#sticky').removeClass('stick');
-                        // $('#sticky').css("background-color", "black");
-                        // $('#sticky').css("position", "inherit");
-                        // $('#sticky').css("top", "0");
-                        // $('#sticky').css("left", "480");
-                        // $('#sticky').css("right", "480");
+                    
                 }
+                */
             });
         });
         
@@ -144,7 +148,35 @@
                                         </a>
                                     </div>
                                     <div class="center">
-                                        <a href="#">SELFFEED</a>
+                                        <div style="position: absolute; left: -8px;top: 0;width: 100%;margin: 0 auto;text-align: center;">
+                                        <a href="#" style="display:block;">SELFFEED</a>
+                                        <?php if(!$credit){ ?>
+                                        <a class="button width_auto" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" onclick="register();">
+                                            Sign up to Order
+                                        </a>
+                                        <?php } else { ?>
+                                                <?php if($cart_full){ 
+                                                    $exist = false;
+                                                    foreach($this->cart->contents() as $cart){
+                                              
+                                                        if($cart['id'] == $product[0]->product_id){
+                                                            $exist = true;
+                                                        }
+                                                    }  ?>
+                                        <?php if($exist){ ?>
+                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"   onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <!-- tambahkan button + gitu ketika if exist ini -->
+                                                <?php }else { ?>
+                                                <a class="fixed_button_header"  style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"  id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <?php } ?>
+                                                <?php } else { ?>
+                                                <!--
+                                                <div id="sticky-anchor"></div>-->
+                                                <!--id="sticky"--><a class="fixed_button_header"  style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            
+                                            <?php } ?>
+                                    <?php } ?>
+                                        </div>
                                     </div>
                                     <div class="right">
                                          <?php if(!$credit){ ?>
@@ -246,8 +278,10 @@
                                             <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
                                             <?php } ?>
                                             <?php } else { ?>
-                                            <div id="sticky-anchor"></div>
-                                            <a id="sticky" class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <!--
+                                            <div id="sticky-anchor"></div>-->
+                                             <!--id="sticky"--><a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            
                                             <?php } ?>
                                     <?php } ?>
                                 </div>

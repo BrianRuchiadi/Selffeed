@@ -122,7 +122,7 @@ code {
                 'street2' => '', 						// Second street address.
                 'city' => 'Kansas City', 							// Required.  Name of City.
                 'state' => 'MO', 							// Required. Name of State or Province.
-                'countrycode' => 'US', 					// Required.  Country code.
+                'countrycode' => 'MY', 					// Required.  Country code.
                 'zip' => '64111', 							// Required.  Postal code of payer.
                 'phonenum' => '555-555-5555' 						// Phone Number of payer.  20 char max.
             );
