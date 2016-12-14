@@ -956,7 +956,7 @@ input:focus, textArea:focus{
 
 
 .menu_contents{
-   background-color : #EDEDE9;
+   background-color : #F7F7F7;
 }
 
 .menu_details_contents{
@@ -1447,7 +1447,7 @@ a.button.primary:hover, .button.primary:hover{
 
 .member_menu_cart_button{
     position : absolute;
-    top : 5px;
+    top : -15px;
     right : 5%;
     display : inline-block;
     background-image : url(../Image/cart.png);

@@ -10,7 +10,7 @@
     /* For mobile phones: */
     [class*="title-"] {
         width: 100%;
-        font-size: 100%;
+        font-size: 90%;
     }
 
     .title2{
@@ -162,7 +162,67 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
         background-color : black;
         position : initial;
     }
-
+    
+    .center, left{
+        font-size : 25px;
+        position : absolute;
+        top : 10px;
+    }
+    
+    .left{
+        margin-top : 8px;
+    }
+    
+    .product_section_wrapper{
+        font-size : 90%;
+    }
+    .menu_contents{
+        background-color : #FFFFFF;
+    }
+    
+    .menu-item-container{
+        margin : 0 15px;
+    }
+    .button.primary  {
+        top : -15px;
+    }
+    
+    .balanced-text{
+        font-size : 90%;
+    }
+    
+    .expand_button{
+        height : 70%;
+        top : 20px;
+        width : auto;
+        background-size : 20px;
+    }
+   
+    .member_menu_cart_button{
+        height : 30px;
+        width : 30px;
+    }
+    
+    .right{
+        top : 25px;
+    }
+    
+    .number_display{
+        margin-top : -10px;
+        margin-left: 20px;
+    }
+    
+    .menu-item{
+        border-bottom : 1px solid #c6c6c6;
+    }
+    
+    .menu-item:last-child{
+        margin-bottom : 0;
+    }
+    
+    ul{
+        margin-bottom: 0;
+    }
 }
 
 .fontface

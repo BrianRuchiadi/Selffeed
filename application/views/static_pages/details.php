@@ -31,44 +31,38 @@
             $('.member_menu_cart_button').hide();
             displayCart();
             
-            scroll = 0;
-            direction = 'down';
+            var timer = 200;
+            var scroll = 0;
+            var direction = 'down';
             
             $(window).scroll(function(){
                
-                if(scroll < $("body").scrollTop()){
-                    direction = 'down';
-                }
-                if(scroll > $("body").scrollTop()){
-                    direction = 'up';
-                }
-                    scroll = $("body").scrollTop();
-                    
-                //console.log('part_1 ' + $(".button.width_auto").offset().top);
-                //console.log('body ' + $("body").scrollTop());
-                
-                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 72))
+        
+                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 80))
                 {
-                    if(direction == 'up'){
+                    console.log('in Zone');
+                    if(scroll > $("body").scrollTop()){
                         var topval = parseInt($('#flexible_header').css("top"), 10);
-                        topval++;
+                        topval = topval + 2;
                         $('#flexible_header').css("top", topval);
                         console.log(topval);
+                        console.log('up');
                     }
                     
-                    if(direction == 'down'){
+                    else{
                         var topval = parseInt($('#flexible_header').css("top"), 10);
-                        topval--;
+                        topval = topval- 2;
                         $('#flexible_header').css("top", topval);
                         console.log(topval);
+                        console.log("down");
                     }
+                    
+                    scroll = $("body").scrollTop();
                 }
                 
               // button width auto 65 6
-              // fixed button header
-                //$("#part_1").css("opacity",1 -(($("#part_1").offset().top - $("body").scrollTop()) / $("#part_1").offset().top));
-                //$('#part_1').css("opacity",  1 - $(window).scrollTop() / $('.about_us_wrapper').height())
             });
+            
             $(window).bind("mousewheel",function(){
                
                                
@@ -122,7 +116,7 @@
             });
         }
         
-        function addToCart(product_id){
+        function addToCart(product_id, product_price){
             cart += 1;
             
             $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
@@ -178,7 +172,7 @@
                                         <div style="position: absolute; left: -8px;top: 0;width: 100%;margin: 0 auto;text-align: center;" id="flexible_header">
                                         <a href="#" style="display:block;">SELFFEED</a>
                                         <?php if(!$credit){ ?>
-                                        <a class="button width_auto" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" onclick="register();">
+                                        <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" onclick="register();">
                                             Sign up to Order
                                         </a>
                                         <?php } else { ?>

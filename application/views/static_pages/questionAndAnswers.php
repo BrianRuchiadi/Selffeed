@@ -113,12 +113,12 @@
                         
                         <a href="http://m.me/SelfFeed"><div class="messenger_link"></div></a>
                        
-                     <div class="buttons">
+                     <div class="buttons" style="margin-top : 50px;">
                             <button class="button" id="black_button" onclick="back()">Back to Home</button>
                         </div>
                     </div>
                 </div>
-                <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                <footer>
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">

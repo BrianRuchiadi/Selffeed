@@ -91,7 +91,6 @@
                                 }
                 });
                 
-                window.location.replace("<?php echo base_url(); ?>index.php/Menu");
                 
             }
             function remove_item(){
@@ -317,7 +316,7 @@
                         </ul>
                     </div>
                     <div class="checkout">
-                        <a class="width_auto" id="font_modified" onclick="checkout()">Place Order</a>
+                        <a class="width_auto" id="font_modified" href="<?php echo base_url(); ?>index.php/Cart/checkout/<?php echo $date->format("Y-m-d") ?>/<?php echo $user[0]->address; ?>">Place Order</a>
                     </div>
                 </div>
             </div>
