@@ -1534,8 +1534,9 @@ a.button.primary:hover, .button.primary:hover{
 }
 
 .list_box .centered_text hr{
-    border-color : #4C4C4C;
+    border-color : #EEEEEE;
     margin : 10px auto;
+    border-width: 1px;
 }
 .list_box_sign_out{
 

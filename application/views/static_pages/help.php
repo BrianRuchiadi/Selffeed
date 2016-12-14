@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
@@ -51,7 +52,7 @@
                             From 10 a.m. to 10 p.m. throughout the entire week! So should anything arise,
                             feel free to speak to us!
                         </p>
-                        <p id="width_description"> Feel free to email any inquires to jason.selffeed@gmail.com or call us at</p>
+                        <p id="width_description"> Feel free to email any inquires to Service@selffeed.co or call us at</p>
                         <p id="width_description">012-4694682</p>
                         <div class="buttons_margin_50">
                             <button class="button" id="black_button" onclick="back()">Back</button>

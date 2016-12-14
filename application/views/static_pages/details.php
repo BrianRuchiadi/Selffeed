@@ -266,7 +266,7 @@
                                     </h2>
                                     <h4>
                                         <span>
-                                            <hr>
+                                            <hr id="white">
                                         </span> 
                                         <span>
                                             <div class="balanced-text">
@@ -274,7 +274,7 @@
                                             </div>
                                         </span>
                                         <span>
-                                            <hr>
+                                            <hr id="white">
                                         </span>
                                     </h4>
                                 </div>
