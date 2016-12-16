@@ -10,12 +10,12 @@ class Paypal_Model extends CI_Model {
         $this->username = "ruchiadibrian-facilitator_api1.yahoo.com";
         $this->password = "GWMH3V6G3VHYLEBB";
         $this->signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31ADIr30Bs7fN-Na5C2GCbQkdsAerm";
-        $this->return_url = "http://localhost/selffeed/index.php/checkout/";
+        $this->return_url = "http://localhost/selffeed/index.php/Checkout/success";
         $this->cancel_url = "http://localhost/selffeed/index.php/Home/";
         $this->endpoint = "https://api-3t.sandbox.paypal.com/nvp?";
     }
 
-    public function setExpressCheckout() {
+    public function setExpressCheckout($checkout) {
         $url = $this->endpoint;
         $data = array(
             "USER" => $this->username,
@@ -23,18 +23,21 @@ class Paypal_Model extends CI_Model {
             "SIGNATURE" => $this->signature,
             "METHOD" => "SetExpressCheckout",
             "VERSION" => 204.0,
-            "PAYMENTREQUEST_0_AMT" => 100,
+           
             "PAYMENTREQUEST_0_CURRENCYCODE" => "MYR",
             "RETURNURL" => $this->return_url,
             "CURRENCY" => "MYR",
             "CANCELURL" => $this->cancel_url,
-            "L_PAYMENTREQUEST_0_NAME0" => "TEST",
-            "L_PAYMENTREQUEST_0_AMT0" => 100,
-            "L_PAYMENTREQUEST_0_QTY0" => 1
+           
         );
+        
+        $data = array_merge($data, $checkout);
+      
         foreach ($data as $key => $value) {
             $url.=$key . "=" . $value . "&";
         }
+       
+        //die(var_dump($data));
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -26,7 +26,8 @@ class Cart extends CI_Controller {
         $this->load->library('cart');
         
         if($this->session->userdata('user_id')){
-        
+            $x = 0;
+            
             $data['deliveryDate'] = $deliveryDate;
             $data['y'] = substr($data['deliveryDate'], 0,4);
             $data['m'] = substr($data['deliveryDate'], 5,2);
@@ -35,9 +36,15 @@ class Cart extends CI_Controller {
             
             $get_timestamp = strtotime("{$data['y']}/{$data['m']}/{$data['d']}");
             $data['date'] = date("Y-m-d", $get_timestamp);
-                
-            $this->ppal();
+            
+            $this->session->set_userdata('date', $data['date']);
+            $this->session->set_userdata('deliveryLocation', $data['deliveryLocation']);
+            
+            $total = 0;
+       
+
             foreach($this->cart->contents() as $cart){
+               
                 $input['user_id'] = $this->session->userdata('user_id');
                 $input['product_id'] = $cart['id'];
                 $input['quantity'] = $cart['qty'];
@@ -46,10 +53,30 @@ class Cart extends CI_Controller {
                 $input['transaction_date'] = date('Y-m-d');
                 $input['delivery_request'] = $data['date'];
                 $input['delivery_location'] = $data['deliveryLocation'];
-                    
-                $this->db->insert('transaction', $input);
+                
+                $cart['name'] = preg_replace('/\s+/', '_', $cart['name']);
+                $paypal['L_PAYMENTREQUEST_0_NAME'.$x.''] = $cart['name'];
+                $paypal['L_PAYMENTREQUEST_0_NUMBER'.$x.''] = $cart['id'];
+                $paypal['L_PAYMENTREQUEST_0_AMT'.$x.''] = number_format($cart['price'],2);
+                $paypal['L_PAYMENTREQUEST_0_QTY'.$x.''] = $cart['qty']; 
+             
+                $total = $total + ($cart['price'] * $cart['qty']);
+               
+                $x++;
             }
-            $this->cart->destroy();
+            $gst = $total * 0.06;
+            $grandtotal = $total + $gst;
+            
+            $paypal['PAYMENTREQUEST_0_ITEMAMT'] = number_format($total,2);
+            $paypal['PAYMENTREQUEST_0_TAXAMT'] = number_format($gst,2);
+            $paypal['PAYMENTREQUEST_0_AMT'] = number_format($grandtotal,2);
+       
+            $paypal = array('PAYMENTREQUEST_0_AMT' => $paypal['PAYMENTREQUEST_0_AMT']) + $paypal;
+            $paypal = array('PAYMENTREQUEST_0_TAXAMT' => $paypal['PAYMENTREQUEST_0_TAXAMT']) + $paypal;
+            $paypal = array('PAYMENTREQUEST_0_ITEMAMT' => $paypal['PAYMENTREQUEST_0_ITEMAMT']) + $paypal;
+           
+            $this->ppal($paypal);
+            
             
         }
     }
@@ -99,6 +126,7 @@ class Cart extends CI_Controller {
             
             foreach($this->cart->contents() as $cart_content){
                 $data['total_quantity'] += $cart_content['qty'];
+                
             }
            
             die(json_encode($data));
@@ -122,9 +150,9 @@ class Cart extends CI_Controller {
         }
     }
     
-    public function ppal() {
+    public function ppal($items = '') {
         $this->load->model("Paypal_Model");
-        $this->Paypal_Model->setExpressCheckout();
+        $this->Paypal_Model->setExpressCheckout($items);
 
         /*
           $param = array();

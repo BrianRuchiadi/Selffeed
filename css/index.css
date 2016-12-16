@@ -245,9 +245,10 @@ li{
 .center{
     position : absolute;
     width : 63.5%;
+    height : 60px;
     text-align : center;
     display : inline-block;
-    overflow : visible;
+    overflow : hidden;
     margin: 0 0 0 2.5%;
     font-size : 30px;
     font-family: 'Open Sans', sans-serif;
@@ -1655,3 +1656,30 @@ footer{
     padding-bottom : 15px;
 }
 
+.addons_menu_wrapper{
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 35%;
+    right: 0;
+    background-color: black;
+    z-index: 100000;
+}
+
+.overlay{
+    background-color: #000;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: 0.5;
+    filter: alpha(opacity = 50);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+[id^="add_on_item_"]{
+    display : inline-block;
+    width : 10%;
+}

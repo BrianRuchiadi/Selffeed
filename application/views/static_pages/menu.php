@@ -25,8 +25,25 @@
         var cart = 0;
         
         $(document).ready(function(){
+            if($("body").scrollTop() > 0){
+                $('#header').css("background-color", "white");
+                $('.center a').css("color", "#1A1A1A");
+                $('.right a').css("color", "#1A1A1A");
+                $('.right a').css("border-color", "#1A1A1A");
+                $('#header').css("opacity", "1");
+                $('#header').css("box-shadow", "1px 1px 5px #7F7F7F");
+            }else{
+                $('#header').css("opacity", 1);
+                $('.center a').css("color", "white");
+                $('.right a').css("color", "white");
+                $('.right a').css("border-color", "white");
+                $('#header').css("background-color", "transparent");
+                $('#header').css("box-shadow", "none");
+            }
+            $('.addons_menu_wrapper').hide();
             $('.member_menu_cart_button').hide();
             $('.member_menu').hide();
+            
             displayCart();
             $(window).bind("mousewheel",function(){
            
@@ -49,6 +66,15 @@
             });
         });
         
+        
+        function normal(){
+            $('.addons_menu_wrapper').hide();
+            $('.overlay').css('display', 'none');
+        }
+        function displayAddOn(){
+            $('.overlay').css('display', 'block');
+            $('.addons_menu_wrapper').show();
+        }
         function expand(){
             $('.member_menu').show();
             $('.wrapper').hide();
@@ -84,6 +110,10 @@
             $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
             $('#add_to_' + product_id).css('padding-left', '10px');
             $('#add_to_' + product_id).css('padding-right', '10px');
+            $('#add_to_' + product_id).css('margin-top', '5px');
+            $('#add_to_' + product_id).css('display', 'inline-block');
+            $('#add_on_item_' + product_id).css('display', 'inline-block');
+            
             var product_id = product_id;
             $.ajax({
                     type : "POST",
@@ -110,6 +140,7 @@
         </script>
     </head>
     <body>
+        <div class="overlay" onclick="normal()"></div>
         <?php if($credit){ ?>
         <div class="member_menu">
             <div class="member_menu_header">
@@ -152,6 +183,9 @@
             </div>
         </div>
         <?php } ?>
+        <div class="addons_menu_wrapper">
+            
+        </div>
       
         <div class="wrapper">  
             <div class="menu_contents">
@@ -249,7 +283,7 @@
                                         <div class="col2 btn">
                                             <a class="button secondary title-3" href="<?php echo base_url(); ?>index.php/Menu/details/<?php echo $product->product_id; ?>">Details</a>
                                         </div>
-                                        <div class="col2 last btn">
+                                        <div class="col2 last btn" style="margin-left:-20px;">
                                             <?php if(!$credit){ ?>
                                             <a class="button primary" onclick="register()">Sign Up to Order</a>
                                             <?php } else { ?>
@@ -263,15 +297,20 @@
                                                     }
                                                 }  ?>
                                             <?php if($exist){ ?>
-                                            <a class="button primary title-4"  onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product->product_price; ?> </a>
-                                            <!-- tambahkan button + gitu ketika if exist ini -->
+                                            <a class="button primary title-4"  id="another_add" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="padding-left : 10px; padding-right : 10px; margin-top : 5px; display : inline-block; ">I'll preorder another . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()">Te</a>
+                
                                             <?php }else { ?>
-                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="display : inline-block;">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()"style="display : none;">Te</a>
                                             <?php } ?>
                                             <?php } else { ?>
-                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="display : inline-block;">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()" style="display : none;">Te</a>
                                             <?php } ?>
                                             <?php } ?>
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,6 @@ class Checkout extends CI_Controller {
             $data['total'] = 0;
 
             $data['cart_content'] = $this->cart->contents();
-            
             $data['user'] = $this->db->get_where('users', array('id' => $this->session->userdata("user_id")))->result();
             
             foreach($data['cart_content'] as $cart){
@@ -34,6 +33,30 @@ class Checkout extends CI_Controller {
             $this->load->view('checkout/checkout.php', $data);
         }
         else{
+            redirect('Home');
+        }
+    }
+    
+    public function success(){
+       
+        if($this->session->userdata("user_id") && count($this->cart->contents()) > 0){
+            
+            foreach($this->cart->contents() as $cart){
+                $input['user_id'] = $this->session->userdata('user_id');
+                $input['product_id'] = $cart['id'];
+                $input['quantity'] = $cart['qty'];
+                $input['price'] = $cart['price'];
+                $input['transaction_status'] = 5;
+                $input['transaction_date'] = date('Y-m-d');
+                $input['delivery_request'] = $this->session->userdata('date');
+                $input['delivery_location'] = $this->session->userdata('deliveryLocation');
+                
+                $this->db->insert('transaction', $input);
+            }
+            $this->cart->destroy();
+            
+            $this->load->view('static_pages/checkoutSuccess.php');
+        }else{
             redirect('Home');
         }
     }

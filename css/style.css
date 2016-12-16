@@ -12,6 +12,9 @@
         width: 100%;
         font-size: 90%;
     }
+    #another_add{
+        width : 90%;
+    }
 
     .title2{
         width: 90%;
@@ -188,7 +191,9 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
 
 
 @media all and (orientation:portrait) {
-    
+    #another_add{
+        width : 90%;
+    }
     .background-image-holder, .background-image-wrapper{
         max-height: none;
         height : 100vh;

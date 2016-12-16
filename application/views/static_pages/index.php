@@ -259,6 +259,7 @@
                                           var result = JSON.parse(result);
                                           var email = result.email;
                                           var password = result.password;
+                                        
                                           $.ajax({
                                                   type : "POST",
                                                   url : "<?php echo base_url(); ?>index.php/Account/login",
@@ -288,15 +289,36 @@
                     url : "<?php echo base_url(); ?>index.php/Account/send_reset_email",
                     data : {email : email},
                     success : function(result){
-                                if(result.result == "true"){
+                                result = JSON.parse(result);
+                                console.log(result);
+                                
+                                if(result.valid == true){
+                                    $('#login_error_messages_2').css('color', 'blue');
                                     $('#login_error_messages_2').html('Information has been sent to your email!');
+                                }else{
+                                    $('#login_error_messages_2').css('color', 'red');
+                                    $('#login_error_messages_2').html(result.email_invalid);
                                 }
                         }
                 });
         }
         
         $(document).ready(function(){
-            
+            if($("body").scrollTop() > 0){
+                $('#header').css("background-color", "white");
+                $('.center a').css("color", "#1A1A1A");
+                $('.right a').css("color", "#1A1A1A");
+                $('.right a').css("border-color", "#1A1A1A");
+                $('#header').css("opacity", "1");
+                $('#header').css("box-shadow", "1px 1px 5px #7F7F7F");
+            }else{
+                $('#header').css("opacity", 1);
+                $('.center a').css("color", "white");
+                $('.right a').css("color", "white");
+                $('.right a').css("border-color", "white");
+                $('#header').css("background-color", "transparent");
+                $('#header').css("box-shadow", "none");
+            }
           
             $('.button').css('z-index', '10000');
             $('.text_link').css('z-index', '100000');

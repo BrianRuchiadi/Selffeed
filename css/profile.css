@@ -793,7 +793,8 @@
      position : relative;
      top : 10px;
  }
- .fixed_button_header{ 
+ .fixed_button_header{
+     display : block;
      outline: none;
      position : relative;
      white-space : nowrap;
@@ -806,7 +807,6 @@
      border-radius : 2px;
      height : 46px;
      line-height : 23px;
-     display : inline-block;
      width : auto;
      padding-left : 3em;
      padding-right : 3em;
@@ -822,5 +822,5 @@
      background-color:#F7F991; 
      border:1px solid #F7F991; 
      font-size : 14px;
-     display : none;
  }
+ 

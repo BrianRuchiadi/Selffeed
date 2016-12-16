@@ -21,7 +21,7 @@
         </style>
         <script>  
             function back(){
-                window.location.replace("<?php echo base_url(); ?>index.php/Menu");
+                window.history.back();
             }
         </script>
     </head>

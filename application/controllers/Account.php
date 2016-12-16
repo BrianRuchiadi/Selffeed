@@ -198,7 +198,6 @@ class Account extends CI_Controller {
             $insert['password'] = $this->input->post('password');
             $insert['salt'] = rand(11111111, 99999999);
             $insert['email'] = $this->input->post('email');
-            $insert['username'] = $this->input->post('first_name');
             $insert['first_name'] = $this->input->post('first_name');
             $insert['last_name'] = $this->input->post('last_name');
             $insert['contact_no'] = $this->input->post('contact_no');
@@ -208,14 +207,12 @@ class Account extends CI_Controller {
             $insert['city'] = $this->input->post('city');
             $insert['state'] = $this->input->post('state');
             $insert['post_code'] = $this->input->post('post_code');
-            
-            $sql = 'INSERT into users (password,salt,email,username,first_name,last_name,contact_no,join_date,address,active,city,state,post_code) values (SHA2(CONCAT(?,?),256),?,?,?,?,?,?,?,?,?,?,?,?)';
+            $sql = 'INSERT into users (password,salt,email,first_name,last_name,contact_no,join_date,address,active,city,state,post_code) values (SHA2(CONCAT(?,?),256),?,?,?,?,?,?,?,?,?,?,?)';
             $this->db->query($sql, array(
                                         $insert['password'],
                                         $insert['salt'],
                                         $insert['salt'],
                                         $insert['email'],
-                                        $insert['username'],
                                         $insert['first_name'],
                                         $insert['last_name'],
                                         $insert['contact_no'],
@@ -226,9 +223,9 @@ class Account extends CI_Controller {
                                         $insert['state'],
                                         $insert['post_code']
                                         ));
-             die(json_encode($insert));
-            $insert['result'] = $this->users->login_verification($insert['email'], $insert['password']);
-  
+            
+            //$insert['result'] = $this->users->login_verification($insert['email'], $insert['password']);
+            die(json_encode($insert));
         }
     }
     
@@ -241,10 +238,11 @@ class Account extends CI_Controller {
             
             $data['result'] = $this->users->get_data_by_email($data['email']);
             $data['count'] = count($data['result']);
-            
+            $data['valid'] = true;
             if($data['count'] == 1){
                $user['new_password'] = rand(1111111,9999999);
                $user['salt'] = rand(11111111, 99999999);
+               //$data['password'] = $user['new_password'];
                
                $sql = 'UPDATE users SET password = SHA2(CONCAT(?,?),256) , salt = ? WHERE email = ?';
                $this->db->query($sql, array(
@@ -255,6 +253,10 @@ class Account extends CI_Controller {
                                             ));
                $this->load->model('Email_Model');
                $data['email'] = $this->Email_Model->sendMail($data['email'], 'Forgot password', "Hi, Our valuable customer, here is your resetted password : {$user['new_password']}, please sign in to change. ");
+            }
+            else{
+                $data['valid'] = false;
+                $data['email_invalid'] = 'User does not exists';
             }
             die(json_encode($data));
         }

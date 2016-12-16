@@ -21,10 +21,7 @@
                             <td> Product Name </td>
                             <td> <input type="text" name="product_name" value="<?php echo $product->product_name; ?>" required> </td>
                         </tr>
-                        <tr>
-                            <td> Product Quantity </td>
-                            <td> <input type="number" name="product_quantity" value="<?php echo $product->product_quantity; ?>" min="0" value="0"> </td>
-                        </tr>
+                       
                         <tr>
                             <td> Product Price </td>
                             <td> <input type="number" name="product_price" value="<?php echo $product->product_price; ?>" step="0.01" min="0" value="0"> </td>

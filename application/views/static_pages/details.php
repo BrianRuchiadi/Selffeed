@@ -28,7 +28,24 @@
         var cart = 0;
         
         $(document).ready(function(){
+            if($("body").scrollTop() > 0){
+                $('#header').css("background-color", "white");
+                $('.center a').css("color", "#1A1A1A");
+                $('.right a').css("color", "#1A1A1A");
+                $('.right a').css("border-color", "#1A1A1A");
+                $('#header').css("opacity", "1");
+                $('#header').css("box-shadow", "1px 1px 5px #7F7F7F");
+            }else{
+                $('#header').css("opacity", 1);
+                $('.center a').css("color", "white");
+                $('.right a').css("color", "white");
+                $('.right a').css("border-color", "white");
+                $('#header').css("background-color", "transparent");
+                $('#header').css("box-shadow", "none");
+            }
+            
             $('.member_menu_cart_button').hide();
+           
             displayCart();
             
             var timer = 200;
@@ -38,22 +55,26 @@
             $(window).scroll(function(){
                
         
-                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 80))
+                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 70))
                 {
-                    console.log('in Zone');
+                            /*
+                    if(parseInt($('#flexible_header').css("top"), 10) < -74){
+                        console.log('enough');
+                    }
+            */
                     if(scroll > $("body").scrollTop()){
                         var topval = parseInt($('#flexible_header').css("top"), 10);
-                        topval = topval + 2;
+                        topval = topval + 1;
                         $('#flexible_header').css("top", topval);
-                        console.log(topval);
+                        //console.log(topval);
                         console.log('up');
                     }
                     
                     else{
                         var topval = parseInt($('#flexible_header').css("top"), 10);
-                        topval = topval- 2;
+                        //topval = topval- 1;
                         $('#flexible_header').css("top", topval);
-                        console.log(topval);
+                        //console.log(topval);
                         console.log("down");
                     }
                     
@@ -122,6 +143,9 @@
             $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
             $('#add_to_' + product_id).css('padding-left', '10px');
             $('#add_to_' + product_id).css('padding-right', '10px');
+            $('#add_to_' + product_id).css('margin-top', '5px');
+            $('#add_to_' + product_id).css('display', 'inline-block');
+            $('#add_on_item_' + product_id).css('display', 'inline-block');
             
             var product_id = product_id;
             $.ajax({
@@ -139,6 +163,11 @@
             });     
         }
         
+        function displayAddOn(){
+            $('.overlay').css('display', 'block');
+            $('.addons_menu_wrapper').show();
+        }
+        
         function sign_in(){
                 window.location.replace('<?php echo base_url(); ?>index.php/Home/index/login');
         }
@@ -151,7 +180,7 @@
         </script>
     </head>
     <body>
-      
+        <div class="overlay"></div>
         <div class="wrapper"> 
  
             
@@ -172,7 +201,7 @@
                                         <div style="position: absolute; left: -8px;top: 0;width: 100%;margin: 0 auto;text-align: center;" id="flexible_header">
                                         <a href="#" style="display:block;">SELFFEED</a>
                                         <?php if(!$credit){ ?>
-                                        <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" onclick="register();">
+                                        <a class="fixed_button_header" style="display : block;" onclick="register();">
                                             Sign up to Order
                                         </a>
                                         <?php } else { ?>
@@ -185,16 +214,14 @@
                                                         }
                                                     }  ?>
                                         <?php if($exist){ ?>
-                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"   onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
-                                                <!-- tambahkan button + gitu ketika if exist ini -->
+                                                <a class="fixed_button_header" style="padding-left : 10px; padding-right : 10px;     font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em; "   onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" >I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
                                                 <?php }else { ?>
-                                                <a class="fixed_button_header"  style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"  id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
                                                 <?php } ?>
                                                 <?php } else { ?>
-                                                <!--
-                                                <div id="sticky-anchor"></div>-->
-                                                <!--id="sticky"--><a class="fixed_button_header"  style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
-                                            
+
+                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"  id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+
                                             <?php } ?>
                                     <?php } ?>
                                         </div>
@@ -294,16 +321,12 @@
                                                 }  ?>
                                     <?php if($exist){ ?>
                                             <a class="button width_auto"  onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
-                                            <!-- tambahkan button + gitu ketika if exist ini -->
                                             <?php }else { ?>
                                             <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
                                             <?php } ?>
                                             <?php } else { ?>
-                                            <!--
-                                            <div id="sticky-anchor"></div>-->
-                                             <!--id="sticky"--><a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
-                                            
-                                            <?php } ?>
+                                            <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                             <?php } ?>
                                     <?php } ?>
                                 </div>
                             </div>

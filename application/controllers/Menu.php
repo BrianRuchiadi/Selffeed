@@ -6,7 +6,6 @@ class Menu extends CI_Controller {
     public function index()
     {  
         $this->load->library('cart');
-        //$this->session->set_userdata("user_id", 13);
         
         $data['credit'] = false;
         $data['cart_full'] = false;
@@ -29,8 +28,10 @@ class Menu extends CI_Controller {
         $this->db->from('products');
         $this->db->join('products_images','products.product_id = products_images.product_id' );
         $this->db->where('product_active = 1');
+        $this->db->where('product_category = "MAIN"');
         
-        $data['products'] = $this->db->get()->result(); 
+        $data['products'] = $this->db->get()->result();
+        $data['add_ons'] = $this->db->get_where('products', array('product_active' => 1, 'product_category' => 'ADDON'))->result();
        
         $this->load->view('static_pages/menu.php', $data);
     }

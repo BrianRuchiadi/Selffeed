@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/index.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/profile.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
@@ -21,18 +20,18 @@
 
         </style>
         <script>  
-            function back(){             
-                window.history.back();
+            function back(){
+                window.location.replace("<?php echo base_url(); ?>index.php/Menu");
             }
         </script>
     </head>
     <body>
         <div class="wrapper">
             <div class="member_menu" id="white">
-                <div class="member_menu_header" id="yellow_header">
+                <div class="member_menu_header" id="black">
                     <div class="left_filler" id="header_left_position">
                         <div class="left_5_percent">
-                            <a class="clickable back" onclick="back()">
+                            <a class="clickable back" href="<?php echo base_url(); ?>index.php/Menu">
                                 <span class="icons-back"></span>
                             </a>
                         </div>
@@ -44,18 +43,16 @@
                     </div>
                     <div class="right_filler"></div>
                 </div>
-                <div class="profile_content">
-                    <h2>Payment</h2>
-                    <div class="payment_description">
-                        <p> Regarding the payment method, Selffeed currently implements Paypal. 
-                        </p>
-                        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark" style="margin : 0 auto; display : block;">
-                        <div class="buttons">
-                            <button class="button" id="black_button" onclick="back()">Back</button>
-                        </div>
+                <div class="faq_content">
+                    <h2>Success</h2>
+                    <p> Congratulations , your purchase have been submitted! </p>
+                    <o> Order status can be checked on <a href="<?php echo base_url(); ?>index.php/Account/orders">Order page</a></p>
+                    <div class="buttons">
+                        <button class="button" id="black_button" onclick="back()">Back to Menu</button>
                     </div>
+                    
                 </div>
-                  <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                <footer style="background-color: black; height: 80px; color: white; text-align: center;">
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">

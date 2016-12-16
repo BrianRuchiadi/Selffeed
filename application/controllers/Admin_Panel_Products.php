@@ -8,7 +8,7 @@ class Admin_Panel_Products extends CI_Controller
         if($this->session->userdata("admin_id")){
             $x = 0;
             $data['number'] = 1;
-            $data['products'] = $this->db->get_where('products', array('product_active' => 1))->result();
+            $data['products'] = $this->db->get_where('products', array('product_category' => 'MAIN'))->result();
        
             if($_POST){
                 foreach($this->input->post('delete') as $delete){        
@@ -68,7 +68,6 @@ class Admin_Panel_Products extends CI_Controller
         
             if($_POST){
                 $product['product_name'] = $this->input->post('product_name');
-                $product['product_quantity'] = $this->input->post('product_quantity');
                 $product['product_price'] = $this->input->post('product_price');
                 $product['product_description'] = $this->input->post('product_description');
                 $product['product_brief_description'] = $this->input->post('product_brief_description');
@@ -128,13 +127,13 @@ class Admin_Panel_Products extends CI_Controller
             {
    
                 $data['product_name'] = $this->input->post('product_name');
-                $data['product_quantity'] = $this->input->post('product_quantity');
                 $data['product_active'] = 1;
                 $data['product_price'] = $this->input->post('product_price');
                 $data['upload_date'] = date("Y-m-d");
                 $data['product_description'] = $this->input->post('product_description');
                 $data['product_brief_description'] = $this->input->post('product_brief_description');
-            
+                $data['product_category'] = "MAIN";
+                
                 $this->db->insert('products',$data);
             
                 $insert_id = $this->db->insert_id();

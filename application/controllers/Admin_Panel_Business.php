@@ -13,7 +13,8 @@ class Admin_Panel_Business  extends CI_Controller{
             
             if($_POST){
                 foreach($this->input->post('delete') as $delete){
-                    $this->delete($delete[x]);
+                    $this->delete($this->input->post('delete')[$x]);
+                    $x++;
                 }
             
                 redirect('Admin_Panel_Business');
