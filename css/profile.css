@@ -219,7 +219,7 @@
 
 #address_content{
     max-width : 500px;
-    height : 1000px;
+    height : 700px;
 }
 
 .address_input{
@@ -808,19 +808,19 @@
      height : 46px;
      line-height : 23px;
      width : auto;
-     padding-left : 3em;
-     padding-right : 3em;
-     background-color : #1a1a1a;
+     padding-left : 10px;
+     padding-right : 10px;
      color : #FFFFFF;
      font-weight : normal;
-     border : 2px solid #1A1A1A;
      cursor : pointer;
      max-width:290px;
      margin:0 auto; 
      margin-top  : 30px;
      height : 46px;
-     background-color:#F7F991; 
-     border:1px solid #F7F991; 
+     background-color:#1a1a1a; 
+     border:1px solid #1a1a1a; 
      font-size : 14px;
+     font-family : 'Open Sans Condensed', sans-serif; 
+     letter-spacing : 0.15em;
  }
  

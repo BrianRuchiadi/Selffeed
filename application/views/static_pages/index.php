@@ -343,8 +343,8 @@
             $(window).scroll(function(){
                 console.log('part_1 ' + $("#part_1").offset().top);
                 console.log('body ' + $("body").scrollTop());
-                $("#part_1").css("opacity",1 -(($("#part_1").offset().top - $("body").scrollTop()) / $("#part_1").offset().top));
-                //$('#part_1').css("opacity",  1 - $(window).scrollTop() / $('.about_us_wrapper').height())
+         
+                $('#part_1').css("opacity",  0 + $(window).scrollTop() / $('.about_us_wrapper').height())
             });
 
             $(window).bind("mousewheel",function(){

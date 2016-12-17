@@ -79,6 +79,7 @@ class Account extends CI_Controller {
             if($_POST){
                 
                 if($this->input->post('main_address') == 1){
+                    
                     $update['address'] = $this->input->post('user_address');
                     $update['state'] = $this->input->post('state');
                     $update['city'] = $this->input->post('user_city');

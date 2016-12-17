@@ -47,7 +47,7 @@
                 <div class="profile_content">
                     <h2>Payment</h2>
                     <div class="payment_description">
-                        <p> Regarding the payment method, Selffeed currently implements Paypal. 
+                        <p> Regarding the payment method, Selffeed accepts Paypal. 
                         </p>
                         <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark" style="margin : 0 auto; display : block;">
                         <div class="buttons">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                  <footer style="background-color: black; height: 80px; color: white; text-align: center;">
+                  <footer>
                     <div style="vertical-align: middle;">
                         <nav class="navbar" style="margin:auto;">
                               <div class="container-fluid" align="center">

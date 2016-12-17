@@ -45,8 +45,8 @@
                 </div>
                 <div class="faq_content">
                     <h2>Success</h2>
-                    <p> Congratulations , your purchase have been submitted! </p>
-                    <o> Order status can be checked on <a href="<?php echo base_url(); ?>index.php/Account/orders">Order page</a></p>
+                    <p> Congratulations , your purchase have been submitted! <br>
+                     Order status can be checked on <a href="<?php echo base_url(); ?>index.php/Account/orders" style="color : black;">Order page</a></p>
                     <div class="buttons">
                         <button class="button" id="black_button" onclick="back()">Back to Menu</button>
                     </div>

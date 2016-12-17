@@ -30,66 +30,76 @@
         $(document).ready(function(){
             if($("body").scrollTop() > 0){
                 $('#header').css("background-color", "white");
-                $('.center a').css("color", "#1A1A1A");
+                $('#title').css("color", "#1A1A1A");
                 $('.right a').css("color", "#1A1A1A");
                 $('.right a').css("border-color", "#1A1A1A");
                 $('#header').css("opacity", "1");
                 $('#header').css("box-shadow", "1px 1px 5px #7F7F7F");
+                
             }else{
                 $('#header').css("opacity", 1);
-                $('.center a').css("color", "white");
+                $('#title').css("color", "white");
                 $('.right a').css("color", "white");
                 $('.right a').css("border-color", "white");
                 $('#header').css("background-color", "transparent");
                 $('#header').css("box-shadow", "none");
             }
-            
+            $('.addons_menu_wrapper').hide();
             $('.member_menu_cart_button').hide();
            
             displayCart();
             
-            var timer = 200;
-            var scroll = 0;
-            var direction = 'down';
+            var headerType = $('#no_move').size();
+            var scrollTimeout = 10;
+            var lastPosition = 0;
+            var currentPosition = 0;
+            var scrollDirection = 'down';
             
-            $(window).scroll(function(){
-               
-        
-                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 70))
-                {
-                            /*
-                    if(parseInt($('#flexible_header').css("top"), 10) < -74){
-                        console.log('enough');
+            if(headerType == 0){
+                $(window).scroll(function(){
+                    currentPosition = $("body").scrollTop();
+                    if(currentPosition > lastPosition){
+                        scrollDirection = 'down';
+                    }else{
+                        scrollDirection = 'up';
                     }
-            */
-                    if(scroll > $("body").scrollTop()){
-                        var topval = parseInt($('#flexible_header').css("top"), 10);
-                        topval = topval + 1;
-                        $('#flexible_header').css("top", topval);
-                        //console.log(topval);
-                        console.log('up');
-                    }
-                    
-                    else{
-                        var topval = parseInt($('#flexible_header').css("top"), 10);
-                        //topval = topval- 1;
-                        $('#flexible_header').css("top", topval);
-                        //console.log(topval);
-                        console.log("down");
-                    }
-                    
-                    scroll = $("body").scrollTop();
-                }
                 
-              // button width auto 65 6
-            });
+                    if(scrollTimeout){
+                        window.clearTimeout(scrollTimeout);
+                    }
+                    scrollTimeout = window.setTimeout(moveable_part, 10);
+               
+                    lastPosition = currentPosition;
+                });
+            }
+            function moveable_part(){
+                
+                if($("body").scrollTop() <= ($(".button.width_auto").offset().top - 6) && $("body").scrollTop() >= ($(".button.width_auto").offset().top - 75))
+                {   
+                          
+                    if(scrollDirection == 'down'){
+                        var base = $(".button.width_auto").offset().top - $("body").scrollTop() ;
+                        var position = base - 80;
+                        $('#flexible_header').css("top", position);
+                    }else{
+                        var base = $(".button.width_auto").offset().top - 70 - $("body").scrollTop() ;
+                        var position = base;
+                        $('#flexible_header').css("top", position);
+                    }  
+                    
+                }else if($("body").scrollTop() < $(".button.width_auto").offset().top){
+                        $('#flexible_header').css("top", 0);    
+                }else if($("body").scrollTop() > $(".button.width_auto").offset().top){
+                        $('#flexible_header').css("top", "-74px"); 
+                }
+            }   
             
             $(window).bind("mousewheel",function(){
                
                                
                 if($(document).scrollTop() > 0){
                     $('#header').css("background-color", "white");
-                    $('.center a').css("color", "#1A1A1A");
+                    $('#title').css("color", "#1A1A1A");
                     $('.right a').css("color", "#1A1A1A");
                     $('.right a').css("border-color", "#1A1A1A");
                     $('#header').css("opacity", "1");
@@ -98,29 +108,25 @@
                 }
                 else{
                     $('#header').css("opacity", 1);
-                    $('.center a').css("color", "white");
+                    $('#title').css("color", "white");
                     $('.right a').css("color", "white");
                     $('.right a').css("border-color", "white");
                     $('#header').css("background-color", "transparent");
                     $('#header').css("box-shadow", "none");
                     $('.clickable.back').css("border", "none");
                 }
-                /*
-                var window_top = $('#header').offset().top;
-                var div_top = $('#sticky-anchor').offset().top;
-                if (window_top >= div_top) {
-                        //up
-                        $('#sticky').addClass('stick');  
-                   
-                } else {
-                        //down
-                        $('#sticky').removeClass('stick');
-                    
-                }
-                */
+
             });
         });
         
+        function normal(){
+            $('.addons_menu_wrapper').hide();
+            $('.overlay').css('display', 'none');
+        }
+        function displayAddOn(){
+            $('.overlay').css('display', 'block');
+            $('.addons_menu_wrapper').show();
+        }
         function displayCart(){
             var input = '';
             $.ajax({
@@ -139,14 +145,25 @@
         
         function addToCart(product_id, product_price){
             cart += 1;
-            
+           
             $('#add_to_' + product_id).html("I'll preorder another . MYR " + product_price);
             $('#add_to_' + product_id).css('padding-left', '10px');
             $('#add_to_' + product_id).css('padding-right', '10px');
-            $('#add_to_' + product_id).css('margin-top', '5px');
-            $('#add_to_' + product_id).css('display', 'inline-block');
-            $('#add_on_item_' + product_id).css('display', 'inline-block');
             
+            $('#add_to_' + product_id + '_' + product_id).html("I'll preorder another . MYR " + product_price);
+            $('#add_to_' + product_id + '_' + product_id).css('max-width', '255px');
+            $('#add_to_' + product_id + '_' + product_id).css('right', '-5px');
+            $('#add_to_' + product_id + '_' + product_id).css('display', 'inline-block');
+            
+            $('#add_on_item_' + product_id).css('display', 'inline-block');
+            $('#add_on_item_' + product_id).css('height', '46px');
+            $('#add_on_item_' + product_id).css('width', '10px');
+            $('#add_on_item_' + product_id).css('margin-bottom', '0');
+            $('#add_on_item_' + product_id).css('padding', '0.7em 1em');
+            
+            $('#add_on_item2_' + product_id).css('display', 'inline-block');
+            $('#add_on_item2_' + product_id).css('height', '46px');
+           
             var product_id = product_id;
             $.ajax({
                     type : "POST",
@@ -166,6 +183,7 @@
         function displayAddOn(){
             $('.overlay').css('display', 'block');
             $('.addons_menu_wrapper').show();
+            $('#flexible_header').css("top", "0");
         }
         
         function sign_in(){
@@ -180,11 +198,41 @@
         </script>
     </head>
     <body>
-        <div class="overlay"></div>
+        <div class="overlay" onclick="normal()"></div>
+        <div class="addons_menu_wrapper">
+            <div class="addons_header"><h1>Add Ons</h1></div>
+            <div class="addons_content">
+                <ul>
+                    <?php foreach($add_ons as $add){ ?>
+                    <li class="addons_box">
+                        <div class="addons_image_box_wrapper">
+                            <div class="addons_image" style="background-image : url(../../..//<?php echo $add->product_image; ?>)"></div>
+                        </div>
+                        
+                        <div class="addons_description_wrapper">
+                            
+                            <div class="addons_name">
+                                <?php echo $add->product_name; ?>
+                            </div>
+                            
+                            <div class="addons_price">
+                                <?php echo number_format($add->product_price,2); ?> MYR
+                            </div>
+                            
+                            <div class="addons_button_wrapper">
+                                <div class="addons_button" onclick="addToCart(<?php echo $add->product_id; ?>, <?php echo $add->product_price; ?>)">Add </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <?php } ?>
+                
+                </ul>
+            </div>
+        </div>
+
         <div class="wrapper"> 
- 
-            
-            
+   
             <div class="menu_details_contents">
                 <div class="page">
                     <div id="menu-item" class="fullscreen">
@@ -198,10 +246,10 @@
                                         </a>
                                     </div>
                                     <div class="center">
-                                        <div style="position: absolute; left: -8px;top: 0;width: 100%;margin: 0 auto;text-align: center;" id="flexible_header">
-                                        <a href="#" style="display:block;">SELFFEED</a>
+                                        <div style="position: absolute; left: -11px;top: 0;width: 100%;margin: 0 auto;text-align: center;" id="flexible_header">
+                                        <a href="#" style="display:block;" id="title">SELFFEED</a>
                                         <?php if(!$credit){ ?>
-                                        <a class="fixed_button_header" style="display : block;" onclick="register();">
+                                        <a class="fixed_button_header" style="display : block;" onclick="register();" id="no_move">
                                             Sign up to Order
                                         </a>
                                         <?php } else { ?>
@@ -214,14 +262,16 @@
                                                         }
                                                     }  ?>
                                         <?php if($exist){ ?>
-                                                <a class="fixed_button_header" style="padding-left : 10px; padding-right : 10px;     font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em; "   onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" >I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="fixed_button_header" style="max-width : 255px; font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em; right: -5px; display : inline-block; color : white;"   onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" >I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="button primary title-4" style="height:46px; width : 10px; margin-bottom : 0; padding : 0.7em 1em; " id="add_on_item_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                                 <?php }else { ?>
-                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em; color : white;" id="add_to_<?php echo $product[0]->product_id; ?>_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="button primary title-4" style="display : none;" id="add_on_item_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                                 <?php } ?>
                                                 <?php } else { ?>
 
-                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em;"  id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
-
+                                                <a class="fixed_button_header" style="font-family : 'Open Sans Condensed', sans-serif; letter-spacing : 0.15em; color : white;" id="add_to_<?php echo $product[0]->product_id; ?>_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                                <a class="button primary title-4" style="display : none;" id="add_on_item_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                             <?php } ?>
                                     <?php } ?>
                                         </div>
@@ -230,7 +280,7 @@
                                          <?php if(!$credit){ ?>
                                          <a href="#" onclick="sign_in()">Sign In</a>
                                          <?php } else { ?>
-                                          <a href="<?php echo base_url(); ?>index.php/Checkout">
+                                          <a href="<?php echo base_url(); ?>index.php/Checkout" style="border:none;">
                                               <div class="member_menu_cart_button">
                                                 <div class="number_display" id="cart_quantity"></div>
                                               </div>
@@ -311,7 +361,7 @@
                                         Sign up to Order
                                     </a>
                                     <?php } else { ?>
-                                                          <?php if($cart_full){ 
+                                        <?php if($cart_full){ 
                                                 $exist = false;
                                                 foreach($this->cart->contents() as $cart){
                                               
@@ -321,11 +371,14 @@
                                                 }  ?>
                                     <?php if($exist){ ?>
                                             <a class="button width_auto"  onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);" style="padding-left : 10px; padding-right : 10px;">I'll preorder another . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <a class="button primary title-4 ref" style="height:46px;" id="add_on_item2_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                             <?php }else { ?>
                                             <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <a class="button primary title-4 ref" style="display : none;" id="add_on_item2_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                             <?php } ?>
                                             <?php } else { ?>
                                             <a class="button width_auto" id="add_to_<?php echo $product[0]->product_id; ?>" onclick="addToCart(<?php echo $product[0]->product_id; ?>, <?php echo $product[0]->product_price; ?>);">I'll preorder this . MYR <?php echo $product[0]->product_price; ?> </a>
+                                            <a class="button primary title-4 ref" style="display : none;" id="add_on_item2_<?php echo $product[0]->product_id; ?>" onclick="displayAddOn()"></a>
                                              <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -356,7 +409,7 @@
                                     <?php echo $ingredient->name; ?> , 
                                    <?php } ?>
                                 </p>
-                                <div class="the-list" id="adjustable-height" style="text-align: center;">
+                                <div class="the-list" id="adjustable-height">
                                     <ul>
                                         <?php foreach($ingredients as $ingredient){ ?>
                                         <li><div class="list_image" style="background-image : url(../../.<?php echo $ingredient->picture; ?>)"></div>

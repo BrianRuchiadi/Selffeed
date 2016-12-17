@@ -31,8 +31,15 @@ class Menu extends CI_Controller {
         $this->db->where('product_category = "MAIN"');
         
         $data['products'] = $this->db->get()->result();
-        $data['add_ons'] = $this->db->get_where('products', array('product_active' => 1, 'product_category' => 'ADDON'))->result();
-       
+        
+        $this->db->select('*');
+        $this->db->from('products');
+        $this->db->join('products_images','products.product_id = products_images.product_id' );
+        $this->db->where('product_active = 1');
+        $this->db->where('product_category = "ADDON"');
+        
+        $data['add_ons'] = $this->db->get()->result();
+
         $this->load->view('static_pages/menu.php', $data);
     }
     
@@ -71,6 +78,14 @@ class Menu extends CI_Controller {
                 $data['ingredients'] = $this->db->get()->result();
                 $data['ingredient_exists'] = true;
             }
+            
+            $this->db->select('*');
+            $this->db->from('products');
+            $this->db->join('products_images','products.product_id = products_images.product_id' );
+            $this->db->where('product_active = 1');
+            $this->db->where('product_category = "ADDON"');
+        
+            $data['add_ons'] = $this->db->get()->result();
         }else{
             redirect('Menu');
         }

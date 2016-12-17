@@ -274,6 +274,9 @@ li{
 
 }
 
+#p1, #p2{
+    opacity : 0;
+}
 .about_us_wrapper{
     position : relative;
     height : 100vh;
@@ -1315,7 +1318,7 @@ a.button.primary:hover, .button.primary:hover{
 .the-list ul li{
     position : relative;
     display : inline-block;
-    min-width : 100px;
+    min-width : 120px;
     min-height : 120px;
     width : 20%;
     height : 30%;
@@ -1447,7 +1450,7 @@ a.button.primary:hover, .button.primary:hover{
 }
 
 .member_menu_cart_button{
-    position : absolute;
+    position : relative;
     top : -15px;
     right : 5%;
     display : inline-block;
@@ -1660,12 +1663,85 @@ footer{
     display: block;
     position: fixed;
     height: 100vh;
-    width: 35%;
+    width: 400px;
     right: 0;
-    background-color: black;
+    background-color: #f7f7f7;
     z-index: 100000;
+    overflow : auto;
+}
+.addons_header{
+    height : 70px;
+    width : 100%;
+    position : relative;
+    background-color : #1a1a1a;
 }
 
+.addons_header h1{
+    font-family : 'Amaranth', sans-serif;
+    color : white;
+    margin : 0;
+    padding-top : 25px;
+    font-size : 16px;
+    letter-spacing : 0.04em;
+}
+
+.addons_box{
+    margin-left : 5px;
+    margin-top : 10px;
+    margin-bottom: 10px;
+    display : inline-block;
+    width : 47%;
+    height : 270px;
+}
+
+.addons_image{
+    background-image : url(../Image/products/honeydew.jpg);
+    background-repeat : no-repeat;
+    background-position : center;
+    background-size : 100%;
+    height : 100%;
+    width : 100%;
+}
+
+.addons_image_box_wrapper{
+    width : 80%;
+    margin : 0 auto;
+    margin-top : 10px;
+    height : 60%;
+}
+
+.addons_description_wrapper{
+    width : 100%;
+    margin : 0 auto;
+    margin-top : 10px;
+    height : 35%;
+    position : relative;
+}
+
+.addons_name, .addons_price{
+    display : inherit;
+    text-align : center;
+    font-family : 'Amaranth', sans-serif;
+    text-transform: uppercase;
+    font-size : 14px;
+}
+
+.addons_button{
+    width :60px;
+    margin : 0 auto;
+    border-radius : 4px;
+    color: white;
+    background-color: #1a1a1a;
+    padding : 8px 15px;
+    text-transform : uppercase;
+    font-family : 'Amaranth', sans-serif;
+    font-size : 14px;
+    letter-spacing : 0.1em;
+}
+
+.addons_button:hover{
+    cursor : pointer;
+}
 .overlay{
     background-color: #000;
     bottom: 0;
@@ -1676,10 +1752,25 @@ footer{
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 99;
+    z-index: 100000;
 }
-
-[id^="add_on_item_"]{
+.addons_button_wrapper{
+    position : absolute;
+    display : block;
+    height : 50px;
+    width : 100%;
+    bottom : 0;
+}
+[id^="add_on_item_"], [id^="add_on_item2_"]{
     display : inline-block;
     width : 10%;
+    background-image : url(../Image/add.png);
+    background-position : center;
+    background-size : 20px;
+    background-repeat : no-repeat;
+}
+
+
+[id^="add_to_"]:hover,  .button.width_auto:hover{
+    background-color : #1a1a1a;
 }

@@ -184,7 +184,35 @@
         </div>
         <?php } ?>
         <div class="addons_menu_wrapper">
-            
+            <div class="addons_header"><h1>Add Ons</h1></div>
+            <div class="addons_content">
+                <ul>
+                    <?php foreach($add_ons as $add){ ?>
+                    <li class="addons_box">
+                        <div class="addons_image_box_wrapper">
+                            <div class="addons_image" style="background-image : url(.<?php echo $add->product_image; ?>)"></div>
+                        </div>
+                        
+                        <div class="addons_description_wrapper">
+                            
+                            <div class="addons_name">
+                                <?php echo $add->product_name; ?>
+                            </div>
+                            
+                            <div class="addons_price">
+                                <?php echo number_format($add->product_price,2); ?> MYR
+                            </div>
+                            
+                            <div class="addons_button_wrapper">
+                                <div class="addons_button" onclick="addToCart(<?php echo $add->product_id; ?>, <?php echo $add->product_price; ?>)">Add </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <?php } ?>
+                
+                </ul>
+            </div>
         </div>
       
         <div class="wrapper">  
@@ -198,13 +226,13 @@
                                 <?php } ?>
                             </div>
                             <div class="center">
-                                <a href="/">SELFFEED</a>
+                                <a href="#">SELFFEED</a>
                             </div>
                             <div class="right">
                                 <?php if(!$credit){ ?>
                                 <a onclick="sign_in();">Sign In</a>
                                 <?php } else { ?>
-                                <a href="<?php echo base_url(); ?>index.php/Checkout">
+                                <a href="<?php echo base_url(); ?>index.php/Checkout" style="border:none">
                                     <div class="member_menu_cart_button">
                                         <div class="number_display" id="cart_quantity"></div>
                                     </div>
@@ -298,15 +326,15 @@
                                                 }  ?>
                                             <?php if($exist){ ?>
                                             <a class="button primary title-4"  id="another_add" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="padding-left : 10px; padding-right : 10px; margin-top : 5px; display : inline-block; ">I'll preorder another . MYR <?php echo $product->product_price; ?> </a>
-                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()">Te</a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()"></a>
                 
                                             <?php }else { ?>
-                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="display : inline-block;">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
-                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()"style="display : none;">Te</a>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" >I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()" style="display : none;"></a>
                                             <?php } ?>
                                             <?php } else { ?>
-                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);" style="display : inline-block;">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
-                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()" style="display : none;">Te</a>
+                                            <a class="button primary title-4" id="add_to_<?php echo $product->product_id; ?>" onclick="addToCart(<?php echo $product->product_id; ?>, <?php echo $product->product_price; ?>);">I'll preorder this . MYR <?php echo $product->product_price; ?> </a>
+                                            <a class="button primary title-4" id="add_on_item_<?php echo $product->product_id; ?>" onclick="displayAddOn()" style="display : none;"></a>
                                             <?php } ?>
                                             <?php } ?>
                                             

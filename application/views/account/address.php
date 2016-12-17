@@ -90,31 +90,30 @@
                             <!--<table class="address_input" align="center">-->
                             <?php foreach($user as $user){ ?>
                                 <label for="address">Full Address:</label>
-                                <input type="textarea" style="width: 100%"  name="user_address" value="<?php echo $user->address; ?>" /> 
+                                <textarea style="width: 100%"  name="user_address"> <?php echo $user->address; ?> 
+                                </textarea>
 
                                 <label for="city">City:</label> 
                                 <input type="text" style="width: 100%" name="user_city" value="<?php echo $user->city; ?>" /> 
 
                                 <label for="state">State:</label> 
-                                <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%">Choose State
-                                  <span class="caret"></span></button>
+                                <select name="state">
                                   <ul class="dropdown-menu">
                                     <option value="johor" <?php if($user->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
-                                            <option value="kedah" <?php if($user->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
-                                            <option value="kelantan" <?php if($user->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
-                                            <option value="malacca" <?php if($user->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
-                                            <option value="negeri_sembilan" <?php if($user->state == 'negeri_sembilan'){ ?> selected <?php } ?>> Negeri Sembilan </option>
-                                            <option value="pahang" <?php if($user->state == 'pahang'){ ?> selected <?php } ?>> Pahang </option>
-                                            <option value="penang" <?php if($user->state == 'penang'){ ?> selected <?php } ?>> Penang </option>
-                                            <option value="perak" <?php if($user->state == 'perak'){ ?> selected <?php } ?>> Perak </option>
-                                            <option value="perlis" <?php if($user->state == 'perlis'){ ?> selected <?php } ?>> Perlis </option>
-                                            <option value="sabah" <?php if($user->state == 'sabah'){ ?> selected <?php } ?>> Sabah </option>
-                                            <option value="sarawak" <?php if($user->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
-                                            <option value="selangor" <?php if($user->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
+                                    <option value="kedah" <?php if($user->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
+                                    <option value="kelantan" <?php if($user->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
+                                    <option value="malacca" <?php if($user->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
+                                    <option value="negeri_sembilan" <?php if($user->state == 'negeri_sembilan'){ ?> selected <?php } ?>> Negeri Sembilan </option>
+                                    <option value="pahang" <?php if($user->state == 'pahang'){ ?> selected <?php } ?>> Pahang </option>
+                                    <option value="penang" <?php if($user->state == 'penang'){ ?> selected <?php } ?>> Penang </option>
+                                    <option value="perak" <?php if($user->state == 'perak'){ ?> selected <?php } ?>> Perak </option>
+                                    <option value="perlis" <?php if($user->state == 'perlis'){ ?> selected <?php } ?>> Perlis </option>
+                                    <option value="sabah" <?php if($user->state == 'sabah'){ ?> selected <?php } ?>> Sabah </option>
+                                    <option value="sarawak" <?php if($user->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
+                                    <option value="selangor" <?php if($user->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
                                             <option value="terengganu" <?php if($user->state == 'terengganu'){ ?> selected <?php } ?>> Terengganu </option>
                                   </ul>
-                                </div> 
+                                </select> 
 
                                 <label for="postcode">Post Code:</label>
                                 <input type="number" style="width: 100% " size="6" name="user_post_code" value="<?php echo $user->post_code; ?>" /> 
@@ -132,64 +131,60 @@
                         </div>                  
                         <div class="homeAddress">
                             <form method="POST">
-                            <table class="address_input">
               
-                                <tr>
-                                    <td> Full Address </td>
-                                    <td> <textarea name="user_address"><?php echo ''.($homeAddress == true ? $homeData->address : ''); ?></textarea> </td>
-                                </tr> 
-                                <tr>
-                                    <td> City </td>
-                                    <td> <input type="text" name="user_city" value="<?php echo ''.($homeAddress == true ? $homeData->city : ''); ?>"> </td>
-                                </tr>
-                                <tr>
-                                    <td> State</td>
-                                    <td> <select name="state">
-                                            <option value="johor" <?php if($homeAddress == true && $homeData->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
-                                            <option value="kedah" <?php if($homeAddress == true && $homeData->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
-                                            <option value="kelantan" <?php if($homeAddress == true && $homeData->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
-                                            <option value="malacca" <?php if($homeAddress == true && $homeData->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
-                                            <option value="negeri_sembilan" <?php if($homeAddress == true && $homeData->state == 'negeri_sembilan'){ ?> selected <?php } ?>> Negeri Sembilan </option>
-                                            <option value="pahang" <?php if($homeAddress == true && $homeData->state == 'pahang'){ ?> selected <?php } ?>> Pahang </option>
-                                            <option value="penang" <?php if($homeAddress == true && $homeData->state == 'penang'){ ?> selected <?php } ?>> Penang </option>
-                                            <option value="perak" <?php if($homeAddress == true && $homeData->state == 'perak'){ ?> selected <?php } ?>> Perak </option>
-                                            <option value="perlis" <?php if($homeAddress == true && $homeData->state == 'perlis'){ ?> selected <?php } ?>> Perlis </option>
-                                            <option value="sabah" <?php if($homeAddress == true && $homeData->state == 'sabah'){ ?> selected <?php } ?>> Sabah </option>
-                                            <option value="sarawak" <?php if($homeAddress == true && $homeData->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
-                                            <option value="selangor" <?php if($homeAddress == true && $homeData->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
-                                            <option value="terengganu" <?php if($homeAddress == true && $homeData->state == 'terengganu'){ ?> selected <?php } ?>> Terengganu </option>
-                                        </select> </td>
-                                </tr>
-                                <tr>
-                                    <td> Post Code </td>
-                                    <td> <input type="number" size="6" name="user_post_code" value="<?php echo ''.($homeAddress == true ? $homeData->postcode : ''); ?>"> </td>
-                                </tr>
+                                <label for="address">Full Address:</label>
+                                <textarea style="width: 100%"  name="user_address"> <?php echo ''.($homeAddress == true ? $homeData->address : ''); ?>
+                                </textarea>
+                                
+                                <label for="city">City:</label> 
+                                <input type="text" style="width: 100%" name="user_city" value="<?php echo ''.($homeAddress == true ? $homeData->city : ''); ?>" /> 
+                                
+                                <label for="state">State:</label> 
+                                <select name="state">
+                                  <ul class="dropdown-menu">
+                                    <option value="johor" <?php if($homeAddress == true && $homeData->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
+                                    <option value="kedah" <?php if($homeAddress == true && $homeData->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
+                                    <option value="kelantan" <?php if($homeAddress == true && $homeData->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
+                                    <option value="malacca" <?php if($homeAddress == true && $homeData->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
+                                    <option value="negeri_sembilan" <?php if($homeAddress == true && $homeData->state == 'negeri_sembilan'){ ?> selected <?php } ?>> Negeri Sembilan </option>
+                                    <option value="pahang" <?php if($homeAddress == true && $homeData->state == 'pahang'){ ?> selected <?php } ?>> Pahang </option>
+                                    <option value="penang" <?php if($homeAddress == true && $homeData->state == 'penang'){ ?> selected <?php } ?>> Penang </option>
+                                    <option value="perak" <?php if($homeAddress == true && $homeData->state == 'perak'){ ?> selected <?php } ?>> Perak </option>
+                                    <option value="perlis" <?php if($homeAddress == true && $homeData->state == 'perlis'){ ?> selected <?php } ?>> Perlis </option>
+                                    <option value="sabah" <?php if($homeAddress == true && $homeData->state == 'sabah'){ ?> selected <?php } ?>> Sabah </option>
+                                    <option value="sarawak" <?php if($homeAddress == true && $homeData->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
+                                    <option value="selangor" <?php if($homeAddress == true && $homeData->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
+                                    <option value="terengganu" <?php if($homeAddress == true && $homeData->state == 'terengganu'){ ?> selected <?php } ?>> Terengganu </option>
+                                  </ul>
+                                </select>
+                                
+                                <label for="postcode">Post Code:</label>
+                                <input type="number" style="width: 100% " size="6" name="user_post_code" value="<?php echo ''.($homeAddress == true ? $homeData->postcode : ''); ?>" /> 
+                                
                                 <tr>
                                     <td colspan="2"><div class="buttons_margin_50">
-                                            <button class="button" id="black_button" type="submit">Save Profile</button>
+                                            <button class="button" id="black_button" type="submit">Save Address</button>
                                             <a class="change_text" id="black_text" href="<?php echo base_url(); ?>index.php/Menu">Cancel</a>
                                         </div></td>
                                 </tr>
                                 <input type="hidden" name="home_address" value="1">
-                            </table>
                             </form>
                         </div>
                         <div class="workAddress">
                             <form method="POST">
-                            <table class="address_input">
-              
-                                <tr>
-                                    <td> Full Address </td>
-                                    <td> <textarea name="user_address"><?php echo ''.($workAddress == true ? $workData->address : ''); ?></textarea> </td>
-                                </tr> 
-                                <tr>
-                                    <td> City </td>
-                                    <td> <input type="text" name="user_city" value="<?php echo ''.($workAddress == true ? $workData->city : ''); ?>"> </td>
-                                </tr>
-                                <tr>
-                                    <td> State</td>
-                                    <td> <select name="state">
-                                            <option value="johor" <?php if($workAddress == true && $workData->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
+                          
+                                
+                                <label for="address">Full Address:</label>
+                                <textarea style="width: 100%"  name="user_address"> <?php echo ''.($workAddress == true ? $workData->address : ''); ?>
+                                </textarea>
+                                
+                                <label for="city">City:</label> 
+                                <input type="text" style="width: 100%" name="user_city" value="<?php echo ''.($workAddress == true ? $workData->city : ''); ?>" /> 
+                                
+                                <label for="state">State:</label> 
+                                <select name="state">
+                                  <ul class="dropdown-menu">
+                                   <option value="johor" <?php if($workAddress == true && $workData->state == 'johor'){ ?> selected <?php } ?>> Johor </option>
                                             <option value="kedah" <?php if($workAddress == true && $workData->state == 'kedah'){ ?> selected <?php } ?>> Kedah </option>
                                             <option value="kelantan" <?php if($workAddress == true && $workData->state == 'kelantan'){ ?> selected <?php } ?>> Kelantan </option>
                                             <option value="malacca" <?php if($workAddress == true && $workData->state == 'malacca'){ ?> selected <?php } ?>> Malacca </option>
@@ -202,15 +197,15 @@
                                             <option value="sarawak" <?php if($workAddress == true && $workData->state == 'sarawak'){ ?> selected <?php } ?>> Sarawak </option>
                                             <option value="selangor" <?php if($workAddress == true && $workData->state == 'selangor'){ ?> selected <?php } ?>> Selangor </option>
                                             <option value="terengganu" <?php if($workAddress == true && $workData->state == 'terengganu'){ ?> selected <?php } ?>> Terengganu </option>
-                                        </select> </td>
-                                </tr>
-                                <tr>
-                                    <td> Post Code </td>
-                                    <td> <input type="number" size="6" name="user_post_code" value="<?php echo ''.($workAddress == true ? $workData->postcode : ''); ?>"> </td>
-                                </tr>
+                                  </ul>
+                                </select>
+                                
+                                <label for="postcode">Post Code:</label>
+                                <input type="number" style="width: 100% " size="6" name="user_post_code" value="<?php echo ''.($workAddress == true ? $workData->postcode : ''); ?>" /> 
+ 
                                 <tr>
                                     <td colspan="2"><div class="buttons_margin_50">
-                                            <button class="button" id="black_button" type="submit">Save Profile</button>
+                                            <button class="button" id="black_button" type="submit">Save Address</button>
                                             <a class="change_text" id="black_text" href="<?php echo base_url(); ?>index.php/Menu">Cancel</a>
                                         </div></td>
                                 </tr>

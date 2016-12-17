@@ -11,7 +11,7 @@ class Paypal_Model extends CI_Model {
         $this->password = "GWMH3V6G3VHYLEBB";
         $this->signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31ADIr30Bs7fN-Na5C2GCbQkdsAerm";
         $this->return_url = "http://localhost/selffeed/index.php/Checkout/success";
-        $this->cancel_url = "http://localhost/selffeed/index.php/Home/";
+        $this->cancel_url = "http://localhost/selffeed/index.php/Checkout/";
         $this->endpoint = "https://api-3t.sandbox.paypal.com/nvp?";
     }
 

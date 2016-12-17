@@ -39,6 +39,7 @@ class Checkout extends CI_Controller {
     
     public function success(){
        
+        $this->load->library('cart');
         if($this->session->userdata("user_id") && count($this->cart->contents()) > 0){
             
             foreach($this->cart->contents() as $cart){
