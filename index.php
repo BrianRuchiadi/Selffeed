@@ -4,7 +4,7 @@ $maintenance = true; ## set to true to enable
 
 if ($maintenance)
 {
-    if (isset( $_SERVER['REMOTE_ADDR']) and $_SERVER['REMOTE_ADDR'] == '180.242.117.43')
+    if (isset( $_SERVER['REMOTE_ADDR']) and $_SERVER['REMOTE_ADDR'] == '61.6.88.249')
     {
         ##do nothing
     } else

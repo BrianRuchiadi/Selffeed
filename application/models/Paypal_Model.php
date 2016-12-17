@@ -7,12 +7,13 @@ class Paypal_Model extends CI_Model {
 
         // parameters
 
-        $this->username = "ruchiadibrian-facilitator_api1.yahoo.com";
-        $this->password = "GWMH3V6G3VHYLEBB";
-        $this->signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31ADIr30Bs7fN-Na5C2GCbQkdsAerm";
+        $this->username = "reece_api1.selfFeed.co"; //"ruchiadibrian-facilitator_api1.yahoo.com";
+        $this->password = "T8EDAHKQLGF37ZA5";  //"GWMH3V6G3VHYLEBB";
+        $this->signature = "AFcWxV21C7fd0v3bYYYRCpSSRI31A0mSLwEApM-Z62.L.8ekF6o4kJMW"; //"AFcWxV21C7fd0v3bYYYRCpSSRl31ADIr30Bs7fN-Na5C2GCbQkdsAerm";
         $this->return_url = "http://localhost/selffeed/index.php/Checkout/success";
         $this->cancel_url = "http://localhost/selffeed/index.php/Checkout/";
-        $this->endpoint = "https://api-3t.sandbox.paypal.com/nvp?";
+        $this->endpoint = "https://api-3t.paypal.com/nvp";// "https://api-3t.sandbox.paypal.com/nvp?"; 
+
     }
 
     public function setExpressCheckout($checkout) {
@@ -47,8 +48,8 @@ class Paypal_Model extends CI_Model {
         $result = urldecode($result);
         echo $result;
         echo "<hr />";
-        parse_str($result);
 
+        die(var_dump($result));
         if (strtoupper($ACK) == "SUCCESS") {
             $link = $this->getExpressCheckoutDetails($TOKEN);
             $ch = curl_init($link);

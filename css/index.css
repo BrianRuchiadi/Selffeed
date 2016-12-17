@@ -303,15 +303,25 @@ li{
         height:100vh;
         opacity : 0.7;
     }
+        
+ 
     .about_us_wrapper p{
         opacity : 1;
         font-size : 40px;
     }
     #part_1{
-        margin-top : 5vh;
+        height : 40vh;
+        font-size : 160%;
+        opacity : 1;
     }
     #part_2{
         margin-top : 10vh;
+        font-size : 160%;
+        height : 40vh;
+        opacity : 1;
+    }
+    #second_arrangement{
+        display : none;
     }
 }
 .about_menu_wrapper{
@@ -388,7 +398,21 @@ li{
 
 @media all and (orientation:portrait) {
     .button_arrangement{
-        z-index: 2;
+        z-index: 2;    
+    }
+    
+    .center{
+        height : 120px;
+    } 
+    .wrapper{
+        overflow-x : hidden;
+    }
+    
+    .title2{
+        line-height: 1.2em;
+    }
+    #first_arrangement{
+        font-size : 100%;
     }
     .centered-content{
         width : 100vw;

@@ -9,6 +9,7 @@
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     
+
     .col2.last.btn{
         position : relative;
         top : -12px;
@@ -29,6 +30,8 @@
         width: 90%;
         font-size: 70%;  
         text-align: center; 
+        margin-top: -60px;
+        letter-spacing : 0.01em;
     }
 
     .headerMenu{
@@ -211,7 +214,7 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
 
 
 @media all and (orientation:portrait) {
-    
+
     #header{
         z-index : 100000;
     }

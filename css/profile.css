@@ -711,7 +711,7 @@
  .each_step{
      width : 55vw;
      height : 100vh;
-     display : block; 
+     display : inline-block; 
      background-color : white;
  }
  
@@ -823,4 +823,118 @@
      font-family : 'Open Sans Condensed', sans-serif; 
      letter-spacing : 0.15em;
  }
- 
+ @media all and (orientation:portrait) {
+     
+    .med_box{
+        width: 100vw;
+        height: 55vh;
+        position : relative;
+    }
+    #animation{
+        display : none;
+    }
+    .animation_holder{
+        width: 80%;
+        height: 60%;
+        top: 25%;
+        left: 10%;
+        background-color: white;  
+        background-size: 100% 100%;
+        background-position: center;
+        position: absolute;
+    }
+    .map_place{
+        display : none;
+    }
+    
+    #map{
+        background-image : url(https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD2jb7zC86sEFusbapaersFLAcquoF0zlY&center=2.9973095907989094,101.60451254999998&zoom=9&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:geometry.fill%7Ccolor:0xffeb3b&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0xffeb3b%7Cweight:5.5&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&size=480x360);
+        border-radius : 50%;
+        height : 80%;
+    }
+    
+    #animation_1{
+        background-image: url(../Image/sleffeed-animation-final/sleffeed1.png);
+    }
+    
+    #animation_2{
+        background-image: url(../Image/sleffeed-animation-final/sleffeed2.png);
+    }
+    
+    #animation_3{
+        background-image: url(../Image/sleffeed-animation-final/sleffeed3.png);
+    }
+    
+    .about_menu_wrapper{
+        height : 100vh;
+        background-size : cover;
+        background-position : center;
+    }
+    
+    .each_step{
+        width : 100vw;
+        height : 45vh;
+        display : block;
+    }
+    .each_step h1{
+        padding-top : 20px;
+        text-align : center;
+        font-size : 100;
+    }
+    .each_step p{
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 40px;
+        font-size: 220%;
+    }
+    
+    .each_step #linkmenu{
+        line-height: 40px;
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-width: 10px;
+    }
+    .each_step #linkmenu a{
+        font-size : 300%;
+    }
+    
+    .centered-content h1{
+        margin-top: -200px;
+        font-size: 150;
+    }
+    .centered-content p{
+        font-size : 40;
+    }
+    
+    #part_1, #part_2{
+        height : 40vh;
+        font-size : 40;
+        margin-top : 0;
+    }
+    
+    #part_1{
+        margin-top : 10vh;
+    }
+    
+    .button_arrangement{
+        width : 90vw;
+        bottom : 200px;
+    }
+    .button_no_transition, .button{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-width: 10px;
+        font-size : 40;
+    }
+    
+    .text_link_no_transition, .text_link{
+        font-size : 40;
+    }
+    
+    .center a{
+        color : white;
+    }
+ }
